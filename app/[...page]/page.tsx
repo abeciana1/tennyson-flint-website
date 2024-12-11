@@ -22,7 +22,11 @@ export default async function Page(props: PageProps) {
 
   return (
     <>
-      <RenderBuilderContent content={content} model={builderModelName} />
+      <div>
+        <main>
+          <RenderBuilderContent content={content} model={builderModelName} />
+        </main>
+      </div>
     </>
   );
 }
