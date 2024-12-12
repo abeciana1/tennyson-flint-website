@@ -6,6 +6,18 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontWeight: {
+      light: '300',
+      normal: '400',
+      medium: '500',
+      semibold: '600',
+      bold: '700',
+    },
+    fontFamily: {
+      sans: 'var(--open-sans)',
+      cinzel: 'var(--cinzel)',
+      'cinzel-dec': 'var(--cinzel-dec)',
+    },
     extend: {
       colors: {
         background: "var(--background)",
