@@ -12,7 +12,6 @@ interface PageProps {
 
 export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
   const urlStructure: { page: string[]; } = (await params)
-  console.log('urlStructure', urlStructure)
   const nestedRoute = urlStructure?.page?.length > 1
   const slugParent = urlStructure?.page[0]
   let modelName = 'page'
