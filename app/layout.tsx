@@ -4,6 +4,15 @@ import {
   Cinzel,
   Cinzel_Decorative
 } from 'next/font/google'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Acme',
+    template: '%s | Tennyson Flint'
+  },
+  metadataBase: new URL('https://tennysonflint.com')
+}
 
 const openSans = Open_Sans({
   subsets: ['latin'],
