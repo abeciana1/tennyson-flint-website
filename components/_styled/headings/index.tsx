@@ -1,7 +1,7 @@
-import { HeadingsI } from '@/definitions/interfaces/_styled/headings'
+import { HeadingI } from '@/definitions/interfaces/_styled/headings'
 import cx from 'classnames'
 
-export const Heading1: React.FC<HeadingsI> = ({
+export const Heading1: React.FC<HeadingI> = ({
   text,
   italic = false,
   bold = false,

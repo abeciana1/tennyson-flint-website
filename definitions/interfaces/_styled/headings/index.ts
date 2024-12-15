@@ -1,4 +1,4 @@
-export interface HeadingsI {
+export interface HeadingI {
   text: string;
   italic?: boolean;
   bold?: boolean;
