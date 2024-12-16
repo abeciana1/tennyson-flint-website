@@ -4,7 +4,7 @@ import { builder } from "@builder.io/sdk";
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
 const NavBar = async () => {
-  const navLinks = await builder.getAll('navigation-links')
+  const navLinks = await builder.getAll('navigation-links', { prerender: true })
   console.log('navLinks', navLinks)
   return (
     <header>
