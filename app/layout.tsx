@@ -5,6 +5,7 @@ import {
   Cinzel_Decorative
 } from 'next/font/google'
 import type { Metadata } from 'next'
+import NavBar from '@/components/_navigation/NavBar'
 
 export const metadata: Metadata = {
   title: {
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body
         className={`${openSans.variable} ${cinzel.variable} ${cinzelDecorative.variable} antialiased`}
       >
+        <NavBar />
         {children}
       </body>
     </html>
