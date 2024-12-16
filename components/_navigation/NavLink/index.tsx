@@ -9,7 +9,6 @@ const NavLink: React.FC<NavLinkI> = ({
   href
 }) => {
   const pathname = usePathname()
-  console.log('pathname', pathname)
   const isActive = pathname === href
   return (
     <li>
