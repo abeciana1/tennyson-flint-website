@@ -29,8 +29,6 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
     })
     .toPromise();
 
-  console.log('page content data', content)
-
   if (modelName === 'blog-post') {
     return {
       title: content?.data?.title,
