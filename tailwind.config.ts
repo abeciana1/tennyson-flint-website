@@ -20,8 +20,6 @@ export default {
     },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
         white: '#EFF1F3',
         black: '#1B1C22',
         navy: '#173B54',
