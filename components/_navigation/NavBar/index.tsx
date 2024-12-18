@@ -1,16 +1,17 @@
+import { use } from 'react'
 import { Heading1 } from '@/components/_styled/headings'
-import { builder } from "@builder.io/sdk";
 import NavLink from '@/components/_navigation/NavLink'
+import MobileMenu from '@/components/_navigation/MobileMenu'
+import { fetchNavLinks } from '@/helper-functions/builder-fetch'
 
-builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
-const NavBar = async () => {
-  const navLinks = await builder.getAll('navigation-links', { prerender: true })
+const NavBar = () => {
+  const navLinks = use(fetchNavLinks())
   return (
     <header>
-      <nav className='flex flex-row px-10 py-3 items-center justify-between'>
+      <nav className='flex flex-row px-10 py-3 items-center justify-between z-50'>
         <Heading1 text='Tennyson Flint' fontSize='3xl' />
-        <ul className='flex flex-row gap-6'>
+        <ul className='hidden md:flex flex-row gap-6'>
           {navLinks && navLinks?.map((link) => {
             return (
               <NavLink
@@ -21,6 +22,7 @@ const NavBar = async () => {
             )
           })}
         </ul>
+        <MobileMenu />
       </nav>
     </header>
   )
