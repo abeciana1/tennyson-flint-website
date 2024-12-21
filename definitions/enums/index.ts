@@ -7,3 +7,10 @@ export enum ROUNDED {
   FULL = 'FULL',
   XXL = 'XXL',
 }
+
+export enum FONT_SIZE {
+  SM = 'SM',
+  MD = 'MD',
+  LG = 'LG',
+  XL = 'XL',
+}
