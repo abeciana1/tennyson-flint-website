@@ -3,4 +3,6 @@ export interface HeadingI {
   italic?: boolean;
   bold?: boolean;
   fontSize?: string;
+  medium?: boolean;
+  semiBold?: boolean;
 }
