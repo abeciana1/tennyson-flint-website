@@ -7,7 +7,7 @@ describe('ImageComp', () => {
   beforeEach(() => {
     render(
       <ImageComp
-        src='test.jpg'
+        src='/test.jpg'
         alt='Test Image'
         width={100}
         height={100}
