@@ -14,3 +14,13 @@ export enum FONT_SIZE {
   LG = 'LG',
   XL = 'XL',
 }
+
+export enum COLORS {
+  WHITE = 'WHITE',
+  BLACK = 'BLACK',
+  NAVY = 'NAVY',
+  GOLD = 'GOLD',
+  VIOLET = 'VIOLET',
+  RED = 'RED',
+  PINK = 'PINK'
+}
