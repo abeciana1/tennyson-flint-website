@@ -4,5 +4,6 @@ export enum ROUNDED {
   MD = 'MD',
   LG = 'LG',
   XL = 'XL',
-  FULL = 'FULL'
+  FULL = 'FULL',
+  XXL = 'XXL',
 }
