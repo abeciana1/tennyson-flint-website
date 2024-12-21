@@ -27,3 +27,5 @@ const ImageComp: React.FC<ImageI> = ({
     />
   )
 }
+
+export default ImageComp
