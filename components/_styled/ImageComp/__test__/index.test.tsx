@@ -19,4 +19,8 @@ describe('ImageComp', () => {
     const img = screen.getByRole('img')
     expect(img).toBeInTheDocument()
   })
+  test('should render with alt text', () => {
+    const img = screen.getByAltText('Test Image')
+    expect(img).toBeInTheDocument()
+  })
 })
