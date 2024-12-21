@@ -11,7 +11,7 @@ const TextContent: React.FC<TextContentI> = ({
 }) => {
   return (
     <div
-      className={cx('', {
+      className={cx('leading-loose', {
         ['font-bold']: bold && !semiBold && !medium,
         ['font-semibold']: semiBold && !medium && !bold,
         ['font-medium']: medium && !bold && !semiBold,
