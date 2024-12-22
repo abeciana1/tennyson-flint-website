@@ -8,7 +8,7 @@ const ImageComp: React.FC<ImageI> = ({
   alt,
   width,
   height,
-  rounded
+  rounded = ROUNDED.NONE
 }) => {
   return (
     <Image
