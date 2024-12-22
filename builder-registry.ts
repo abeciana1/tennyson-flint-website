@@ -40,7 +40,7 @@ Builder.registerComponent(ImageComp, {
       type: "enum",
       options: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
       helperText: "Choose between: NONE, SM, MD, LG, XL, FULL, or  XXL."
-    },
+    }
   ],
 })
 
@@ -180,9 +180,35 @@ Builder.registerComponent(HeroSection, {
       defaultValue: [],
       subFields: [
         {
-          name: 'Image',
-          type: 'uiBlocks',
-          defaultValue: []
+          friendlyName: 'Image source link',
+          name: "src",
+          type: "string",
+          required: true
+        },
+        {
+          friendlyName: 'Image accessibility alt text',
+          name: "alt",
+          type: "string",
+          required: true
+        },
+        {
+          friendlyName: 'Image width dimension',
+          name: "width",
+          type: "number",
+          required: true
+        },
+        {
+          friendlyName: 'Image height dimension',
+          name: "height",
+          type: "number",
+          required: true
+        },
+        {
+          friendlyName: 'Image rounded edges',
+          name: "rounded",
+          type: "enum",
+          options: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
+          helperText: "Choose between: NONE, SM, MD, LG, XL, FULL, or  XXL."
         }
       ]
     }
