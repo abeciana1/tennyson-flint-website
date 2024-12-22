@@ -19,9 +19,9 @@ const HeroSection: React.FC<HeroSectionI> = ({
 }) => {
   return (
     <MarginSection>
-      <section className='flex items-center mx-auto gap-24 justify-around'>
+      <section className='flex items-center mx-auto gap-10 lg:gap-24 justify-around flex-col md:flex-row'>
         <section
-          className='max-w-[550px]'
+          className='md:max-w-[300px] lg:max-w-[550px]'
         >
           {preHeading &&
             <TextContent
@@ -36,7 +36,7 @@ const HeroSection: React.FC<HeroSectionI> = ({
           {subheading &&
             <Heading2
               text={subheading}
-              semiBold
+              medium
             />
           }
           <TextContent
