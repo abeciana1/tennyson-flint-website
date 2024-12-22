@@ -7,7 +7,7 @@ export interface HeroSectionI {
   subheading?: string;
   textBody: string;
   ctaChildren: ButtonLinkI[];
-  image: ImageI;
+  image: ImageI[];
 }
 
 export interface MarginSectionI {
