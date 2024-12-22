@@ -29,7 +29,7 @@ const HeroSection: React.FC<HeroSectionI> = ({
         <section>
           {preHeading &&
             <TextContent
-              text={preHeading}
+              text={preHeading.toUpperCase()}
               fontSize={FONT_SIZE.XXL}
             />
           }
