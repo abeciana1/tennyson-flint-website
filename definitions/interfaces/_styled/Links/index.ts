@@ -4,7 +4,7 @@ export interface BasicLinkI {
   linkText: string;
   title: string;
   href: string;
-  targetBlank: boolean;
+  targetBlank?: boolean;
 }
 
 export interface ButtonLinkI extends BasicLinkI {

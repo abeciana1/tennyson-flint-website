@@ -8,7 +8,7 @@ export const ButtonLink: React.FC<ButtonLinkI> = ({
   linkText,
   title,
   href,
-  targetBlank,
+  targetBlank = false,
   bgColor = COLORS.WHITE,
   rounded = ROUNDED.NONE,
   arrow = false
