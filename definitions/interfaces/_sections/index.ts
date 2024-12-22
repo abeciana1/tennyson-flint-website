@@ -9,3 +9,7 @@ export interface HeroSectionI {
   ctaChildren: ButtonLinkI[];
   image: ImageI;
 }
+
+export interface MarginSectionI {
+  children: React.ReactNode[]
+}
