@@ -5,5 +5,5 @@ export interface ImageI {
   alt: string;
   width: number;
   height: number;
-  rounded?: ROUNDED;
+  rounded: ROUNDED;
 }
