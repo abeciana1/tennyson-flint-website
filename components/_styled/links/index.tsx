@@ -4,7 +4,7 @@ import { COLORS, ROUNDED } from '@/definitions/enums'
 import cx from 'classnames'
 import { FaArrowRight } from "react-icons/fa";
 
-const ButtonLink: React.FC<ButtonLinkI> = ({
+export const ButtonLink: React.FC<ButtonLinkI> = ({
   linkText,
   title,
   href,
@@ -18,7 +18,7 @@ const ButtonLink: React.FC<ButtonLinkI> = ({
       href={href}
       title={title}
       target={targetBlank ? "_blank" : ""}
-      className={cx('text-lg font-medium', {
+      className={cx('text-lg font-medium max-w-fit', {
         ['flex items-center gap-5']: arrow,
         ['bg-white border-black border-2']: bgColor === COLORS.WHITE,
         ['bg-black text-white']: bgColor === COLORS.BLACK,
@@ -42,5 +42,3 @@ const ButtonLink: React.FC<ButtonLinkI> = ({
     </Link>
   )
 }
-
-export default ButtonLink
