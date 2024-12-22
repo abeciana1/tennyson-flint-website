@@ -2,6 +2,7 @@ import { Heading1, Heading2 } from '@/components/_styled/headings'
 import { HeroSectionI } from '@/definitions/interfaces/_sections'
 import ImageComp from '@/components/_styled/ImageComp'
 import TextContent from '@/components/_styled/Text'
+import { FONT_SIZE } from '@/definitions/enums'
 
 const HeroSection: React.FC<HeroSectionI> = ({
   preHeading = '',
@@ -25,6 +26,7 @@ const HeroSection: React.FC<HeroSectionI> = ({
         {preHeading &&
           <TextContent
             text={preHeading}
+            fontSize={FONT_SIZE.XXL}
           />
         }
         <Heading1
