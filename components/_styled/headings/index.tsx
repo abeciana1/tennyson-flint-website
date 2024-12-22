@@ -32,7 +32,7 @@ export const Heading2: React.FC<HeadingI> = ({
   fontSize = '4xl'
 }) => {
   return (
-    <h1
+    <h2
       className={cx('font-cinzel-dec', {
         ['italic']: italic,
         ['font-bold']: bold && !medium && !semiBold,
@@ -40,6 +40,6 @@ export const Heading2: React.FC<HeadingI> = ({
         ['font-medium']: medium && !bold && !semiBold,
         ['font-semibold']: semiBold && !bold && !medium
       })}
-    >{ text }</h1>
+    >{ text }</h2>
   )
 }
