@@ -17,7 +17,7 @@ const ImageComp: React.FC<ImageI> = ({
       width={width}
       height={height}
       className={cx({
-        ['rounded-none']: ROUNDED.NONE,
+        ['rounded-none']: rounded === ROUNDED.NONE,
         ['rounded-sm']: rounded === ROUNDED.SM,
         ['rounded-md']: rounded === ROUNDED.MD,
         ['rounded-lg']: rounded === ROUNDED.LG,
