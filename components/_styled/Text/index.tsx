@@ -18,7 +18,8 @@ const TextContent: React.FC<TextContentI> = ({
         ['text-lg']: fontSize === FONT_SIZE.LG,
         ['text-sm']: fontSize === FONT_SIZE.SM,
         ['text-xl']: fontSize === FONT_SIZE.XL,
-        ['text-md']: fontSize === FONT_SIZE.MD
+        ['text-md']: fontSize === FONT_SIZE.MD,
+        ['text-2xl']: fontSize === FONT_SIZE.XXL
       })}
     >
       {text}
