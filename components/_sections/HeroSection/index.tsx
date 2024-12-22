@@ -7,6 +7,7 @@ import { ButtonLink } from '@/components/_styled/links'
 import { ButtonLinkI } from '@/definitions/interfaces/_styled/Links'
 import { COLORS, ROUNDED } from '@/definitions/enums'
 import MarginSection from '@/components/_sections/MarginSection'
+import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
 
 const HeroSection: React.FC<HeroSectionI> = ({
   preHeading = '',
@@ -16,17 +17,12 @@ const HeroSection: React.FC<HeroSectionI> = ({
   ctaChildren,
   image
 }) => {
-  const {
-    src,
-    alt,
-    width,
-    height,
-    rounded
-  } = image
   return (
     <MarginSection>
-      <section className='flex items-center'>
-        <section>
+      <section className='flex items-center mx-auto gap-24 justify-around'>
+        <section
+          className='max-w-[550px]'
+        >
           {preHeading &&
             <TextContent
               text={preHeading.toUpperCase()}
@@ -35,7 +31,7 @@ const HeroSection: React.FC<HeroSectionI> = ({
           }
           <Heading1
             text={heading}
-            bold
+            fontSize='5xl'
           />
           {subheading &&
             <Heading2
@@ -45,6 +41,7 @@ const HeroSection: React.FC<HeroSectionI> = ({
           }
           <TextContent
             text={textBody}
+            fontSize={FONT_SIZE.XXL}
           />
           {ctaChildren && 
             <div className='flex flex-wrap gap-5'>
@@ -71,14 +68,23 @@ const HeroSection: React.FC<HeroSectionI> = ({
             </div>
           }
         </section>
-        <section>
-          <ImageComp
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            rounded={rounded}
-          />
+        <section className='w-fit'>
+          {image && image?.map(({
+            src,
+            alt,
+            width,
+            height,
+            rounded
+          }: ImageI, index: number) => (
+            <ImageComp
+              key={index + width + height}
+              src={src}
+              alt={alt}
+              width={width}
+              height={height}
+              rounded={ROUNDED[rounded]}
+            />
+          ))}
         </section>
       </section>
     </MarginSection>
