@@ -68,7 +68,6 @@ Builder.registerComponent(ButtonLink, {
     {
       name: 'targetBlank',
       type: 'boolean',
-      required: true,
       friendlyName: 'Open link in a new window?',
     },
     {
@@ -103,6 +102,11 @@ Builder.registerComponent(HeroSection, {
     }
   },
   inputs: [
+    {
+      name: 'preHeading',
+      type:'string',
+      friendlyName: 'Pre-heading'
+    },
     {
       name: 'heading',
       type:'string',
@@ -149,7 +153,6 @@ Builder.registerComponent(HeroSection, {
         {
           name: 'targetBlank',
           type: 'boolean',
-          required: true,
           friendlyName: 'Open link in a new window?',
         },
         {
