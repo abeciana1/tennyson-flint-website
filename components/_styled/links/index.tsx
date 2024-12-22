@@ -18,7 +18,7 @@ export const ButtonLink: React.FC<ButtonLinkI> = ({
       href={href}
       title={title}
       target={targetBlank ? "_blank" : ""}
-      className={cx('text-lg font-medium max-w-fit', {
+      className={cx('text-lg font-medium max-w-fit py-1 px-2', {
         ['flex items-center gap-5']: arrow,
         ['bg-white border-black border-2']: bgColor === COLORS.WHITE,
         ['bg-black text-white']: bgColor === COLORS.BLACK,
@@ -27,7 +27,7 @@ export const ButtonLink: React.FC<ButtonLinkI> = ({
         ['bg-violet text-white']: bgColor === COLORS.VIOLET,
         ['bg-red text-white']: bgColor === COLORS.RED,
         ['bg-pink text-white']: bgColor === COLORS.PINK,
-        ['rounded-none']: ROUNDED.NONE,
+        ['rounded-none']: rounded === ROUNDED.NONE,
         ['rounded-sm']: rounded === ROUNDED.SM,
         ['rounded-md']: rounded === ROUNDED.MD,
         ['rounded-lg']: rounded === ROUNDED.LG,
