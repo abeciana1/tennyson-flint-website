@@ -4,6 +4,7 @@ import ImageComp from '@/components/_styled/ImageComp'
 import TextContent from '@/components/_styled/Text'
 
 const HeroSection: React.FC<HeroSectionI> = ({
+  preHeading = '',
   heading,
   subheading = '',
   textBody,
@@ -21,6 +22,11 @@ const HeroSection: React.FC<HeroSectionI> = ({
   return (
     <section className='flex items-center'>
       <section>
+        {preHeading &&
+          <TextContent
+            text={preHeading}
+          />
+        }
         <Heading1
           text={heading}
           bold
