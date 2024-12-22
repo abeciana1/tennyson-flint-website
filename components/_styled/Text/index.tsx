@@ -11,7 +11,7 @@ const TextContent: React.FC<TextContentI> = ({
 }) => {
   return (
     <div
-      className={cx('leading-loose', {
+      className={cx('leading-normal', {
         ['font-bold']: bold && !semiBold && !medium,
         ['font-semibold']: semiBold && !medium && !bold,
         ['font-medium']: medium && !bold && !semiBold,
@@ -19,7 +19,8 @@ const TextContent: React.FC<TextContentI> = ({
         ['text-sm']: fontSize === FONT_SIZE.SM,
         ['text-xl']: fontSize === FONT_SIZE.XL,
         ['text-md']: fontSize === FONT_SIZE.MD,
-        ['text-2xl']: fontSize === FONT_SIZE.XXL
+        ['text-2xl']: fontSize === FONT_SIZE.XXL,
+        ['text-3xl']: fontSize === FONT_SIZE.XXXL
       })}
     >
       {text}
