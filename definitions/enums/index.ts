@@ -13,6 +13,7 @@ export enum FONT_SIZE {
   MD = 'MD',
   LG = 'LG',
   XL = 'XL',
+  XXL = 'XXL',
 }
 
 export enum COLORS {
