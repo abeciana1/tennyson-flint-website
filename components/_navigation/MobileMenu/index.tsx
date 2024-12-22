@@ -22,10 +22,10 @@ const MobileMenu = () => {
 
   useEffect(() => {
     const main = document?.getElementsByTagName('main')
-    if (isOpen && main) {
-      main[0].style.display = 'none';
-    } else {
-      main[0].style.display = 'block';
+    if (isOpen && main && main.length > 0) {
+      main[0]!.style!.display = 'none';
+    } else if (main && main.length > 0) {
+      main[0]!.style!.display = 'block';
     }
   }, [isOpen])
 
