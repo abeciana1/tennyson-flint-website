@@ -3,6 +3,9 @@ import { HeroSectionI } from '@/definitions/interfaces/_sections'
 import ImageComp from '@/components/_styled/ImageComp'
 import TextContent from '@/components/_styled/Text'
 import { FONT_SIZE } from '@/definitions/enums'
+import { ButtonLink } from '@/components/_styled/links'
+import { ButtonLinkI } from '@/definitions/interfaces/_styled/Links'
+import { COLORS, ROUNDED } from '@/definitions/enums'
 
 const HeroSection: React.FC<HeroSectionI> = ({
   preHeading = '',
@@ -43,8 +46,28 @@ const HeroSection: React.FC<HeroSectionI> = ({
           text={textBody}
         />
         {ctaChildren && 
-          <>
-          </>
+          <div className='flex flex-wrap gap-5'>
+            {ctaChildren?.map(({
+              linkText,
+              title,
+              href,
+              targetBlank,
+              bgColor,
+              rounded,
+              arrow
+            }: ButtonLinkI) => (
+              <ButtonLink
+                key={linkText}
+                linkText={linkText}
+                title={title}
+                href={href}
+                targetBlank={targetBlank}
+                bgColor={COLORS[bgColor]}
+                rounded={ROUNDED[rounded]}
+                arrow={arrow}
+              />
+            ))}
+          </div>
         }
       </section>
       <section>
