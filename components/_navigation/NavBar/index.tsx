@@ -9,8 +9,8 @@ const NavBar = () => {
   const navLinks = use(fetchNavLinks())
   return (
     <header>
-      <nav className='flex flex-row px-10 py-3 items-center justify-between z-50'>
-        <Heading1 text='Tennyson Flint' fontSize='3xl' />
+      <nav className='flex flex-row px-5 sm:px-10 py-3 items-center justify-between z-50'>
+        <Heading1 text='Tennyson Flint' fontSize='2xl' />
         <ul className='hidden md:flex flex-row gap-6'>
           {navLinks && navLinks?.map((link) => {
             return (
