@@ -11,5 +11,5 @@ export interface HeroSectionI {
 }
 
 export interface MarginSectionI {
-  children: React.ReactNode[]
+  children: React.ReactNode | React.ReactNode[]
 }
