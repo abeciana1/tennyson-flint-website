@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
-import ButtonLink from '@/components/_styled/links'
+import { ButtonLink } from '@/components/_styled/links'
 import { COLORS, ROUNDED } from '@/definitions/enums'
 
 describe('Links', () => {
