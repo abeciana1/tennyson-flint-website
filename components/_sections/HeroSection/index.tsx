@@ -23,7 +23,6 @@ const HeroSection: React.FC<HeroSectionI> = ({
     height,
     rounded
   } = image
-  console.log('ctaChildren', ctaChildren)
   return (
     <MarginSection>
       <section className='flex items-center'>
