@@ -179,13 +179,14 @@ Builder.registerComponent(HeroSection, {
     {
       name: 'image',
       type: 'list',
+      max: 1,
       friendlyName: 'Image',
       defaultValue: [],
       subFields: [
         {
-          friendlyName: 'Image source link',
-          name: "src",
-          type: "string",
+          friendlyName: 'Image file',
+          name: 'src',
+          type: "file",
           required: true
         },
         {
@@ -212,7 +213,7 @@ Builder.registerComponent(HeroSection, {
           type: "enum",
           options: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
           helperText: "Choose between: NONE, SM, MD, LG, XL, FULL, or  XXL."
-        }
+        },
       ]
     }
   ]
