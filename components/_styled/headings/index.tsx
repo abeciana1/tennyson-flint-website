@@ -16,6 +16,7 @@ export const Heading1: React.FC<HeadingI> = ({
         ['font-bold']: bold,
         ['text-5xl']: fontSize === '5xl',
         ['text-3xl']: fontSize === '3xl',
+        ['text-2xl']: fontSize === '2xl',
         ['font-medium']: medium && !bold && !semiBold,
         ['font-semibold']: semiBold && !bold && !medium
       })}
