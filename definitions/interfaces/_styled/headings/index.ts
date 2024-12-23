@@ -1,8 +1,8 @@
+import { COLORS, FONT_STYLE } from '@/definitions/enums'
+
 export interface HeadingI {
   text: string;
-  italic?: boolean;
-  bold?: boolean;
   fontSize?: string;
-  medium?: boolean;
-  semiBold?: boolean;
+  color?: COLORS;
+  fontStyle?: FONT_STYLE;
 }

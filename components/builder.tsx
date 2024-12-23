@@ -22,5 +22,9 @@ export function RenderBuilderContent({ content, model }: BuilderPageProps) {
   // If the "content" is falsy and the page is
   // not being previewed in Builder, render the
   // DefaultErrorPage with a 404.
-  return <DefaultErrorPage statusCode={404} />;
+  if (model === 'page') {
+    return <DefaultErrorPage statusCode={404} />;
+  } else {
+    return <></>
+  }
 }

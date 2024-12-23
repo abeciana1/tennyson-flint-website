@@ -2,7 +2,7 @@ import { Heading1, Heading2 } from '@/components/_styled/headings'
 import { HeroSectionI } from '@/definitions/interfaces/_sections'
 import ImageComp from '@/components/_styled/ImageComp'
 import TextContent from '@/components/_styled/Text'
-import { FONT_SIZE } from '@/definitions/enums'
+import { FONT_SIZE, FONT_STYLE } from '@/definitions/enums'
 import { ButtonLink } from '@/components/_styled/links'
 import { ButtonLinkI } from '@/definitions/interfaces/_styled/Links'
 import { COLORS, ROUNDED } from '@/definitions/enums'
@@ -36,7 +36,7 @@ const HeroSection: React.FC<HeroSectionI> = ({
           {subheading &&
             <Heading2
               text={subheading}
-              medium
+              fontStyle={FONT_STYLE.MEDIUM}
             />
           }
           <TextContent

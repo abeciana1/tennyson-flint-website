@@ -26,3 +26,17 @@ export enum COLORS {
   RED = 'RED',
   PINK = 'PINK'
 }
+
+export enum FONT_STYLE {
+  NORMAL = 'NORMAL',
+  ITALIC = 'ITALIC',
+  BOLD = 'BOLD',
+  SEMI_BOLD = 'SEMI_BOLD',
+  MEDIUM = 'MEDIUM'
+}
+
+export enum FONT_FAMILY {
+  SANS = 'SANS',
+  CINZEL_DEC = 'CINZEL_DEC',
+  CINZEL = 'CINZEL'
+}

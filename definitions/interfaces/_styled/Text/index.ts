@@ -1,9 +1,14 @@
-import { FONT_SIZE } from "@/definitions/enums";
+import {
+  FONT_SIZE,
+  FONT_STYLE,
+  FONT_FAMILY,
+  COLORS
+} from "@/definitions/enums";
 
 export interface TextContentI {
   text: string;
   fontSize?: FONT_SIZE;
-  bold?: boolean;
-  semiBold?: boolean;
-  medium?: boolean;
+  fontStyle?: FONT_STYLE;
+  fontFamily?: FONT_FAMILY;
+  color?: COLORS;
 }
