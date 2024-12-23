@@ -4,6 +4,7 @@ import ImageComp from '@/components/_styled/ImageComp'
 import { ButtonLink } from '@/components/_styled/links'
 import HeroSection from '@/components/_sections/HeroSection'
 import TextContent from '@/components/_styled/Text'
+import SocialLinksSection from '@/components/_sections/SocialLinksSection' 
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -263,6 +264,57 @@ Builder.registerComponent(TextContent, {
       enum: [
         'WHITE',
         'BLACK',
+      ]
+    }
+  ]
+})
+
+Builder.registerComponent(SocialLinksSection, {
+  name: 'Social Links Section',
+  inputs: [
+    {
+      name: 'title',
+      type:'string',
+      required: true,
+      friendlyName: 'Title'
+    },
+    {
+      name: 'href',
+      type: 'string',
+      required: true,
+      friendlyName: 'Link'
+    },
+    {
+      name: 'image',
+      type: 'list',
+      max: 1,
+      friendlyName: 'Image',
+      defaultValue: [],
+      subFields: [
+        {
+          friendlyName: 'Image file',
+          name: 'src',
+          type: "file",
+          required: true
+        },
+        {
+          friendlyName: 'Image accessibility alt text',
+          name: "alt",
+          type: "string",
+          required: true
+        },
+        {
+          friendlyName: 'Image width dimension',
+          name: "width",
+          type: "number",
+          required: true
+        },
+        {
+          friendlyName: 'Image height dimension',
+          name: "height",
+          type: "number",
+          required: true
+        },
       ]
     }
   ]
