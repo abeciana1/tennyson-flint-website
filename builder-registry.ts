@@ -3,7 +3,7 @@ import { builder, Builder } from "@builder.io/react";
 import ImageComp from '@/components/_styled/ImageComp'
 import { ButtonLink } from '@/components/_styled/links'
 import HeroSection from '@/components/_sections/HeroSection'
-
+import TextContent from '@/components/_styled/Text'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -37,8 +37,8 @@ Builder.registerComponent(ImageComp, {
     {
       friendlyName: 'Image rounded edges',
       name: "rounded",
-      type: "enum",
-      options: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
+      type: "string",
+      enum: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
       helperText: "Choose between: NONE, SM, MD, LG, XL, FULL, or  XXL."
     }
   ],
@@ -73,8 +73,8 @@ Builder.registerComponent(ButtonLink, {
     {
       friendlyName: 'Button rounded edges',
       name: "rounded",
-      type: "enum",
-      options: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
+      type: "string",
+      enum: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
       helperText: "Choose between: NONE, SM, MD, LG, XL, FULL, or  XXL."
     },
     {
@@ -85,8 +85,8 @@ Builder.registerComponent(ButtonLink, {
     {
       friendlyName: 'Button color',
       name: 'bgColor',
-      type: 'enum',
-      options: ["WHITE", "BLACK", "NAVY", "GOLD", "VIOLET", "RED", "PINK"],
+      type: 'string',
+      enum: ["WHITE", "BLACK", "NAVY", "GOLD", "VIOLET", "RED", "PINK"],
       helperText: "Choose between: WHITE, BLACK, NAVY, GOLD, VIOLET, RED, or PINK."
     }
   ]
@@ -94,13 +94,6 @@ Builder.registerComponent(ButtonLink, {
 
 Builder.registerComponent(HeroSection, {
   name: 'Hero Section',
-  canHaveChildren: true,
-  childRequirements: {
-    message: 'You can only put Button Links or Images in this section.',
-    query: {
-      'component.name': { $in: ['Button Link', 'ImageComp'] }
-    }
-  },
   inputs: [
     {
       name: 'preHeading',
@@ -158,8 +151,8 @@ Builder.registerComponent(HeroSection, {
         {
           friendlyName: 'Button rounded edges',
           name: "rounded",
-          type: "enum",
-          options: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
+          type: "string",
+          enum: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
           helperText: "Choose between: NONE, SM, MD, LG, XL, FULL, or  XXL."
         },
         {
@@ -170,8 +163,8 @@ Builder.registerComponent(HeroSection, {
         {
           friendlyName: 'Button color',
           name: 'bgColor',
-          type: 'enum',
-          options: ["WHITE", "BLACK", "NAVY", "GOLD", "VIOLET", "RED", "PINK"],
+          type: 'string',
+          enum: ["WHITE", "BLACK", "NAVY", "GOLD", "VIOLET", "RED", "PINK"],
           helperText: "Choose between: WHITE, BLACK, NAVY, GOLD, VIOLET, RED, or PINK."
         }
       ]
@@ -214,6 +207,62 @@ Builder.registerComponent(HeroSection, {
           options: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
           helperText: "Choose between: NONE, SM, MD, LG, XL, FULL, or  XXL."
         },
+      ]
+    }
+  ]
+})
+
+Builder.registerComponent(TextContent, {
+  name: 'Text Content',
+  inputs: [
+    {
+      name: 'text',
+      type: 'longText',
+      required: true,
+      friendlyName: 'Text'
+    }, 
+    {
+      name: 'fontSize',
+      friendlyName: 'Font Size',
+      type: 'string',
+      enum: [
+        'SM',
+        'MD',
+        'LG',
+        'XL',
+        'XXL',
+        'XXXL',
+      ]
+    },
+    {
+      name: 'fontStyle',
+      friendlyName: 'Font Style',
+      type: 'string',
+      enum: [
+        'NORMAL',
+        'ITALIC',
+        'BOLD',
+        'SEMI_BOLD',
+        'MEDIUM'
+      ]
+    },
+    {
+      name: 'fontFamily',
+      friendlyName: 'Font Family',
+      type:'string',
+      enum: [
+        'SANS',
+        'CINZEL_DEC',
+        'CINZEL'
+      ]
+    },
+    {
+      name: 'color',
+      friendlyName: 'Text Color',
+      type:'string',
+      enum: [
+        'WHITE',
+        'BLACK',
       ]
     }
   ]
