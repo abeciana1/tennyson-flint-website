@@ -6,7 +6,6 @@ import {
 } from 'next/font/google'
 import type { Metadata } from 'next'
 import NavBar from '@/components/_navigation/NavBar'
-import Footer from '@/components/_navigation/Footer'
 
 export const metadata: Metadata = {
   title: {
@@ -46,7 +45,6 @@ export default function RootLayout({
       >
         <NavBar />
         {children}
-        <Footer />
       </body>
     </html>
   );
