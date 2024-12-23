@@ -9,7 +9,7 @@ import NavBar from '@/components/_navigation/NavBar'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Acme',
+    default: 'Tennyson Flint',
     template: '%s | Tennyson Flint'
   },
   metadataBase: new URL('https://tennysonflint.com')
@@ -40,6 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <body
         className={`${openSans.variable} ${cinzel.variable} ${cinzelDecorative.variable} antialiased`}
       >
