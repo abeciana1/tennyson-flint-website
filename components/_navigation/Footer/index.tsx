@@ -38,7 +38,7 @@ const Footer: React.FC<FooterI> = ({
               <SocialLinksSection socialLinks={socialLinks} />
             </div>
           }
-          <div className='mt-5'>
+          <div className='mt-10'>
             <TextContent
               text={`Created © ${new Date().getFullYear()}`}
               fontFamily={FONT_FAMILY.SANS}
