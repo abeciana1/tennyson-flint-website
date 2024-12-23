@@ -18,7 +18,7 @@ export const fetchFooter = async () => {
     console.log('footer', footer)
     return footer;
   } catch (error) {
-    console.error('Error fetching navigation links:', error);
+    console.error('Error fetching footer content:', error);
     return []
   }
 }
