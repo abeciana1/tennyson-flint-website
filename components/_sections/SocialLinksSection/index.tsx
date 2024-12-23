@@ -6,7 +6,7 @@ const SocialLinksSection: React.FC<SocialLinkSectionI> = ({
   socialLinks
 }) => {
   return (
-    <div className='flex'>
+    <div className='flex gap-3 justify-center'>
       {socialLinks.map(({
         title,
         href,
