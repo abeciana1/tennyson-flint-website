@@ -12,10 +12,12 @@ const TextContent: React.FC<TextContentI> = ({
   fontSize = FONT_SIZE.LG,
   fontStyle = FONT_STYLE.NORMAL,
   fontFamily = FONT_FAMILY.SANS,
-  color = COLORS.BLACK
+  color = COLORS.BLACK,
+  dataTestId = ''
 }) => {
   return (
     <div
+      data-testId={dataTestId}
       className={cx('leading-normal', {
         ['font-bold']: fontStyle === FONT_STYLE.BOLD,
         ['font-semibold']: fontStyle === FONT_STYLE.SEMI_BOLD,
