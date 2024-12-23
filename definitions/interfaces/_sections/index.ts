@@ -17,3 +17,8 @@ export interface MarginSectionI {
 export interface SocialLinkSectionI {
   socialLinks: SocialLinkI[];
 }
+
+export interface BlogSectionI {
+  preheading: string;
+  headline: string;
+}
