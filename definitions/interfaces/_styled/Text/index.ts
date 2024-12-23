@@ -11,4 +11,5 @@ export interface TextContentI {
   fontStyle?: FONT_STYLE;
   fontFamily?: FONT_FAMILY;
   color?: COLORS;
+  dataTestId?: string;
 }
