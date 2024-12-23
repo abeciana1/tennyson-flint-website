@@ -13,7 +13,7 @@ import {
 const Footer: React.FC = () => {
   const content = use(fetchFooter())
   return (
-    <section className='bg-gray max-h-fit'>
+    <footer className='bg-gray max-h-fit'>
       <MarginSection>
         <section className='mx-auto text-center'>
           <TextContent
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
           <RenderBuilderContent content={content} model='footer' />
         </section>
       </MarginSection>
-    </section>
+    </footer>
   )
 }
 
