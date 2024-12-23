@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
+import BlogSection from '@/components/_sections/BlogSection'
 
 describe('BlogSection', () => {
   beforeEach(() => {
