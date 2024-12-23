@@ -47,7 +47,6 @@ export const ButtonLink: React.FC<ButtonLinkI> = ({
 export const SocialLink: React.FC<SocialLinkI> = ({
   title,
   href,
-  targetBlank = false,
   image
 }) => {
   const {
