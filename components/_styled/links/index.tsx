@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import { ButtonLinkI } from '@/definitions/interfaces/_styled/Links'
+import { ButtonLinkI, SocialLinkI } from '@/definitions/interfaces/_styled/Links'
 import { COLORS, ROUNDED } from '@/definitions/enums'
 import cx from 'classnames'
 import { FaArrowRight } from "react-icons/fa";
+import ImageComp from '@/components/_styled/ImageComp'
 
 export const ButtonLink: React.FC<ButtonLinkI> = ({
   linkText,
@@ -39,6 +40,36 @@ export const ButtonLink: React.FC<ButtonLinkI> = ({
       {arrow &&
         <FaArrowRight strokeWidth='1' size={20} />
       }
+    </Link>
+  )
+}
+
+export const SocialLink: React.FC<SocialLinkI> = ({
+  title,
+  href,
+  targetBlank = false,
+  image
+}) => {
+  const {
+    src,
+    alt,
+    width,
+    height
+  } = image[0]
+  return (
+    <Link
+      href={href}
+      title={title}
+      target='_blank'
+      className='bg-white rounded-full p-2.5'
+    >
+      <ImageComp
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        rounded={ROUNDED.NONE}
+      />
     </Link>
   )
 }
