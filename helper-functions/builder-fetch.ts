@@ -11,14 +11,3 @@ export const fetchNavLinks = async () => {
     return [];
   }
 }
-
-export const fetchFooter = async () => {
-  try {
-    const footer = await builder.get('footer', { prerender: true });
-    console.log('footer', footer)
-    return footer;
-  } catch (error) {
-    console.error('Error fetching footer content:', error);
-    return []
-  }
-}
