@@ -9,6 +9,7 @@ import {
 import BlogTemplate from '@/components/_blog/BlogTemplate'
 import { format } from 'date-fns'
 import { ROUNDED } from '@/definitions/enums'
+import cx from 'classnames'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -56,7 +57,9 @@ export default async function Page(props: PageProps) {
   return (
     <>
       <div className='relative'>
-        <main className='min-h-screen relative'>
+        <main className={cx('min-h-screen relative', {
+          ['pb-20']: modelName === 'blog-article'
+        })}>
           {modelName === 'blog-article' &&
             <BlogTemplate
               title={content?.data?.blogPostTitle}
