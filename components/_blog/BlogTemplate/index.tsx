@@ -23,7 +23,7 @@ const BlogTemplate: React.FC<BlogTemplateI> = ({
   } = image
   return (
     <MarginSection>
-      <MarginSection>
+      <section className='md:px-10'>
         <Heading1
           text={title}
         />
@@ -37,7 +37,7 @@ const BlogTemplate: React.FC<BlogTemplateI> = ({
         }
         <section>
           <div
-            className='flex justify-between'
+            className='flex justify-between my-2'
           >
             <TextContent
               text='By Tennyson Flint'
@@ -51,15 +51,17 @@ const BlogTemplate: React.FC<BlogTemplateI> = ({
               fontStyle={FONT_STYLE.MEDIUM}
             />
           </div>
-          <ImageComp
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            rounded={rounded}
-          />
+          <div className='flex justify-center'>
+            <ImageComp
+              src={src}
+              alt={alt}
+              width={width}
+              height={height}
+              rounded={rounded}
+            />
+          </div>
         </section>
-      </MarginSection>
+      </section>
     </MarginSection>
   )
 }
