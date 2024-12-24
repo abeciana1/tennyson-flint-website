@@ -33,8 +33,9 @@ describe('BlogTemplate', () => {
   })
   test('should render an image', () => {
     const img = screen.getByRole('img')
-    expect(img).toHaveAttribute('src', '/test.jpg')
     expect(img).toHaveAttribute('alt', 'Test Image')
+    expect(img).toHaveAttribute('width', '100')
+    expect(img).toHaveAttribute('height', '100')
     expect(img).toBeInTheDocument()
   })
   test('should render a published date', () => {
