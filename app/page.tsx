@@ -21,8 +21,8 @@ export default async function Page(props: PageProps) {
     .toPromise();
   return (
     <>
-      <div>
-        <main>
+      <div className='relative'>
+        <main className='min-h-screen relative'>
           <RenderBuilderContent content={content} model={builderModelName} />
         </main>
       </div>
