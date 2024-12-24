@@ -6,3 +6,7 @@ export interface BlogTemplateI {
   image: ImageI;
   publishedDate: string;
 }
+
+export interface BlogContentI {
+  textContent: string;
+}
