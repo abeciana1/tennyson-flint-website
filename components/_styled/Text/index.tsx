@@ -30,6 +30,7 @@ const TextContent: React.FC<TextContentI> = ({
         ['text-md']: fontSize === FONT_SIZE.MD,
         ['text-2xl']: fontSize === FONT_SIZE.XXL,
         ['text-3xl']: fontSize === FONT_SIZE.XXXL,
+        ['text-4xl']: fontSize === FONT_SIZE.XXXXL,
         ['font-sans']: fontFamily === FONT_FAMILY.SANS,
         ['font-cinzel']: fontFamily === FONT_FAMILY.CINZEL,
         ['font-cinzel-dec']: fontFamily === FONT_FAMILY.CINZEL_DEC,
