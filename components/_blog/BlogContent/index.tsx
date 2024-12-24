@@ -1,14 +1,18 @@
 import { BlogContentI } from '@/definitions/interfaces/_blog'
 import MarginSection from '@/components/_sections/MarginSection'
+import DOMPurify from 'isomorphic-dompurify';
 
 const BlogContent: React.FC<BlogContentI> = ({
   textContent
 }) => {
-  console.log('textContent', textContent)
+  const sanitizedContent = DOMPurify.sanitize(textContent)
+  console.log('sanitizedContent', sanitizedContent)
   return (
-    <MarginSection>
-      <div/>
-    </MarginSection>
+    <section
+      data-testid='blogContent'
+      className='blog-content px-5 sm:px-20'
+      dangerouslySetInnerHTML={{__html: sanitizedContent}}
+    />
   )
 }
 
