@@ -1,6 +1,6 @@
 import { BlogContentI } from '@/definitions/interfaces/_blog'
-import MarginSection from '@/components/_sections/MarginSection'
 import DOMPurify from 'isomorphic-dompurify';
+import '@/components/_blog/BlogContent/blog-content.css'
 
 const BlogContent: React.FC<BlogContentI> = ({
   textContent
