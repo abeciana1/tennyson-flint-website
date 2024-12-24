@@ -17,7 +17,7 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
   let modelName = 'page'
   
   if (nestedRoute) {
-    if (slugParent === 'blog') modelName = 'blog-post'
+    if (slugParent === 'blog') modelName = 'blog-article'
     if (slugParent === 'book') modelName = 'book-page'
   }
   
@@ -29,7 +29,7 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
     })
     .toPromise();
 
-  if (modelName === 'blog-post') {
+  if (modelName === 'blog-article') {
     return {
       title: content?.data?.title,
       description: content?.data?.description,
@@ -57,10 +57,18 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function Page(props: PageProps) {
-  const builderModelName = "page";
+  const urlStructure: { page: string[]; } = (await props?.params)
+  const nestedRoute = urlStructure?.page?.length > 1
+  const slugParent = urlStructure?.page[0]
+  let modelName = 'page'
+  
+  if (nestedRoute) {
+    if (slugParent === 'blog') modelName = 'blog-article'
+    if (slugParent === 'book') modelName = 'book-page'
+  }
 
   const content = await builder
-    .get(builderModelName, {
+    .get(modelName, {
       userAttributes: {
         urlPath: "/" + ((await props?.params)?.page?.join("/") || ""),
       },
@@ -69,9 +77,9 @@ export default async function Page(props: PageProps) {
 
   return (
     <>
-      <div>
-        <main>
-          <RenderBuilderContent content={content} model={builderModelName} />
+      <div className='relative'>
+        <main className='min-h-screen relative'>
+          <RenderBuilderContent content={content} model={modelName} />
         </main>
       </div>
     </>
