@@ -60,3 +60,19 @@ export const pageContentDataFetch = async (props: PageProps, modelName: string) 
     return []
   }
 }
+
+export const getBlogPostListData = async () => {
+  try {
+    const content = await builder
+    .getAll('blog-article', {
+      limit: 3,
+      sort: {
+        publishedDate: -1
+      }
+    })
+    return content
+  } catch (error) {
+    console.error('Error fetching blog post content data:', error);
+    return []
+  }
+}
