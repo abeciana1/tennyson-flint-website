@@ -19,8 +19,8 @@ export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
 
   if (modelName === 'blog-article') {
     return {
-      title: content?.data?.title,
-      description: content?.data?.description,
+      title: content?.data?.blogPostTitle,
+      description: content?.data?.seoDescription,
       alternates: {
         canonical: `/blog/${urlStructure?.page[1]}`
       }
