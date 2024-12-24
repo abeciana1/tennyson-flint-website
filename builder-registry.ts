@@ -207,10 +207,10 @@ Builder.registerComponent(HeroSection, {
           required: true
         },
         {
-          friendlyName: 'Image rounded edges',
+          friendlyName: 'Button rounded edges',
           name: "rounded",
-          type: "enum",
-          options: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
+          type: "string",
+          enum: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
           helperText: "Choose between: NONE, SM, MD, LG, XL, FULL, or  XXL."
         },
       ]
