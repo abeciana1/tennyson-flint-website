@@ -1,3 +1,4 @@
+import { use } from 'react'
 import { BlogSectionI } from '@/definitions/interfaces/_sections'
 import { Heading1 } from '@/components/_styled/headings'
 import TextContent from '@/components/_styled/Text'
@@ -6,11 +7,14 @@ import {
   FONT_FAMILY
 } from '@/definitions/enums'
 import MarginSection from '@/components/_sections/MarginSection'
+import { getBlogPostListData } from '@/helper-functions/builder-fetch'
 
 const BlogSection: React.FC<BlogSectionI> = ({
   preheading,
   headline
 }) => {
+  const blogList = use(getBlogPostListData())
+  console.log('blogList', blogList)
   return (
     <section>
       <MarginSection>
