@@ -1,30 +1,21 @@
 import type { Metadata } from 'next'
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from "../../components/builder";
+import { PageProps } from '@/definitions/interfaces'
+import { modelAndContentFetch } from '@/helper-functions/builder-fetch'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
-interface PageProps {
-  params: Promise<{
-    page: string[];
-  }>;
-}
-
-export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
-  const urlStructure: { page: string[]; } = (await params)
-  const nestedRoute = urlStructure?.page?.length > 1
-  const slugParent = urlStructure?.page[0]
-  let modelName = 'page'
-  
-  if (nestedRoute) {
-    if (slugParent === 'blog') modelName = 'blog-article'
-    if (slugParent === 'book') modelName = 'book-page'
-  }
+export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
+  const {
+    modelName,
+    urlStructure
+  } = await modelAndContentFetch(props)
   
   const content = await builder
     .get(modelName, {
       userAttributes: {
-        urlPath: "/" + ((await params)?.page?.join("/") || ""),
+        urlPath: "/" + ((await props?.params)?.page?.join("/") || ""),
       },
     })
     .toPromise();
@@ -57,15 +48,7 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function Page(props: PageProps) {
-  const urlStructure: { page: string[]; } = (await props?.params)
-  const nestedRoute = urlStructure?.page?.length > 1
-  const slugParent = urlStructure?.page[0]
-  let modelName = 'page'
-  
-  if (nestedRoute) {
-    if (slugParent === 'blog') modelName = 'blog-article'
-    if (slugParent === 'book') modelName = 'book-page'
-  }
+  const { modelName } = await modelAndContentFetch(props)
 
   const content = await builder
     .get(modelName, {
