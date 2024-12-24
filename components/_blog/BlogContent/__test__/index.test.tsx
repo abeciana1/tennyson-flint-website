@@ -6,7 +6,7 @@ describe('BlogContent', () => {
   beforeEach(() => {
     render(
       <BlogContent
-        textContent="Text content"
+        textContent="<b>Text content</b>"
       />
     )
   })
