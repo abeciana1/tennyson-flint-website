@@ -7,6 +7,7 @@ import TextContent from '@/components/_styled/Text'
 import SocialLinksSection from '@/components/_sections/SocialLinksSection' 
 import BlogContent from '@/components/_blog/BlogContent'
 import BlogImage from '@/components/_blog/BlogImage'
+import BlogSection from '@/components/_sections/BlogSection'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -385,4 +386,23 @@ Builder.registerComponent(BlogImage, {
       helperText: "Choose between: NONE, SM, MD, LG, XL, FULL, or  XXL."
     }
   ],
+})
+
+Builder.registerComponent(BlogSection, {
+  name: 'Blog Section',
+  models: ['page', 'blog-article'],
+  inputs: [
+    {
+      name: 'preheading',
+      friendlyName: 'Preheading',
+      type:'string',
+      required: true
+    },
+    {
+      name: 'headline',
+      friendlyName: 'Headline',
+      type:'string',
+      required: true
+    }
+  ]
 })
