@@ -11,6 +11,7 @@ builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
 Builder.registerComponent(ImageComp, {
   name: "ImageComp",
+  models: ['page', 'footer'],
   inputs: [
     {
       friendlyName: 'Image file',
@@ -48,6 +49,7 @@ Builder.registerComponent(ImageComp, {
 
 Builder.registerComponent(ButtonLink, {
   name: 'Button Link',
+  models: ['page', 'footer'],
   inputs: [
     {
       name: 'linkText',
@@ -96,6 +98,7 @@ Builder.registerComponent(ButtonLink, {
 
 Builder.registerComponent(HeroSection, {
   name: 'Hero Section',
+  models: ['page'],
   inputs: [
     {
       name: 'preHeading',
@@ -216,6 +219,7 @@ Builder.registerComponent(HeroSection, {
 
 Builder.registerComponent(TextContent, {
   name: 'Text Content',
+  models: ['page', 'footer'],
   inputs: [
     {
       name: 'text',
@@ -272,6 +276,7 @@ Builder.registerComponent(TextContent, {
 
 Builder.registerComponent(SocialLinksSection, {
   name: 'Social Links Section',
+  models: ['footer'],
   inputs: [
     {
       name: 'socialLinks',
@@ -332,6 +337,7 @@ Builder.registerComponent(SocialLinksSection, {
 
 Builder.registerComponent(BlogContent, {
   name: 'Blog Content',
+  models: ['blog-article'],
   inputs: [
     {
       name: 'textContent',
