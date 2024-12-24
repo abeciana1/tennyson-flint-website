@@ -6,6 +6,9 @@ import {
   modelAndContentFetch,
   pageContentDataFetch
 } from '@/helper-functions/builder-fetch'
+import BlogTemplate from '@/components/_blog/BlogTemplate'
+import { format } from 'date-fns'
+import { ROUNDED } from '@/definitions/enums'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -48,11 +51,26 @@ export default async function Page(props: PageProps) {
   const { modelName } = await modelAndContentFetch(props)
 
   const content = await pageContentDataFetch(props, modelName)
+  console.log('content', content)
 
   return (
     <>
       <div className='relative'>
         <main className='min-h-screen relative'>
+          {modelName === 'blog-article' &&
+            <BlogTemplate
+              title={content?.data?.blogPostTitle}
+              excerpt={content?.data?.excerpt}
+              publishedDate={format(new Date(content?.firstPublished), "MM/dd/yyyy")}
+              image={{
+                src: content?.data?.blogImage,
+                alt: `${content?.data?.blogPostTitle} featured blog image`,
+                width: content?.data?.blogImageWidth,
+                height: content?.data?.blogImageHeight,
+                rounded: ROUNDED.LG
+              }}
+            />
+          }
           <RenderBuilderContent content={content} model={modelName} />
         </main>
       </div>
