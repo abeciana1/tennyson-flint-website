@@ -6,6 +6,7 @@ import HeroSection from '@/components/_sections/HeroSection'
 import TextContent from '@/components/_styled/Text'
 import SocialLinksSection from '@/components/_sections/SocialLinksSection' 
 import BlogContent from '@/components/_blog/BlogContent'
+import BlogImage from '@/components/_blog/BlogImage'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -346,4 +347,42 @@ Builder.registerComponent(BlogContent, {
       friendlyName: 'Text Content'
     }
   ]
+})
+
+Builder.registerComponent(BlogImage, {
+  name: "Blog Image",
+  models: ['blog-article'],
+  inputs: [
+    {
+      friendlyName: 'Image file',
+      name: 'src',
+      type: "file",
+      required: true
+    },
+    {
+      friendlyName: 'Image accessibility alt text',
+      name: "alt",
+      type: "string",
+      required: true
+    },
+    {
+      friendlyName: 'Image width dimension',
+      name: "width",
+      type: "number",
+      required: true
+    },
+    {
+      friendlyName: 'Image height dimension',
+      name: "height",
+      type: "number",
+      required: true
+    },
+    {
+      friendlyName: 'Image rounded edges',
+      name: "rounded",
+      type: "string",
+      enum: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
+      helperText: "Choose between: NONE, SM, MD, LG, XL, FULL, or  XXL."
+    }
+  ],
 })
