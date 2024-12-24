@@ -1,4 +1,3 @@
-import MarginSection from '@/components/_sections/MarginSection'
 import TextContent from '@/components/_styled/Text'
 import {
   FONT_FAMILY,
@@ -6,16 +5,16 @@ import {
   COLORS,
   FONT_STYLE
 } from '@/definitions/enums'
-import { FooterI } from '@/definitions/interfaces/_navigation'
-import SocialLinksSection from '@/components/_sections/SocialLinksSection'
+import { RenderBuilderContent } from '@/components/builder'
+import { use } from 'react'
+import { fetchFooter } from '@/helper-functions/builder-fetch'
+import MarginSection from '@/components/_sections/MarginSection'
 
-const Footer: React.FC<FooterI> = ({
-  siteDescription,
-  socialLinks
-}) => {
+const Footer: React.FC = () => {
+  const content = use(fetchFooter())
   return (
-    <footer className='bg-gray max-h-fit'>
-      <MarginSection>
+    <>
+      <footer className='bg-gray relative bottom-0 w-full px-5 sm:px-10 pt-2 md:pt-4 lg:pt-8'>
         <section className='mx-auto text-center'>
           <TextContent
             text='Tennyson Flint'
@@ -24,32 +23,10 @@ const Footer: React.FC<FooterI> = ({
             color={COLORS.WHITE}
             fontStyle={FONT_STYLE.SEMI_BOLD}
           />
-          <div className='mt-5'>
-            <TextContent
-              text={siteDescription}
-              fontFamily={FONT_FAMILY.SANS}
-              fontSize={FONT_SIZE.XXL}
-              color={COLORS.WHITE}
-              fontStyle={FONT_STYLE.MEDIUM}
-            />
-          </div>
-          {(socialLinks && socialLinks.length > 0) &&
-            <div className='mt-5'>
-              <SocialLinksSection socialLinks={socialLinks} />
-            </div>
-          }
-          <div className='mt-10'>
-            <TextContent
-              text={`Created © ${new Date().getFullYear()}`}
-              fontFamily={FONT_FAMILY.SANS}
-              fontSize={FONT_SIZE.MD}
-              color={COLORS.WHITE}
-              fontStyle={FONT_STYLE.NORMAL}
-            />
-          </div>
+          <RenderBuilderContent content={content} model='footer' />
         </section>
-      </MarginSection>
-    </footer>
+      </footer>
+    </>
   )
 }
 
