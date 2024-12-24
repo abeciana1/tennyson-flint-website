@@ -22,47 +22,50 @@ const BlogTemplate: React.FC<BlogTemplateI> = ({
     rounded
   } = image
   return (
-    <MarginSection>
-      <section className='md:px-10'>
-        <Heading1
-          text={title}
-        />
-        {excerpt &&
-          <TextContent
-            dataTestId='blogExcerpt'
-            text={excerpt}
-            fontSize={FONT_SIZE.XXL}
-            fontStyle={FONT_STYLE.ITALIC}
+    <>
+      <MarginSection>
+        <section className='md:px-10'>
+          <Heading1
+            text={title}
           />
-        }
-        <section>
-          <div
-            className='flex justify-between my-2'
-          >
+          {excerpt &&
             <TextContent
-              text='By Tennyson Flint'
+              dataTestId='blogExcerpt'
+              text={excerpt}
               fontSize={FONT_SIZE.XXL}
-              fontStyle={FONT_STYLE.MEDIUM}
+              fontStyle={FONT_STYLE.ITALIC}
             />
-            <TextContent
-              dataTestId='publishedDate'
-              text={publishedDate}
-              fontSize={FONT_SIZE.XXL}
-              fontStyle={FONT_STYLE.MEDIUM}
-            />
-          </div>
-          <div className='flex justify-center'>
-            <ImageComp
-              src={src}
-              alt={alt}
-              width={width}
-              height={height}
-              rounded={rounded}
-            />
-          </div>
+          }
+          <section>
+            <div
+              className='flex justify-between my-2'
+            >
+              <TextContent
+                text='By Tennyson Flint'
+                fontSize={FONT_SIZE.XXL}
+                fontStyle={FONT_STYLE.MEDIUM}
+              />
+              <TextContent
+                dataTestId='publishedDate'
+                text={publishedDate}
+                fontSize={FONT_SIZE.XXL}
+                fontStyle={FONT_STYLE.MEDIUM}
+              />
+            </div>
+            <div className='flex justify-center'>
+              <ImageComp
+                src={src}
+                alt={alt}
+                width={width}
+                height={height}
+                rounded={rounded}
+              />
+            </div>
+          </section>
         </section>
-      </section>
-    </MarginSection>
+      </MarginSection>
+      <hr className='mx-5 sm:mx-20 text-gray' />
+    </>
   )
 }
 
