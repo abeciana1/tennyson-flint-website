@@ -6,6 +6,7 @@ import {
 } from 'next/font/google'
 import type { Metadata } from 'next'
 import NavBar from '@/components/_navigation/NavBar'
+import Footer from '@/components/_navigation/Footer'
 
 export const metadata: Metadata = {
   title: {
@@ -42,10 +43,11 @@ export default function RootLayout({
     <html lang="en">
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <body
-        className={`${openSans.variable} ${cinzel.variable} ${cinzelDecorative.variable} antialiased`}
+        className={`${openSans.variable} ${cinzel.variable} ${cinzelDecorative.variable} antialiased relative flex flex-col`}
       >
         <NavBar />
         {children}
+        <Footer/>
       </body>
     </html>
   );
