@@ -10,7 +10,7 @@ const BlogImage: React.FC<ImageI> = ({
   rounded = ROUNDED.MD
 }) => {
   return (
-    <section className='px-5 sm:px-20 flex justify-center'>
+    <section className='px-5 sm:px-20 flex justify-center py-4 md:py-8'>
       <ImageComp
         src={src}
         alt={alt}
