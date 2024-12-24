@@ -52,7 +52,6 @@ export default async function Page(props: PageProps) {
   const { modelName } = await modelAndContentFetch(props)
 
   const content = await pageContentDataFetch(props, modelName)
-  console.log('content', content)
 
   return (
     <>
