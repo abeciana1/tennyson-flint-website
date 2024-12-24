@@ -11,3 +11,19 @@ export const fetchNavLinks = async () => {
     return [];
   }
 }
+
+export const fetchFooter = async () => {
+  try {
+    const content = await builder
+    .get('footer', {
+      userAttributes: {
+        urlPath: "/" // + ((await params)?.page?.join("/") || ""),
+      },
+    })
+    .toPromise();
+    return content
+  } catch (error) {
+    console.error('Error fetching navigation links:', error);
+    return []
+  }
+}
