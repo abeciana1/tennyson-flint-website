@@ -17,7 +17,7 @@ const TextContent: React.FC<TextContentI> = ({
 }) => {
   return (
     <div
-      data-testId={dataTestId}
+      data-testid={dataTestId}
       className={cx('leading-normal', {
         ['font-bold']: fontStyle === FONT_STYLE.BOLD,
         ['font-semibold']: fontStyle === FONT_STYLE.SEMI_BOLD,
