@@ -1,13 +1,8 @@
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from '@/components/builder'
+import { PageProps } from '@/definitions/interfaces'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
-
-interface PageProps {
-  params: Promise<{
-    page: string[];
-  }>;
-}
 
 export default async function Page(props: PageProps) {
   const builderModelName = "page";
