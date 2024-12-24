@@ -18,7 +18,7 @@ export const fetchFooter = async () => {
     const content = await builder
     .get('footer', {
       userAttributes: {
-        urlPath: "/" // + ((await params)?.page?.join("/") || ""),
+        urlPath: "/"
       },
     })
     .toPromise();
@@ -45,7 +45,18 @@ export const modelAndContentFetch = async (props: PageProps) => {
   }
 }
 
-export const pageContentDataFetch = async (props: PageProps) => {
-  
-
+export const pageContentDataFetch = async (props: PageProps, modelName: string) => {
+  try {
+    const content = await builder
+    .get(modelName, {
+      userAttributes: {
+        urlPath: "/" + ((await props?.params)?.page?.join("/") || ""),
+      },
+    })
+    .toPromise();
+    return content
+  } catch (error) {
+    console.error('Error fetching page content data:', error);
+    return []
+  }
 }
