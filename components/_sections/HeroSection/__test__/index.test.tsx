@@ -11,13 +11,15 @@ describe('HeroSection', () => {
         subheading='Subheading'
         textBody='Text Body'
         ctaChildren={[]}
-        image={{
-          src: '/test.jpg',
-          alt: 'Test Image',
-          width: 100,
-          height: 100,
-          rounded: ROUNDED.MD
-        }}
+        image={[
+          {
+            src: '/test.jpg',
+            alt: 'Test Image',
+            width: 100,
+            height: 100,
+            rounded: ROUNDED.MD
+          }
+        ]}
       />
     )
   })
