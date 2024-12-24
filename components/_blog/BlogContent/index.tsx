@@ -6,7 +6,6 @@ const BlogContent: React.FC<BlogContentI> = ({
   textContent
 }) => {
   const sanitizedContent = DOMPurify.sanitize(textContent)
-  console.log('sanitizedContent', sanitizedContent)
   return (
     <section
       data-testid='blogContent'
