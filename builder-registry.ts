@@ -5,6 +5,7 @@ import { ButtonLink } from '@/components/_styled/links'
 import HeroSection from '@/components/_sections/HeroSection'
 import TextContent from '@/components/_styled/Text'
 import SocialLinksSection from '@/components/_sections/SocialLinksSection' 
+import BlogContent from '@/components/_blog/BlogContent'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -12,9 +13,9 @@ Builder.registerComponent(ImageComp, {
   name: "ImageComp",
   inputs: [
     {
-      friendlyName: 'Image source link',
-      name: "src",
-      type: "string",
+      friendlyName: 'Image file',
+      name: 'src',
+      type: "file",
       required: true
     },
     {
@@ -326,5 +327,17 @@ Builder.registerComponent(SocialLinksSection, {
         }
       ]
     },
+  ]
+})
+
+Builder.registerComponent(BlogContent, {
+  name: 'Blog Content',
+  inputs: [
+    {
+      name: 'textContent',
+      type: 'richText',
+      required: true,
+      friendlyName: 'Text Content'
+    }
   ]
 })
