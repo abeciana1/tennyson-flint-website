@@ -45,7 +45,7 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
             />
           </div>
           <div className='mt-6'>
-            <RenderBuilderContent content={content} model='book-page' />
+            <RenderBuilderContent content={content} model='book' />
           </div>
         </div>
       </section>
