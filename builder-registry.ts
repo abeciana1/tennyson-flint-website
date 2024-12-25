@@ -52,7 +52,7 @@ Builder.registerComponent(ImageComp, {
 
 Builder.registerComponent(ButtonLink, {
   name: 'Button Link',
-  models: ['page', 'footer', 'book-page'],
+  models: ['page', 'footer', 'book-page', 'book'],
   inputs: [
     {
       name: 'linkText',
@@ -420,3 +420,5 @@ Builder.registerComponent(BlogCollection, {
     }
   ]
 })
+
+// Builder.registerComponent()
