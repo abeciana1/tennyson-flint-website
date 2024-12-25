@@ -78,7 +78,7 @@ export default async function Page(props: PageProps) {
           {modelName === 'book-page' &&
             <BookDetailTemplate
               bookTitle={content?.data?.bookTitle}
-              preheading={content?.data?.preheadingd}
+              preheading={content?.data?.preheading}
               bookCover={{
                 src: content?.data?.bookImage,
                 alt: `${content?.data?.bookTitle} cover image`,
