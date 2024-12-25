@@ -23,7 +23,7 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
   } = bookCover
   return (
     <MarginSection>
-      <section className='md:px-10 flex items-center'>
+      <section className='md:px-10 flex items-center gap-32'>
         <div>
           <ImageComp
             src={src}
@@ -36,7 +36,7 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
         <div>
           <TextContent
             dataTestId='preheading'
-            text={preheading}
+            text={preheading.toUpperCase()}
             fontSize={FONT_SIZE.XXL}
           />
           <div className='mt-6'>
