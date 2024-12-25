@@ -54,7 +54,7 @@ const BlogSection: React.FC<BlogSectionI> = ({
                     month: format(new Date(post?.firstPublished), "MMM"),
                     day: format(new Date(post?.firstPublished), "d")
                   }}
-                  category="test"
+                  category={post?.data?.category?.id}
                 />
               )
             })}
