@@ -8,7 +8,6 @@ import {
 import { RenderBuilderContent } from '@/components/builder'
 import { use } from 'react'
 import { fetchFooter } from '@/helper-functions/builder-fetch'
-import MarginSection from '@/components/_sections/MarginSection'
 
 const Footer: React.FC = () => {
   const content = use(fetchFooter())
