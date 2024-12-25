@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import BookDetailTemplate from '@/components/_book/BookDetailTemplate'
+import { ROUNDED } from '@/definitions/enums'
 
 describe('BookDetailTemplate', () => {
   beforeEach(() => {
@@ -9,10 +10,11 @@ describe('BookDetailTemplate', () => {
         preheading='Upcoming release'
         bookTitle='Book Title'
         bookCover={{
-          src: 'book-cover.jpg',
+          src: '/book-cover.jpg',
           alt: 'Book Cover',
           width: 100,
-          height: 150
+          height: 150,
+          rounded: ROUNDED.MD
         }}
       />
     )
