@@ -1,24 +1,19 @@
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from '@/components/builder'
 import { PageProps } from '@/definitions/interfaces'
+import { pageContentDataFetch } from '@/helper-functions/builder-fetch'
+import { use } from 'react'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
-export default async function Page(props: PageProps) {
-  const builderModelName = "page";
+export default function Page(props: PageProps) {
+  const content = use(pageContentDataFetch(props, 'page'))
 
-  const content = await builder
-    .get(builderModelName, {
-      userAttributes: {
-        urlPath: "/" + ((await props?.params)?.page?.join("/") || ""),
-      },
-    })
-    .toPromise();
   return (
     <>
       <div className='relative'>
         <main className='min-h-screen relative'>
-          <RenderBuilderContent content={content} model={builderModelName} />
+          <RenderBuilderContent content={content} model='page' />
         </main>
       </div>
     </>
