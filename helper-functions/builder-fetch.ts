@@ -37,7 +37,7 @@ export const modelAndContentFetch = async (props: PageProps) => {
   
   if (nestedRoute) {
     if (slugParent === 'blog') modelName = 'blog-article'
-    if (slugParent === 'book') modelName = 'book-page'
+    if (slugParent === 'books') modelName = 'book-page'
   } 
   return {
     modelName,
