@@ -52,9 +52,8 @@ export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
 
 export default async function Page(props: PageProps) {
   const { modelName } = await modelAndContentFetch(props)
-
   const content = await pageContentDataFetch(props, modelName)
-
+  console.log('content', content)
   return (
     <>
       <div className='relative'>
@@ -74,6 +73,9 @@ export default async function Page(props: PageProps) {
                 rounded: ROUNDED.LG
               }}
             />
+          }
+          {modelName === 'book-page' &&
+            <></>
           }
           <RenderBuilderContent content={content} model={modelName} />
         </main>
