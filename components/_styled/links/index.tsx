@@ -19,7 +19,7 @@ export const ButtonLink: React.FC<ButtonLinkI> = ({
       href={href}
       title={title}
       target={targetBlank ? "_blank" : ""}
-      className={cx('text-lg font-medium max-w-fit py-1 px-2', {
+      className={cx('font-sans text-lg font-medium max-w-fit py-1 px-2', {
         ['flex items-center gap-5']: arrow,
         ['bg-white border-black border-2']: bgColor === COLORS.WHITE,
         ['bg-black text-white']: bgColor === COLORS.BLACK,

@@ -5,10 +5,13 @@ import TextContent from '@/components/_styled/Text'
 import {
   FONT_STYLE,
   FONT_FAMILY,
-  FONT_SIZE
+  FONT_SIZE,
+  ROUNDED
 } from '@/definitions/enums'
 import MarginSection from '@/components/_sections/MarginSection'
 import { getBlogPostListData } from '@/helper-functions/builder-fetch'
+import BlogPostCard from '@/components/_blog/BlogPostCard'
+import {format} from 'date-fns'
 
 const BlogSection: React.FC<BlogSectionI> = ({
   preheading,
@@ -31,6 +34,32 @@ const BlogSection: React.FC<BlogSectionI> = ({
           fontStyle={FONT_STYLE.MEDIUM}
           fontFamily={FONT_FAMILY.CINZEL}
         />
+        {blogList &&
+          <section className='mt-12 flex flex-row'>
+            {blogList?.map((post) => {
+              return (
+                <BlogPostCard
+                  key={post?.id}
+                  title={post?.data?.title}
+                  excerpt={post?.data?.excerpt}
+                  href={`/blog${post?.previewUrl?.split('/blog')[1]}`}
+                  image={{
+                    src: post?.data?.blogImage,
+                    alt: `${post?.data?.title} featured blog image`,
+                    width: post?.data?.blogImageWidth,
+                    height: post?.data?.blogImageHeight,
+                    rounded: ROUNDED.XL
+                  }}
+                  publishedDate={{
+                    month: format(new Date(post?.firstPublished), "MMM"),
+                    day: format(new Date(post?.firstPublished), "d")
+                  }}
+                  category="test"
+                />
+              )
+            })}
+          </section>
+        }
       </MarginSection>
     </section>
   )

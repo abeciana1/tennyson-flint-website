@@ -10,3 +10,17 @@ export interface BlogTemplateI {
 export interface BlogContentI {
   textContent: string;
 }
+
+export interface BlogPostCardDateI {
+  month: string;
+  day: string
+}
+
+export interface BlogPostCardI {
+  title: string;
+  excerpt: string;
+  href: string;
+  image: ImageI;
+  publishedDate: BlogPostCardDateI;
+  category: string;
+}

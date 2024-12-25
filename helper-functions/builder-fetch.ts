@@ -70,7 +70,7 @@ export const getBlogPostListData = async (dataLimit: number) => {
         firstPublished: -1
       }
     })
-    console.log('content:', content)
+    // console.log('content:', content)
     return content
   } catch (error) {
     console.error('Error fetching blog post content data:', error);
