@@ -23,18 +23,29 @@ export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
 
   if (modelName === 'blog-article') {
     return {
-      title: content?.data?.blogPostTitle,
+      title: content?.data?.blogPostTitle + '!!!!!!',
       description: content?.data?.seoDescription,
       alternates: {
         canonical: `/blog/${urlStructure?.page[1]}`
       }
     }
   } else if (modelName === 'book-page') {
-    return {
-      title: content?.data?.title,
-      description: content?.data?.description,
-      alternates: {
-        canonical: `/book/${urlStructure?.page[1]}`
+    if (urlStructure?.page[1]) {
+      return {
+        title: content?.data?.title + '!!!!',
+        description: content?.data?.description,
+        alternates: {
+          canonical: `/book/${urlStructure?.page[1]}`
+        }
+      }
+      // add json-ld for books
+    } else {
+      return {
+        title: content?.data?.title,
+        description: content?.data?.description,
+        alternates: {
+          canonical: `/book/${urlStructure?.page[1]}`
+        }
       }
     }
   } else {
