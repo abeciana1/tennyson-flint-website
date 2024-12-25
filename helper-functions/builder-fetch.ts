@@ -61,15 +61,16 @@ export const pageContentDataFetch = async (props: PageProps, modelName: string) 
   }
 }
 
-export const getBlogPostListData = async () => {
+export const getBlogPostListData = async (dataLimit: number) => {
   try {
-    const content = await builder
-    .getAll('blog-article', {
-      limit: 3,
+    const content = await builder.getAll('blog-article', {
+      limit: dataLimit,
+      includeUnpublished: false,
       sort: {
-        publishedDate: -1
+        firstPublished: -1
       }
     })
+    console.log('content:', content)
     return content
   } catch (error) {
     console.error('Error fetching blog post content data:', error);
