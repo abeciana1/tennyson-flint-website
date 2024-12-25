@@ -10,6 +10,7 @@ describe('Blog Post Card', () => {
       <BlogPostCard
         title='Test Blog Post Title'
         excerpt='Test Blog Post Excerpt'
+        href='/blog/post'
         image={{
           src: '/test.jpg',
           alt: 'Test Blog Post Image',
@@ -17,7 +18,10 @@ describe('Blog Post Card', () => {
           height: 100,
           rounded: ROUNDED.MD
         }}
-        publishedDate={format(new Date(), "MM/dd/yyyy")}
+        publishedDate={{
+          month: format(new Date(), "MM/dd/yyyy"),
+          day: format(new Date(), "MM/dd/yyyy")
+        }}
         category='Teaching'
       />
     )
