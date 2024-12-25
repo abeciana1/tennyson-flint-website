@@ -10,6 +10,7 @@ import BlogTemplate from '@/components/_blog/BlogTemplate'
 import { format } from 'date-fns'
 import { ROUNDED } from '@/definitions/enums'
 import cx from 'classnames'
+import BookDetailTemplate from '@/components/_book/BookDetailTemplate'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -75,7 +76,18 @@ export default async function Page(props: PageProps) {
             />
           }
           {modelName === 'book-page' &&
-            <></>
+            <BookDetailTemplate
+              bookTitle={content?.data?.bookTitle}
+              preheading={content?.data?.preheadingd}
+              bookCover={{
+                src: content?.data?.bookImage,
+                alt: `${content?.data?.bookTitle} cover image`,
+                width: content?.data?.bookImageWidth,
+                height: content?.data?.bookImageHeight,
+                rounded: ROUNDED.MD
+              }}
+              content={content}
+            />
           }
           <RenderBuilderContent content={content} model={modelName} />
         </main>
