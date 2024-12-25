@@ -22,3 +22,7 @@ export interface BlogSectionI {
   preheading: string;
   headline: string;
 }
+
+export interface BlogCollectionI {
+  heading: string;
+}
