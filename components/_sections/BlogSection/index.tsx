@@ -35,25 +35,26 @@ const BlogSection: React.FC<BlogSectionI> = ({
         />
         {blogList &&
           <section className='mt-12 flex flex-row gap-6 justify-center'>
-            {blogList?.map((post) => {
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+            {blogList?.map((blogPost: any) => {
               return (
                 <BlogPostCard
-                  key={post?.id}
-                  title={post?.data?.title}
-                  excerpt={post?.data?.excerpt}
-                  href={`/blog${post?.previewUrl?.split('/blog')[1]}`}
+                  key={blogPost?.id}
+                  title={blogPost?.data?.title}
+                  excerpt={blogPost?.data?.excerpt}
+                  href={`/blog${blogPost?.previewUrl?.split('/blog')[1]}`}
                   image={{
-                    src: post?.data?.blogImage,
-                    alt: `${post?.data?.title} featured blog image`,
-                    width: post?.data?.blogImageWidth,
-                    height: post?.data?.blogImageHeight,
+                    src: blogPost?.data?.blogImage,
+                    alt: `${blogPost?.data?.title} featured blog image`,
+                    width: blogPost?.data?.blogImageWidth,
+                    height: blogPost?.data?.blogImageHeight,
                     rounded: ROUNDED.XL
                   }}
                   publishedDate={{
-                    month: format(new Date(post?.firstPublished), "MMM"),
-                    day: format(new Date(post?.firstPublished), "d")
+                    month: format(new Date(blogPost?.firstPublished), "MMM"),
+                    day: format(new Date(blogPost?.firstPublished), "d")
                   }}
-                  category={post?.data?.category?.id}
+                  category={blogPost?.data?.category?.id}
                 />
               )
             })}
