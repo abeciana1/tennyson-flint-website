@@ -16,6 +16,7 @@ const BlogCategory: React.FC<BlogCategoryI> = ({
     {category &&
       <div className='bg-slate-300 rounded-md px-2 py-1 max-w-fit'>
         <TextContent
+          dataTestId='category'
           text={category?.data?.categoryName}
           fontSize={FONT_SIZE.MD}
           fontStyle={FONT_STYLE.MEDIUM}

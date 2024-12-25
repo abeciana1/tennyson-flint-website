@@ -1,10 +1,10 @@
 import '@testing-library/jest-dom'
-import { render, screen }  from '@testing-library/react'
-import BlogPostCard from '@/components/_blog/BlogPostCard'
+import { act, render, screen }  from '@testing-library/react'
 import { format } from 'date-fns'
 import { ROUNDED } from '@/definitions/enums'
+import BlogPostCard from '@/components/_blog/BlogPostCard'
 
-describe('Blog Post Card', () => {
+describe('BlogPostCard', () => {
   beforeEach(() => {
     render(
       <BlogPostCard
@@ -22,12 +22,12 @@ describe('Blog Post Card', () => {
           month: format(new Date(), "MM/dd/yyyy"),
           day: format(new Date(), "MM/dd/yyyy")
         }}
-        category='Teaching'
+        category='8caca91acc834ed6a9ab4ce37a22acf0'
       />
     )
   })
-  test('should render a blog post title', () => {
-    const title = screen.getByTestId('title')
+  test('should render a blog post title', async () => {
+    const title = await screen.getByTestId('title')
     expect(title.textContent).toBe('Test Blog Post Title')
     expect(title).toBeInTheDocument()
   })
@@ -38,7 +38,7 @@ describe('Blog Post Card', () => {
   })
   test('should render an excerpt', () => {
     const excerpt = screen.getByTestId('excerpt')
-    expect(excerpt.textContent).toBe('Test Blog Post Excerpt')
+    expect(excerpt.textContent).toBe('Test Blog Post Excerpt'.substring(0, 46) + '...')
     expect(excerpt).toBeInTheDocument()
   })
   test('should render an image', () => {
