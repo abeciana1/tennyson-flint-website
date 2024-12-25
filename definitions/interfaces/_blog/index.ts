@@ -24,3 +24,7 @@ export interface BlogPostCardI {
   publishedDate: BlogPostCardDateI;
   category: string;
 }
+
+export interface BlogCategoryI {
+  id: string;
+}
