@@ -18,7 +18,6 @@ const BlogSection: React.FC<BlogSectionI> = ({
   headline
 }) => {
   const blogList = use(getBlogPostListData(3))
-  console.log('blogList', blogList)
   return (
     <section>
       <MarginSection>
@@ -35,7 +34,7 @@ const BlogSection: React.FC<BlogSectionI> = ({
           fontFamily={FONT_FAMILY.CINZEL}
         />
         {blogList &&
-          <section className='mt-12 flex flex-row'>
+          <section className='mt-12 flex flex-row gap-6 justify-center'>
             {blogList?.map((post) => {
               return (
                 <BlogPostCard

@@ -70,10 +70,24 @@ export const getBlogPostListData = async (dataLimit: number) => {
         firstPublished: -1
       }
     })
-    // console.log('content:', content)
     return content
   } catch (error) {
     console.error('Error fetching blog post content data:', error);
+    return []
+  }
+}
+
+export const getBlogCategory = async (categoryId: string) => {
+  try {
+    const content = await builder.get('blog-category', {
+      query: {
+        id: categoryId
+      }
+    })
+    console.log('content', content)
+    return content
+  } catch (error) {
+    console.error('Error fetching blog category data:', error);
     return []
   }
 }
