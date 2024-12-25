@@ -16,6 +16,7 @@ describe('BookDetailTemplate', () => {
           height: 150,
           rounded: ROUNDED.MD
         }}
+        content={{}}
       />
     )
   })
