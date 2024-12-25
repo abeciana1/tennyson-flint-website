@@ -10,16 +10,16 @@ const BlogDate: React.FC<BlogPostCardDateI> = ({
   day
 }) => {
   return (
-    <div className='h-16 w-16 rounded-full flex flex-col justify-center bg-slate-300 text-center'>
+    <div className='h-14 w-14 relative rounded-full flex flex-col justify-center bg-slate-300 text-center'>
       <TextContent
         text={month}
         fontStyle={FONT_STYLE.BOLD}
-        fontSize={FONT_SIZE.XL}
+        fontSize={FONT_SIZE.LG}
       />
       <TextContent
         text={day}
         fontStyle={FONT_STYLE.BOLD}
-        fontSize={FONT_SIZE.XL}
+        fontSize={FONT_SIZE.LG}
       />
     </div>
   )
