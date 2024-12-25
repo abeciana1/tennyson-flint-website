@@ -6,11 +6,13 @@ import {
 } from '@/definitions/enums'
 import MarginSection from '@/components/_sections/MarginSection'
 import { BookDetailTemplateI } from '@/definitions/interfaces/_book'
+import { RenderBuilderContent } from '@/components/builder'
 
 const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
   preheading,
   bookTitle,
   bookCover,
+  content
 }) => {
   const {
     src,
@@ -21,7 +23,7 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
   } = bookCover
   return (
     <MarginSection>
-      <section className='md:px-10 flex'>
+      <section className='md:px-10 flex items-center'>
         <div>
           <ImageComp
             src={src}
@@ -41,6 +43,9 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
             <Heading1
               text={bookTitle}
             />
+          </div>
+          <div className='mt-6'>
+            <RenderBuilderContent content={content} model='book-page' />
           </div>
         </div>
       </section>
