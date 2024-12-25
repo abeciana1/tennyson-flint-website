@@ -84,7 +84,6 @@ export const getBlogCategory = async (categoryId: string) => {
         id: categoryId
       }
     })
-    console.log('content', content)
     return content
   } catch (error) {
     console.error('Error fetching blog category data:', error);
