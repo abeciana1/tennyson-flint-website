@@ -14,7 +14,7 @@ const BlogSection: React.FC<BlogSectionI> = ({
   preheading,
   headline
 }) => {
-  const blogList = use(getBlogPostListData())
+  const blogList = use(getBlogPostListData(3))
   console.log('blogList', blogList)
   return (
     <section>
