@@ -8,7 +8,6 @@ import {
   FONT_STYLE
 } from '@/definitions/enums'
 import { ButtonLink } from '@/components/_styled/links'
-import { format } from 'date-fns'
 import BlogDate from '@/components/_blog/BlogDate'
 
 const BlogPostCard: React.FC<BlogPostCardI> = ({
@@ -26,7 +25,7 @@ const BlogPostCard: React.FC<BlogPostCardI> = ({
     height,
     rounded
   } = image
-  console.log('publishedDate', publishedDate)
+  console.log('category', category)
   return (
     <div>
       <div className='relative w-72'>
@@ -44,8 +43,8 @@ const BlogPostCard: React.FC<BlogPostCardI> = ({
           />
         </div>
       </div>
-      <div>category</div>
-      <div className='mt-4'>
+      <div className='mt-6'>
+        <div className='mt-4'>category</div>
         <TextContent
           dataTestId='title'
           text={title}
