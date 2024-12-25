@@ -8,6 +8,7 @@ import SocialLinksSection from '@/components/_sections/SocialLinksSection'
 import BlogContent from '@/components/_blog/BlogContent'
 import BlogImage from '@/components/_blog/BlogImage'
 import BlogSection from '@/components/_sections/BlogSection'
+import BlogCollection from '@/components/_sections/BlogCollection'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -401,6 +402,19 @@ Builder.registerComponent(BlogSection, {
     {
       name: 'headline',
       friendlyName: 'Headline',
+      type:'string',
+      required: true
+    }
+  ]
+})
+
+Builder.registerComponent(BlogCollection, {
+  name: 'Blog Collection',
+  models: ['page'],
+  inputs: [
+    {
+      name: 'heading',
+      friendlyName: 'Heading',
       type:'string',
       required: true
     }
