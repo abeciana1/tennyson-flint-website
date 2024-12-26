@@ -4,4 +4,5 @@ export interface BookDetailTemplateI {
   preheading: string;
   bookTitle: string;
   bookCover: ImageI;
+  slug: string;
 }
