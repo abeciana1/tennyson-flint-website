@@ -90,3 +90,21 @@ export const getBlogCategory = async (categoryId: string) => {
     return []
   }
 }
+
+export const getBookTemplateData = async (title: string, slug: string) => {
+  try {
+    const content = await builder.get('book', {
+      query: {
+        name: title,
+        data: {
+          slug: slug
+        }
+      }
+    })
+    console.log('content', content)
+    return content
+  } catch (error) {
+    console.error('Error fetching blog blocks data:', error);
+    return []
+  }
+}
