@@ -7,12 +7,14 @@ import {
 import MarginSection from '@/components/_sections/MarginSection'
 import { BookDetailTemplateI } from '@/definitions/interfaces/_book'
 import { RenderBuilderContent } from '@/components/builder'
+import { use } from 'react'
+import { getBookTemplateData } from '@/helper-functions/builder-fetch'
 
 const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
   preheading,
   bookTitle,
   bookCover,
-  content
+  slug
 }) => {
   const {
     src,
@@ -21,6 +23,7 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
     height,
     rounded
   } = bookCover
+  const bookTemplateData = use(getBookTemplateData(bookTitle, slug))
   return (
     <MarginSection>
       <section className='md:px-10 flex items-center gap-32'>
@@ -45,7 +48,7 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
             />
           </div>
           <div className='mt-6'>
-            <RenderBuilderContent content={content} model='book' />
+            <RenderBuilderContent content={bookTemplateData} model='book' />
           </div>
         </div>
       </section>
