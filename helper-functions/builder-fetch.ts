@@ -101,7 +101,6 @@ export const getBookTemplateData = async (title: string, slug: string) => {
         }
       }
     })
-    console.log('content', content)
     return content
   } catch (error) {
     console.error('Error fetching blog blocks data:', error);
