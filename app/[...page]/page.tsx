@@ -85,7 +85,7 @@ export default async function Page(props: PageProps) {
                 height: content?.data?.bookImageHeight,
                 rounded: ROUNDED.MD
               }}
-              content={content}
+              slug={content?.data?.slug}
             />
           }
           <RenderBuilderContent content={content} model={modelName} />
