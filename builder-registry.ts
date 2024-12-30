@@ -9,6 +9,7 @@ import BlogContent from '@/components/_blog/BlogContent'
 import BlogImage from '@/components/_blog/BlogImage'
 import BlogSection from '@/components/_sections/BlogSection'
 import BlogCollection from '@/components/_sections/BlogCollection'
+import TabList from '@/components/_book/TabList'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -421,4 +422,29 @@ Builder.registerComponent(BlogCollection, {
   ]
 })
 
-// Builder.registerComponent()
+Builder.registerComponent(TabList, {
+  name: 'Tab List',
+  models: ['book'],
+  inputs: [
+    {
+      name: 'tabList',
+      type: 'array',
+      friendlyName: 'Tabs listing',
+      defaultValue: [],
+      subFields: [
+        {
+          name: 'tabName',
+          type: 'string',
+          required: true,
+          friendlyName: 'Tab Name'
+        },
+        {
+          name: 'blocks',
+          type: 'uiBlocks',
+          hideFromUI: true,
+          defaultValue: [],
+        },
+      ]
+    }
+  ]
+})
