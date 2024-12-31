@@ -1,4 +1,5 @@
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
+import { type BuilderElement } from '@builder.io/react'
 
 export interface BookDetailTemplateI {
   preheading: string;
