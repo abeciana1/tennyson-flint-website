@@ -1,5 +1,4 @@
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
-import { type BuilderElement } from '@builder.io/react'
 
 export interface BookDetailTemplateI {
   preheading: string;
@@ -9,6 +8,5 @@ export interface BookDetailTemplateI {
 }
 
 export interface TabListI {
-  tabList: { tabName: string; blocks: React.ReactNode[] }[];
-  builderBlock: BuilderElement;
+  tabList: { tabName: string; blocks: BuilderElement[] }[];
 }
