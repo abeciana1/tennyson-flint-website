@@ -14,7 +14,7 @@ const TabList: React.FC<TabListI> = ({
   return (
     <div className='max-w-2xl my-6'>
       {tabList &&
-        <ul role='tablist' className='flex gap-8'>
+        <ul role='tablist' className='flex gap-6'>
           {tabList?.map((tab, index) => (
             <TabButton
               key={tab.tabName + index}
