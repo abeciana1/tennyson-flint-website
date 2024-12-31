@@ -26,7 +26,7 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
   const bookTemplateData = use(getBookTemplateData(bookTitle, slug))
   return (
     <MarginSection>
-      <section className='md:px-10 flex items-center gap-32'>
+      <section className='lg:px-10 flex items-center gap-16 lg:32'>
         <div>
           <ImageComp
             src={src}
