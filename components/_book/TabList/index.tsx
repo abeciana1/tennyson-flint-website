@@ -5,11 +5,8 @@ import { TabButton } from '@/components/_styled/buttons'
 import { BuilderBlocks } from '@builder.io/react'
 
 const TabList: React.FC<TabListI> = ({
-  tabList,
-  builderBlock
+  tabList
 }) => {
-  console.log('tabList', tabList)
-  console.log('builderBlock', builderBlock)
   const [activeTab, setActiveTab] = useState(0)
   const changeHandler = (index: number) => {
     setActiveTab(index)
@@ -17,20 +14,21 @@ const TabList: React.FC<TabListI> = ({
   return (
     <div className='max-w-2xl my-6'>
       {tabList &&
-        <div className='flex gap-8'>
+        <ul role='tablist' className='flex gap-8'>
           {tabList?.map((tab, index) => (
             <TabButton
+              key={tab.tabName + index}
               label={tab.tabName}
               active={activeTab === index}
               tabIndex={index}
               changeHandler={changeHandler}
             />
           ))}
-        </div>
+        </ul>
       }
       <div className='font-sans'>
         <BuilderBlocks
-          parentElementId={builderBlock?.id}
+          parentElementId={tabList[activeTab].blocks[0].id}
           dataPath={`tabList.${activeTab}.blocks`}
           blocks={tabList[activeTab].blocks}
         />
