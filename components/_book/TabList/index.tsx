@@ -26,13 +26,15 @@ const TabList: React.FC<TabListI> = ({
           ))}
         </ul>
       }
-      <div className='font-sans'>
-        <BuilderBlocks
-          parentElementId={tabList[activeTab].blocks[0].id}
-          dataPath={`tabList.${activeTab}.blocks`}
-          blocks={tabList[activeTab].blocks}
-        />
-      </div>
+      {(tabList[activeTab].blocks?.length > 0) &&
+        <div className='font-sans'>
+          <BuilderBlocks
+            parentElementId={tabList[activeTab].blocks[0].id}
+            dataPath={`tabList.${activeTab}.blocks`}
+            blocks={tabList[activeTab].blocks}
+          />
+        </div>
+      }
     </div>
   )
 }
