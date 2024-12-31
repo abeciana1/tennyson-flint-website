@@ -27,7 +27,7 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
   return (
     <MarginSection>
       <section className='lg:px-10 flex items-center gap-16 lg:32'>
-        <div>
+        <div className='hidden md:block'>
           <ImageComp
             src={src}
             alt={alt}
@@ -45,6 +45,15 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
           <div className='mt-6'>
             <Heading1
               text={bookTitle}
+            />
+          </div>
+          <div className='block md:hidden mt-6'>
+            <ImageComp
+              src={src}
+              alt={alt}
+              width={width}
+              height={height}
+              rounded={rounded}
             />
           </div>
           <RenderBuilderContent content={bookTemplateData} model='book' />
