@@ -9,6 +9,7 @@ export const TabButton: React.FC<TabButtonI> = ({
 }) => {
   return (
     <button
+      role='tab'
       tabIndex={tabIndex}
       onClick={() => changeHandler(tabIndex)}
       className={cx('font-bold text-xl py-2 px-4 font-sans rounded-lg', {
