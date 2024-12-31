@@ -16,7 +16,7 @@ const ImageComp: React.FC<ImageI> = ({
       alt={alt}
       width={width}
       height={height}
-      className={cx({
+      className={cx('mx-auto',{
         ['rounded-none']: rounded === ROUNDED.NONE,
         ['rounded-sm']: rounded === ROUNDED.SM,
         ['rounded-md']: rounded === ROUNDED.MD,
