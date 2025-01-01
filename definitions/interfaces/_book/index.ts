@@ -14,4 +14,5 @@ export interface TabListI {
 
 export interface MeetTheCharactersI {
   headingText: string;
+  bookSlug: string;
 }
