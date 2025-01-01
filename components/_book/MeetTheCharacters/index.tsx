@@ -4,6 +4,7 @@ import { MeetTheCharactersI } from '@/definitions/interfaces/_book'
 
 const MeetTheCharacters: React.FC<MeetTheCharactersI> = ({
   headingText,
+  bookSlug
 }) => {
   return (
     <MarginSection>
