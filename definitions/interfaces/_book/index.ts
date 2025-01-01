@@ -11,3 +11,7 @@ export interface BookDetailTemplateI {
 export interface TabListI {
   tabList: { tabName: string; blocks: BuilderElement[] }[];
 }
+
+export interface MeetTheCharactersI {
+  headingText: string;
+}
