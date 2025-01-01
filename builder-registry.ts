@@ -11,6 +11,7 @@ import BlogSection from '@/components/_sections/BlogSection'
 import BlogCollection from '@/components/_sections/BlogCollection'
 import TabList from '@/components/_book/TabList'
 import MeetTheCharacters from '@/components/_book/MeetTheCharacters'
+import BookCollection from '@/components/_sections/BookCollection'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -461,4 +462,8 @@ Builder.registerComponent(MeetTheCharacters, {
       required: true
     }
   ]
+})
+
+Builder.registerComponent(BookCollection, {
+  name: 'Book Collection',
 })
