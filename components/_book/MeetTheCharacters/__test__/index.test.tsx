@@ -5,7 +5,9 @@ import MeetTheCharacters from '@/components/_book/MeetTheCharacters'
 describe('MeetTheCharacters', () => {
   beforeEach(() => {
     render(
-      <MeetTheCharacters/>
+      <MeetTheCharacters
+        headingText='Meet the Characters'
+      />
     )
   })
   test('should render h2', () => {
