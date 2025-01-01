@@ -37,3 +37,9 @@ export interface CharacterCardI {
   description: string;
   image: ImageI;
 }
+
+export interface BookCollectionI {
+  builderState: {
+    content: Content
+  }
+}
