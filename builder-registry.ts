@@ -10,6 +10,7 @@ import BlogImage from '@/components/_blog/BlogImage'
 import BlogSection from '@/components/_sections/BlogSection'
 import BlogCollection from '@/components/_sections/BlogCollection'
 import TabList from '@/components/_book/TabList'
+import MeetTheCharacters from '@/components/_book/MeetTheCharacters'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -445,6 +446,25 @@ Builder.registerComponent(TabList, {
           defaultValue: [],
         },
       ]
+    }
+  ]
+})
+
+Builder.registerComponent(MeetTheCharacters, {
+  name: 'Meet the Characters',
+  models: ['book-page'],
+  inputs: [
+    {
+      name: 'headingText',
+      friendlyName: 'Heading Text',
+      type:'string',
+      required: true
+    },
+    {
+      name: 'bookSlug',
+      friendlyName: 'Book Slug',
+      type:'string',
+      required: true,
     }
   ]
 })
