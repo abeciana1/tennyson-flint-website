@@ -1,5 +1,8 @@
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
-import { type BuilderElement } from '@builder.io/react'
+import {
+  type BuilderElement,
+  type Content
+} from '@builder.io/react'
 
 export interface BookDetailTemplateI {
   preheading: string;
@@ -14,5 +17,15 @@ export interface TabListI {
 
 export interface MeetTheCharactersI {
   headingText: string;
-  bookSlug: string;
+  builderState: {
+    content: Content
+  }
+}
+
+export interface CharacterI {
+  characterName: string;
+  characterBio: string;
+  characterImage: string;
+  characterImgHeight: number;
+  characterImgWidth: number;
 }
