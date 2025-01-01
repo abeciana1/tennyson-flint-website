@@ -43,3 +43,23 @@ export interface BookCollectionI {
     content: Content
   }
 }
+
+export interface BookI {
+  data: {
+    blocks: BuilderElement[],
+    bookImage: string;
+    bookImageHeight: number;
+    bookImageWidth: number;
+    bookTitle: string;
+    slug: string;
+    state: object;
+    httpRequests: object;
+    inputs: [];
+  }
+}
+
+export interface BookCollectionCardI {
+  bookTitle: string;
+  slug: string;
+  bookCover: ImageI;
+}

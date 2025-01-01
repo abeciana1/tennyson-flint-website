@@ -8,7 +8,6 @@ const MeetTheCharacters: React.FC<MeetTheCharactersI> = ({
   headingText,
   builderState
 }) => {
-  console.log('builderState', builderState)
   return (
     <MarginSection>
       <Heading2
