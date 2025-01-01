@@ -459,12 +459,6 @@ Builder.registerComponent(MeetTheCharacters, {
       friendlyName: 'Heading Text',
       type:'string',
       required: true
-    },
-    {
-      name: 'bookSlug',
-      friendlyName: 'Book Slug',
-      type:'string',
-      required: true,
     }
   ]
 })
