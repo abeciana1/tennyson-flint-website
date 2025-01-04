@@ -1,3 +1,4 @@
+'use client'
 import TextContent from '@/components/_styled/Text'
 import {
   FONT_FAMILY,
