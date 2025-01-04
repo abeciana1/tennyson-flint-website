@@ -28,7 +28,8 @@ export default {
         violet: '#210D41',
         red: '#DA2C38',
         pink: '#CA2E55',
-        gray: '#D9D9D9'
+        gray: '#D9D9D9',
+        darkGray: '#9D9D9D'
       },
     },
   },
