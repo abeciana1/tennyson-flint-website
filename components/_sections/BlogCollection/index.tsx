@@ -6,7 +6,6 @@ import { use } from 'react'
 import BlogPostCard from '@/components/_blog/BlogPostCard'
 import { ROUNDED } from '@/definitions/enums'
 import { format } from 'date-fns'
-import { ButtonLink } from '@/components/_styled/links'
 
 const BlogCollection: React.FC<BlogCollectionI> = ({
   heading
@@ -43,9 +42,6 @@ const BlogCollection: React.FC<BlogCollectionI> = ({
             )
           })}
         </section>
-      }
-      {blogList && blogList?.length > 2 &&
-        <></>
       }
     </MarginSection>
   )
