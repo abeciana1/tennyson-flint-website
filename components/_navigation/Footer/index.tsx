@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
       setContent(footerContent)
     }
     fetchContent()
-  }, [content])
+  }, [])
   return (
     <>
       <footer className='bg-darkGray relative bottom-0 w-full px-5 sm:px-10 pt-2 md:pt-4 lg:pt-8'>
