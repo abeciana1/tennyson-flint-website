@@ -72,6 +72,7 @@ const BlogPostCard: React.FC<BlogPostCardI> = ({
             href={href}
             bgColor={COLORS.PINK}
             rounded={ROUNDED.MD}
+            fontStyle={FONT_STYLE.SEMI_BOLD}
           />
         </div>
       </div>
