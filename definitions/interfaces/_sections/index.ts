@@ -1,5 +1,6 @@
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
 import { ButtonLinkI, SocialLinkI } from '@/definitions/interfaces/_styled/Links'
+import { COLORS } from '@/definitions/enums'
 
 export interface HeroSectionI {
   preHeading?: string;
@@ -25,4 +26,11 @@ export interface BlogSectionI {
 
 export interface BlogCollectionI {
   heading: string;
+}
+
+export interface FormContainerI extends MarginSectionI {
+  heading: string;
+  textBody: string;
+  bgColor: COLORS;
+  textColor: COLORS;
 }
