@@ -22,6 +22,7 @@ export const Heading1: React.FC<HeadingI> = ({
         ['font-normal']: fontStyle === FONT_STYLE.NORMAL,
         ['italic']: fontStyle === FONT_STYLE.ITALIC,
         ['text-5xl']: fontSize === '5xl',
+        ['text-4xl']: fontSize === '4xl',
         ['text-3xl']: fontSize === '3xl',
         ['text-2xl']: fontSize === '2xl',
         ['text-white']: color === COLORS.WHITE,
