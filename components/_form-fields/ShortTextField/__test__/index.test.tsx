@@ -17,7 +17,7 @@ describe('ShortTextField', () => {
     render(
       <Wrapper>
         <ShortTextField
-          name={slugify('Test label')}
+          name='testLabel'
           type={FIELD_TYPE.TEXT}
           label='Test label'
           required
@@ -30,7 +30,7 @@ describe('ShortTextField', () => {
   test('should render textbox role', () => {
     const field = screen.getByRole('textbox')
     expect(field).toHaveAttribute('placeholder', 'Test label*')
-    expect(field).toHaveAttribute('id', 'test-label')
+    expect(field).toHaveAttribute('id', 'testLabel')
     expect(field).toHaveAttribute('type', 'text')
     expect(field).toBeInTheDocument()
   })
