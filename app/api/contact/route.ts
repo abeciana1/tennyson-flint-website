@@ -1,0 +1,17 @@
+import { NextRequest, NextResponse } from "next/server";
+
+export const POST = async (req: NextRequest) => {
+  try {
+    const body = await req.json();
+    return NextResponse.json(
+      { message: "Form submission successful", data: body },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error('Error handling POST request:', error);
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
+  }
+};
