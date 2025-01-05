@@ -8,9 +8,8 @@ const ShortTextField: React.FC<ShortTextFieldI> = ({
   helperText = '',
   register
 }) => {
-  console.log('field type', type)
   return (
-    <div>
+    <div className='flex flex-col grow'>
       <label
         htmlFor={name}
         className='sr-only'
@@ -24,6 +23,7 @@ const ShortTextField: React.FC<ShortTextFieldI> = ({
         {...register(name, {
           required: required && 'This field is required',
         })}
+        className='max-h-12 py-3 px-3 rounded-lg font-sans w-full'
       />
       {helperText &&
         <small
