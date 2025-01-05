@@ -27,6 +27,8 @@ export const Heading1: React.FC<HeadingI> = ({
         ['text-2xl']: fontSize === '2xl',
         ['text-white']: color === COLORS.WHITE,
         ['text-black']: color === COLORS.BLACK,
+        ['text-gold']: color === COLORS.GOLD,
+        ['text-navy']: color === COLORS.NAVY,
         ['font-sans']: fontFamily === FONT_FAMILY.SANS,
         ['font-cinzel']: fontFamily === FONT_FAMILY.CINZEL,
         ['font-cinzel-dec']: fontFamily === FONT_FAMILY.CINZEL_DEC,

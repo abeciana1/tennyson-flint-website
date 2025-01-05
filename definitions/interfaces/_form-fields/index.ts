@@ -9,3 +9,11 @@ export interface ShortTextFieldI {
   register: UseFormRegister<FieldValues>;
   name: string;
 }
+
+export interface TextAreaI {
+  label: string;
+  required?: boolean;
+  helperText?: string;
+  register: UseFormRegister<FieldValues>;
+  name: string;
+}

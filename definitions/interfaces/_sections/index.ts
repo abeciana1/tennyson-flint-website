@@ -34,3 +34,11 @@ export interface FormContainerI extends MarginSectionI {
   bgColor: COLORS;
   textColor: COLORS;
 }
+
+// forms
+
+export interface ContactFormI extends FormContainerI {
+  submitBtnText: string;
+  submitBtnColor: COLORS;
+  submitBtnTextColor: COLORS;
+}
