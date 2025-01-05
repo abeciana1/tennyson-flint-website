@@ -9,9 +9,17 @@ import {
 import { RenderBuilderContent } from '@/components/builder'
 import { use } from 'react'
 import { fetchFooter } from '@/helper-functions/builder-fetch'
+import { useEffect, useState } from 'react'
 
 const Footer: React.FC = () => {
-  const content = use(fetchFooter())
+  const [ content, setContent ] = useState({})
+  useEffect(() => {
+    const fetchContent = async () => {
+      const footerContent = await fetchFooter()
+      setContent(footerContent)
+    }
+    fetchContent()
+  }, [content])
   return (
     <>
       <footer className='bg-darkGray relative bottom-0 w-full px-5 sm:px-10 pt-2 md:pt-4 lg:pt-8'>
