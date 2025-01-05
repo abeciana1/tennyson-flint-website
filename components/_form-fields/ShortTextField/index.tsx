@@ -26,11 +26,11 @@ const ShortTextField: React.FC<ShortTextFieldI> = ({
         })}
       />
       {helperText &&
-        <span
+        <small
           className=''
         >
           {helperText}
-        </span>
+        </small>
       }
     </div>
   )
