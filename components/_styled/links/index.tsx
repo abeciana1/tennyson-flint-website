@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import { ButtonLinkI, SocialLinkI } from '@/definitions/interfaces/_styled/Links'
-import { COLORS, ROUNDED } from '@/definitions/enums'
+import {
+  COLORS,
+  ROUNDED,
+  FONT_STYLE
+} from '@/definitions/enums'
 import cx from 'classnames'
 import { FaArrowRight } from "react-icons/fa";
 import ImageComp from '@/components/_styled/ImageComp'
@@ -13,14 +17,15 @@ export const ButtonLink: React.FC<ButtonLinkI> = ({
   bgColor = COLORS.WHITE,
   rounded = ROUNDED.NONE,
   arrow = false,
-  textColor = COLORS.WHITE
+  textColor = COLORS.WHITE,
+  fontStyle = FONT_STYLE.NORMAL
 }) => {
   return (
     <Link
       href={href}
       title={title}
       target={targetBlank ? "_blank" : ""}
-      className={cx('font-sans text-lg font-medium max-w-fit py-1 px-2', {
+      className={cx('font-sans text-lg max-w-fit py-1 px-2', {
         ['flex items-center gap-5']: arrow,
         ['bg-white border-black border-2']: bgColor === COLORS.WHITE,
         ['bg-black']: bgColor === COLORS.BLACK,
@@ -37,7 +42,10 @@ export const ButtonLink: React.FC<ButtonLinkI> = ({
         ['rounded-2xl']: rounded === ROUNDED.XXL,
         ['text-white']: textColor === COLORS.WHITE,
         ['text-black']: textColor === COLORS.BLACK,
-        ['text-gold']: textColor === COLORS.GOLD
+        ['text-gold']: textColor === COLORS.GOLD,
+        ['font-bold']: fontStyle === FONT_STYLE.BOLD,
+        ['font-semibold']: fontStyle === FONT_STYLE.SEMI_BOLD,
+        ['font-medium']: fontStyle === FONT_STYLE.MEDIUM
       })}
     >
       {linkText}
