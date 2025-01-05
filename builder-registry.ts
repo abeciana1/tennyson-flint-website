@@ -85,7 +85,6 @@ Builder.registerComponent(ButtonLink, {
       name: "rounded",
       type: "string",
       enum: ["NONE", "SM", "MD", "LG", "XL", "FULL", "XXL"],
-      helperText: "Choose between: NONE, SM, MD, LG, XL, FULL, or  XXL."
     },
     {
       friendlyName: 'Display an arrow icon',
@@ -93,12 +92,28 @@ Builder.registerComponent(ButtonLink, {
       type: 'boolean',
     },
     {
-      friendlyName: 'Button color',
+      friendlyName: 'Button background color',
       name: 'bgColor',
       type: 'string',
       enum: ["WHITE", "BLACK", "NAVY", "GOLD", "VIOLET", "RED", "PINK"],
-      helperText: "Choose between: WHITE, BLACK, NAVY, GOLD, VIOLET, RED, or PINK."
-    }
+    },
+    {
+      friendlyName: 'Button text color',
+      name: 'Color',
+      type: 'string',
+      enum: ["WHITE", "BLACK", "NAVY", "GOLD", "VIOLET", "RED", "PINK"],
+    },
+    {
+      name: 'fontStyle',
+      friendlyName: 'Font Style',
+      type: 'string',
+      enum: [
+        'NORMAL',
+        'BOLD',
+        'SEMI_BOLD',
+        'MEDIUM'
+      ]
+    },
   ]
 })
 
