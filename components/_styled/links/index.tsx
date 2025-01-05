@@ -12,7 +12,8 @@ export const ButtonLink: React.FC<ButtonLinkI> = ({
   targetBlank = false,
   bgColor = COLORS.WHITE,
   rounded = ROUNDED.NONE,
-  arrow = false
+  arrow = false,
+  textColor = COLORS.WHITE
 }) => {
   return (
     <Link
@@ -22,18 +23,21 @@ export const ButtonLink: React.FC<ButtonLinkI> = ({
       className={cx('font-sans text-lg font-medium max-w-fit py-1 px-2', {
         ['flex items-center gap-5']: arrow,
         ['bg-white border-black border-2']: bgColor === COLORS.WHITE,
-        ['bg-black text-white']: bgColor === COLORS.BLACK,
-        ['bg-navy text-white']: bgColor === COLORS.NAVY,
-        ['bg-gold text-black']: bgColor === COLORS.GOLD,
-        ['bg-violet text-white']: bgColor === COLORS.VIOLET,
-        ['bg-red text-white']: bgColor === COLORS.RED,
-        ['bg-pink text-white']: bgColor === COLORS.PINK,
+        ['bg-black']: bgColor === COLORS.BLACK,
+        ['bg-navy']: bgColor === COLORS.NAVY,
+        ['bg-gold']: bgColor === COLORS.GOLD,
+        ['bg-violet']: bgColor === COLORS.VIOLET,
+        ['bg-red']: bgColor === COLORS.RED,
+        ['bg-pink']: bgColor === COLORS.PINK,
         ['rounded-none']: rounded === ROUNDED.NONE,
         ['rounded-sm']: rounded === ROUNDED.SM,
         ['rounded-md']: rounded === ROUNDED.MD,
         ['rounded-lg']: rounded === ROUNDED.LG,
         ['rounded-xl']: rounded === ROUNDED.XL,
         ['rounded-2xl']: rounded === ROUNDED.XXL,
+        ['text-white']: textColor === COLORS.WHITE,
+        ['text-black']: textColor === COLORS.BLACK,
+        ['text-gold']: textColor === COLORS.GOLD
       })}
     >
       {linkText}
