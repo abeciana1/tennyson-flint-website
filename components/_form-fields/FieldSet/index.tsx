@@ -1,8 +1,14 @@
 import { MarginSectionI } from '@/definitions/interfaces/_sections'
 
-const FieldSet = () => {
+const FieldSet:React.FC<MarginSectionI> = ({
+  children
+}) => {
   return (
-    <fieldset></fieldset>
+    <fieldset
+      className='mt-10 w-full flex flex-wrap gap-10'
+    >
+      {children}
+    </fieldset>
   )
 }
 
