@@ -12,6 +12,7 @@ import BlogCollection from '@/components/_sections/BlogCollection'
 import TabList from '@/components/_book/TabList'
 import MeetTheCharacters from '@/components/_book/MeetTheCharacters'
 import BookCollection from '@/components/_sections/BookCollection'
+import ContactForm from '@/components/_forms/ContactForm'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -481,4 +482,52 @@ Builder.registerComponent(MeetTheCharacters, {
 
 Builder.registerComponent(BookCollection, {
   name: 'Book Collection',
+})
+
+Builder.registerComponent(ContactForm, {
+  name: 'Contact Form',
+  inputs: [
+    {
+      name: 'heading',
+      friendlyName: 'Form heading',
+      type: 'string',
+      required: true
+    },
+    {
+      name: 'textBody',
+      friendlyName: 'Text body',
+      type: 'richText',
+      required: true
+    },
+    {
+      friendlyName: 'Background color',
+      name: 'bgColor',
+      type: 'string',
+      enum: ["WHITE", "BLACK", "NAVY", "GOLD", "VIOLET", "RED", "PINK"],
+    },
+    {
+      friendlyName: 'Text color',
+      name: 'textColor',
+      type: 'string',
+      enum: ["WHITE", "BLACK", "NAVY", "GOLD", "VIOLET", "RED", "PINK"],
+    },
+    {
+      name: 'submitBtnText',
+      friendlyName: 'Submit button text',
+      type: 'string',
+      defaultValue: 'Submit'
+    },
+    {
+      name: 'submitBtnColor',
+      friendlyName: 'Submit button color',
+      type: 'string',
+      enum: ["WHITE", "BLACK", "NAVY", "GOLD", "VIOLET", "RED", "PINK"],
+    },
+    {
+      name: 'submitBtnTextColor',
+      friendlyName: 'Submit button text color',
+      type: 'string',
+      enum: ["WHITE", "BLACK", "NAVY", "GOLD", "VIOLET", "RED", "PINK"],
+    }
+  ]
 })
