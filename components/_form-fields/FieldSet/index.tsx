@@ -5,7 +5,7 @@ const FieldSet:React.FC<MarginSectionI> = ({
 }) => {
   return (
     <fieldset
-      className='mt-10 w-full flex flex-wrap gap-10'
+      className='mt-10 w-full flex flex-wrap gap-10 justify-center'
     >
       {children}
     </fieldset>
