@@ -1,4 +1,4 @@
-import { COLORS, ROUNDED } from '@/definitions/enums'
+import { COLORS, FONT_STYLE, ROUNDED } from '@/definitions/enums'
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
 
 export interface BasicLinkI {
@@ -12,7 +12,8 @@ export interface ButtonLinkI extends BasicLinkI {
   bgColor: COLORS;
   arrow?: boolean;
   rounded: ROUNDED;
-  textColor: COLORS;
+  textColor?: COLORS;
+  fontStyle?: FONT_STYLE;
 }
 
 export interface SocialLinkI extends BasicLinkI {
