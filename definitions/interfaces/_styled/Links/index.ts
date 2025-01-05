@@ -12,6 +12,7 @@ export interface ButtonLinkI extends BasicLinkI {
   bgColor: COLORS;
   arrow?: boolean;
   rounded: ROUNDED;
+  textColor: COLORS;
 }
 
 export interface SocialLinkI extends BasicLinkI {
