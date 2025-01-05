@@ -1,25 +1,29 @@
-import { slugify } from '@/helper-functions/general'
 import { ShortTextFieldI } from '@/definitions/interfaces/_form-fields'
 
 const ShortTextField: React.FC<ShortTextFieldI> = ({
+  name,
   type,
   label,
   required = false,
-  helperText = ''
+  helperText = '',
+  register
 }) => {
   console.log('field type', type)
   return (
     <div>
       <label
-        htmlFor={slugify(label)}
+        htmlFor={name}
         className='sr-only'
       >
-          {label}
+        {label + (required && '*')}
       </label>
       <input
+        id={name}
         type={type}
-        name={slugify(label)}
-        required={required}
+        placeholder={label + (required && '*')}
+        {...register(name, {
+          required: required && 'This field is required',
+        })}
       />
       {helperText &&
         <span
