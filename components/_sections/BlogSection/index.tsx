@@ -6,12 +6,14 @@ import {
   FONT_STYLE,
   FONT_FAMILY,
   FONT_SIZE,
-  ROUNDED
+  ROUNDED,
+  COLORS
 } from '@/definitions/enums'
 import MarginSection from '@/components/_sections/MarginSection'
 import { getBlogPostListData } from '@/helper-functions/builder-fetch'
 import BlogPostCard from '@/components/_blog/BlogPostCard'
 import {format} from 'date-fns'
+import { ButtonLink } from '@/components/_styled/links'
 
 const BlogSection: React.FC<BlogSectionI> = ({
   preheading,
@@ -59,6 +61,19 @@ const BlogSection: React.FC<BlogSectionI> = ({
               )
             })}
           </section>
+        }
+        {blogList && blogList?.length > 2 &&
+          <div className='mt-12 flex justify-center'>
+            <ButtonLink
+              linkText='View all blogs'
+              title='Link to all blog posts pages'
+              href='/blogs'
+              bgColor={COLORS.NAVY}
+              textColor={COLORS.GOLD}
+              rounded={ROUNDED.MD}
+              fontStyle={FONT_STYLE.BOLD}
+            />
+          </div>
         }
       </MarginSection>
     </section>
