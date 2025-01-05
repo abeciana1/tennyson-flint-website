@@ -19,7 +19,7 @@ const FormContainer:React.FC<FormContainerI> = ({
   const sanitizedContent = DOMPurify.sanitize(textBody)
   return (
     <section
-      className={cx('p-5 rounded-lg', {
+      className={cx('p-5 rounded-lg lg:max-w-3xl mx-auto', {
         ['bg-navy']: bgColor === COLORS.NAVY,
         ['bg-white']: bgColor === COLORS.WHITE,
         ['bg-black']: bgColor === COLORS.BLACK,
