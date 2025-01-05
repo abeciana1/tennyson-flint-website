@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react'
 import ShortTextField from '@/components/_form-fields/ShortTextField'
 import { FIELD_TYPE } from '@/definitions/enums'
 import { useForm, FormProvider } from 'react-hook-form';
-import { slugify } from '@/helper-functions/general'
 import { ReactNode } from 'react';
 
 const Wrapper = ({ children }: {children: ReactNode[] | ReactNode}) => {
