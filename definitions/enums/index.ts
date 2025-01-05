@@ -41,3 +41,8 @@ export enum FONT_FAMILY {
   CINZEL_DEC = 'CINZEL_DEC',
   CINZEL = 'CINZEL'
 }
+
+export enum FIELD_TYPE {
+  TEXT = 'text',
+  EMAIL = 'email',
+}
