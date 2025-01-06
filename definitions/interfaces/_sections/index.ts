@@ -42,3 +42,11 @@ export interface ContactFormI extends FormContainerI {
   submitBtnColor: COLORS;
   submitBtnTextColor: COLORS;
 }
+
+// form data
+export interface ContactFormDataI {
+  firstName: string;
+  lastName: string;
+  email: string;
+  textBody: string;
+}
