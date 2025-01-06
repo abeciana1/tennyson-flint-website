@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
+import Mail from 'nodemailer/lib/mailer';
+import { sendEmail } from '@/helper-functions/nodemailer'
 
 export const POST = async (req: NextRequest) => {
   try {
     const body = await req.json();
+    await sendEmail(body)
     return NextResponse.json(
       { message: "Form submission successful", data: body },
       { status: 200 }
