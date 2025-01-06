@@ -1,3 +1,5 @@
+import { ContactFormDataI } from '@/definitions/interfaces/_sections'
+
 export const slugify = (str: string) => {
   str = str.replace(/^\s+|\s+$/g, '');
   str = str.toLowerCase();
@@ -6,3 +8,11 @@ export const slugify = (str: string) => {
           .replace(/-+/g, '-');
   return str;
 }
+
+export const validateEmail = (email: string) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
