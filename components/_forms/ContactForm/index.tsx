@@ -32,8 +32,6 @@ const ContactForm:React.FC<ContactFormI> = ({
       textBody: ''
     }
   })
-  console.log('form errors', errors)
-
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const contactRes = await axios.post('/api/contact', data, {
       headers: {
