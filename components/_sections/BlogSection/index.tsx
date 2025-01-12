@@ -36,7 +36,7 @@ const BlogSection: React.FC<BlogSectionI> = ({
           fontFamily={FONT_FAMILY.CINZEL}
         />
         {blogList &&
-          <section className='mt-12 flex flex-row gap-6 justify-center'>
+          <section className='mt-12 flex flex-row flex-wrap gap-6'>
             {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {blogList?.map((blogPost: any) => {
               return (
