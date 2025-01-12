@@ -67,7 +67,7 @@ const BlogSection: React.FC<BlogSectionI> = ({
             <ButtonLink
               linkText='View all blogs'
               title='Link to all blog posts pages'
-              href='/blogs'
+              href='/blog'
               bgColor={COLORS.NAVY}
               textColor={COLORS.GOLD}
               rounded={ROUNDED.MD}
