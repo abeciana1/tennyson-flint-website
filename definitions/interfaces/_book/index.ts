@@ -23,12 +23,16 @@ export interface MeetTheCharactersI {
 }
 
 export interface CharacterI {
-  data: {
-    characterName: string;
-    characterBio: string;
-    characterImage: string;
-    characterImgHeight: number;
-    characterImgWidth: number;
+  character: {
+    value: {
+      data: {
+        characterName: string;
+        characterBio: string;
+        characterImage: string;
+        characterImgHeight: number;
+        characterImgWidth: number;
+      }
+    }
   }
 }
 
