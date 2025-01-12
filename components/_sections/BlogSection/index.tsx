@@ -44,7 +44,7 @@ const BlogSection: React.FC<BlogSectionI> = ({
                   key={blogPost?.id}
                   title={blogPost?.data?.blogPostTitle}
                   excerpt={blogPost?.data?.excerpt}
-                  href={`/blog${blogPost?.previewUrl?.split('/blog')[1]}`}
+                  href={`/blog/${blogPost?.data?.slug}`}
                   image={{
                     src: blogPost?.data?.blogImage,
                     alt: `${blogPost?.data?.blogPostTitle} featured blog image`,
