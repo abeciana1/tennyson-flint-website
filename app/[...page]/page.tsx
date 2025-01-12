@@ -23,7 +23,6 @@ export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   const content = await pageContentDataFetch(props, modelName)
 
   if (modelName === 'blog-article') {
-    console.log('content: ', content)
     return {
       title: content?.data?.blogPostTitle,
       description: content?.data?.seoDescription,
