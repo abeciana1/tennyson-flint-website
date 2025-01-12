@@ -42,12 +42,12 @@ const BlogSection: React.FC<BlogSectionI> = ({
               return (
                 <BlogPostCard
                   key={blogPost?.id}
-                  title={blogPost?.data?.title}
+                  title={blogPost?.data?.blogPostTitle}
                   excerpt={blogPost?.data?.excerpt}
                   href={`/blog${blogPost?.previewUrl?.split('/blog')[1]}`}
                   image={{
                     src: blogPost?.data?.blogImage,
-                    alt: `${blogPost?.data?.title} featured blog image`,
+                    alt: `${blogPost?.data?.blogPostTitle} featured blog image`,
                     width: blogPost?.data?.blogImageWidth,
                     height: blogPost?.data?.blogImageHeight,
                     rounded: ROUNDED.XL
