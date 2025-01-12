@@ -17,7 +17,7 @@ const BlogCollection: React.FC<BlogCollectionI> = ({
         text={heading}
       />
       {blogList &&
-        <section className='mt-12 flex flex-row gap-6 justify-center'>
+        <section className='mt-12 flex flex-row flex-wrap gap-6'>
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {blogList?.map((blogPost: any) => {
             return (
@@ -25,7 +25,7 @@ const BlogCollection: React.FC<BlogCollectionI> = ({
                 key={blogPost?.id}
                 title={blogPost?.data?.title}
                 excerpt={blogPost?.data?.excerpt}
-                href={`/blog${blogPost?.previewUrl?.split('/blog')[1]}`}
+                href={`/blog/${blogPost?.data?.slug}`}
                 image={{
                   src: blogPost?.data?.blogImage,
                   alt: `${blogPost?.data?.title} featured blog image`,
