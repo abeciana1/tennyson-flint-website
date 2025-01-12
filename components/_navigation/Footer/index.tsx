@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 import TextContent from '@/components/_styled/Text'
 import {
   FONT_FAMILY,
@@ -12,14 +12,16 @@ import { fetchFooter } from '@/helper-functions/builder-fetch'
 import { useEffect, useState } from 'react'
 
 const Footer: React.FC = () => {
-  const [ content, setContent ] = useState({})
-  useEffect(() => {
-    const fetchContent = async () => {
-      const footerContent = await fetchFooter()
-      setContent(footerContent)
-    }
-    fetchContent()
-  }, [])
+  const content = use(fetchFooter())
+  // const [ content, setContent ] = useState({})
+  // console.log('content: ', content)
+  // useEffect(() => {
+  //   const fetchContent = async () => {
+  //     const footerContent = await 
+  //     setContent(footerContent)
+  //   }
+  //   fetchContent()
+  // }, [])
   return (
     <>
       <footer className='bg-darkGray relative bottom-0 w-full px-5 sm:px-10 pt-2 md:pt-4 lg:pt-8'>
