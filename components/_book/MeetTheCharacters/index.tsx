@@ -13,21 +13,21 @@ const MeetTheCharacters: React.FC<MeetTheCharactersI> = ({
       <Heading2
         text={headingText}
       />
-      {(builderState?.content?.data?.state?.character?.results) &&
+      {(builderState?.content?.data?.characters) &&
         <div className='flex flex-wrap gap-12 mt-6'>
-          {builderState?.content?.data?.state?.character?.results?.map(({
-            data
+          {builderState?.content?.data?.characters?.map(({
+            character
           }: CharacterI, index: number) => {
             return (
               <CharacterCard
-                key={data?.characterName+index}
-                name={data?.characterName}
-                description={data?.characterBio}
+                key={character?.value?.data?.characterName+index}
+                name={character?.value?.data?.characterName}
+                description={character?.value?.data?.characterBio}
                 image={{
-                  src: data?.characterImage,
-                  alt: `${data?.characterName} image`,
-                  width: data?.characterImgWidth,
-                  height: data?.characterImgHeight,
+                  src: character?.value?.data?.characterImage,
+                  alt: `${character?.value?.data?.characterName} image`,
+                  width: character?.value?.data?.characterImgWidth,
+                  height: character?.value?.data?.characterImgHeight,
                   rounded: ROUNDED.MD
                 }}
               />
