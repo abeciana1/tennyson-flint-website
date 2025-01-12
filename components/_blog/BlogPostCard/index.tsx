@@ -51,12 +51,14 @@ const BlogPostCard: React.FC<BlogPostCardI> = ({
               id={category}
             />
           </div>
-          <TextContent
-            dataTestId='title'
-            text={title}
-            fontSize={FONT_SIZE.XL}
-            fontStyle={FONT_STYLE.SEMI_BOLD}
-          />
+          <div className='mt-2'>
+            <TextContent
+              dataTestId='title'
+              text={title}
+              fontSize={FONT_SIZE.XL}
+              fontStyle={FONT_STYLE.SEMI_BOLD}
+            />
+          </div>
         </div>
         <div className='mt-4'>
           <TextContent
