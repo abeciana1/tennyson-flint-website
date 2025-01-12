@@ -32,8 +32,9 @@ export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
     }
     // add json-ld for books
   } else if (modelName === 'book-page') {
+    console.log('content: ', content)
     return {
-      title: content?.data?.title + '!!!!',
+      title: content?.name + '!!!!',
       description: content?.data?.description,
       alternates: {
         canonical: `/book/${urlStructure?.page[1]}`
