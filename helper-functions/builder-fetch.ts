@@ -47,14 +47,27 @@ export const modelAndContentFetch = async (props: PageProps) => {
 
 export const pageContentDataFetch = async (props: PageProps, modelName: string) => {
   try {
-    const content = await builder
-    .get(modelName, {
-      userAttributes: {
-        urlPath: "/" + ((await props?.params)?.page?.join("/") || ""),
-      },
-    })
-    .toPromise();
-    return content
+    const urlStructure: { page: string[]; } = (await props?.params)
+    if (modelName === 'blog-article') {
+      const content = await builder
+      .get('blog-article', {
+        query: {
+          data: {
+            slug: urlStructure?.page[1]
+          }
+        }
+      })
+      return content
+    } else {
+      const content = await builder
+      .get(modelName, {
+        userAttributes: {
+          urlPath: "/" + ((await props?.params)?.page?.join("/") || ""),
+        },
+      })
+      .toPromise();
+      return content
+    }
   } catch (error) {
     console.error('Error fetching page content data:', error);
     return []
