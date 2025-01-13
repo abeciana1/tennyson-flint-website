@@ -1,12 +1,11 @@
-import { use } from 'react'
 import { Heading1 } from '@/components/_styled/headings'
 import NavLink from '@/components/_navigation/NavLink'
 import MobileMenu from '@/components/_navigation/MobileMenu'
-import { fetchNavLinks } from '@/helper-functions/builder-fetch'
 import Link from 'next/link'
+import { NavBarI } from '@/definitions/interfaces/_navigation'
 
-const NavBar = () => {
-  const navLinks = use(fetchNavLinks())
+const NavBar: React.FC<NavBarI> = ({ blok }) => {
+  const { navLinks } = blok
   return (
     <header>
       <nav className='flex flex-row px-5 sm:px-10 py-3 items-center justify-between z-50 bg-white'>
@@ -17,14 +16,14 @@ const NavBar = () => {
           {navLinks && navLinks?.map((link) => {
             return (
               <NavLink
-                key={link?.id}
-                label={link?.data?.linkText}
-                href={link?.data?.href}
+                key={link?._uid}
+                label={link?.label}
+                href={link?.href}
               />
             )
           })}
         </ul>
-        <MobileMenu />
+        <MobileMenu blok={blok} />
       </nav>
     </header>
   )

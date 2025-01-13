@@ -2,23 +2,11 @@
 import { useState, useEffect } from 'react'
 import NavLink from '@/components/_navigation/NavLink'
 import Hamburger from 'hamburger-react'
-import { fetchNavLinks } from '@/helper-functions/builder-fetch'
-import { BuilderContent } from '@builder.io/sdk';
+import { NavBarI } from '@/definitions/interfaces/_navigation'
 
-const MobileMenu = () => {
+const MobileMenu: React.FC<NavBarI> = ({ blok }) => {
+  const { navLinks } = blok
   const [isOpen, setOpen] = useState(false)
-  const [navLinks, setNavLinks] = useState<BuilderContent[]>([]);
-  useEffect(() => {
-    const fetchLinks = async () => {
-      try {
-        const links = await fetchNavLinks();
-        setNavLinks(links);
-      } catch (error) {
-        console.error('Error fetching navigation links:', error);
-      }
-    }
-    fetchLinks()
-  }, [isOpen])
 
   useEffect(() => {
     const main = document?.getElementsByTagName('main')
@@ -45,9 +33,9 @@ const MobileMenu = () => {
           {navLinks && navLinks?.map((link) => {
             return (
               <NavLink
-                key={link?.id}
-                label={link?.data?.linkText}
-                href={link?.data?.href}
+                key={link?._uid}
+                label={link?.label}
+                href={link?.href}
               />
             )
           })}
