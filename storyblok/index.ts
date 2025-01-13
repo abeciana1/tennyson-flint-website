@@ -7,6 +7,8 @@ import FallbackComponent from '@/components/FallbackComponent'
 
 import Page from '@/components/_page'
 import HeroSection from '@/components/_sections/HeroSection'
+import NavBar from '@/components/_navigation/NavBar'
+import NavLink from '@/components/_navigation/NavLink'
 
 export interface SbPageData extends SbBlokData {
   body: SbBlokData[];
@@ -24,7 +26,9 @@ export const initStoryblok = (options = {}) => storyblokInit({
   use: [apiPlugin],
   components: {
     page: Page,
-    "hero-section": HeroSection
+    "hero-section": HeroSection,
+    headerNavigation: NavBar,
+    navLink: NavLink
   },
   enableFallbackComponent: true,
   customFallbackComponent: FallbackComponent,
