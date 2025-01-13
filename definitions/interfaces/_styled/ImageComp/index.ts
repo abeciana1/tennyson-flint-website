@@ -1,9 +1,11 @@
 import { ROUNDED } from '@/definitions/enums';
 
 export interface ImageI {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  rounded: ROUNDED;
+  file: {
+    filename: string;
+  }
+  alt_text: string;
+  width: string;
+  height: string;
+  rounded_edges: ROUNDED;
 }
