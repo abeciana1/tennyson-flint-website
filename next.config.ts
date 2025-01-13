@@ -1,12 +1,12 @@
-import BuilderDevTools from "@builder.io/dev-tools/next";
+// import BuilderDevTools from "@builder.io/dev-tools/next";
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = BuilderDevTools()({
+const nextConfig: NextConfig = ({
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.builder.io',
+        hostname: 'a.storyblok.com',
       }
     ]
   }
