@@ -10,22 +10,25 @@ import MarginSection from '@/components/_sections/MarginSection'
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
 
 const HeroSection: React.FC<HeroSectionI> = ({
-  preHeading = '',
-  heading,
-  subheading = '',
-  textBody,
-  ctaChildren,
-  image
+  blok
 }) => {
+  const {
+    preheading = '',
+    heading,
+    subheading = '',
+    text_body,
+    cta_children,
+    image
+  } = blok
   return (
     <MarginSection>
       <section className='flex items-center mx-auto gap-10 lg:gap-24 justify-around flex-col md:flex-row'>
         <section
           className='md:max-w-[300px] lg:max-w-[550px]'
         >
-          {preHeading &&
+          {preheading &&
             <TextContent
-              text={preHeading.toUpperCase()}
+              text={preheading.toUpperCase()}
               fontSize={FONT_SIZE.XXL}
             />
           }
@@ -40,12 +43,12 @@ const HeroSection: React.FC<HeroSectionI> = ({
             />
           }
           <TextContent
-            text={textBody}
+            text={text_body}
             fontSize={FONT_SIZE.XXL}
           />
-          {ctaChildren && 
+          {cta_children && 
             <div className='flex flex-wrap gap-5'>
-              {ctaChildren?.map(({
+              {cta_children?.map(({
                 linkText,
                 title,
                 href,
@@ -70,19 +73,19 @@ const HeroSection: React.FC<HeroSectionI> = ({
         </section>
         <section className='w-fit'>
           {image && image?.map(({
-            src,
-            alt,
+            file,
+            alt_text,
             width,
             height,
-            rounded
+            rounded_edges
           }: ImageI, index: number) => (
             <ImageComp
               key={index + width + height}
-              src={src}
-              alt={alt}
+              file={file}
+              alt_text={alt_text}
               width={width}
               height={height}
-              rounded={ROUNDED[rounded]}
+              rounded_edges={ROUNDED[rounded_edges]}
             />
           ))}
         </section>
