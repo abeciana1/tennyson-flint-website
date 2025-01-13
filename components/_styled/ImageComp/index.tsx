@@ -4,25 +4,25 @@ import cx from 'classnames'
 import { ROUNDED } from '@/definitions/enums'
 
 const ImageComp: React.FC<ImageI> = ({
-  src,
-  alt,
+  file,
+  alt_text,
   width,
   height,
-  rounded = ROUNDED.NONE
+  rounded_edges = ROUNDED.NONE
 }) => {
   return (
     <Image
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
+      src={file.filename}
+      alt={alt_text}
+      width={Number(width)}
+      height={Number(height)}
       className={cx('mx-auto',{
-        ['rounded-none']: rounded === ROUNDED.NONE,
-        ['rounded-sm']: rounded === ROUNDED.SM,
-        ['rounded-md']: rounded === ROUNDED.MD,
-        ['rounded-lg']: rounded === ROUNDED.LG,
-        ['rounded-xl']: rounded === ROUNDED.XL,
-        ['rounded-2xl']: rounded === ROUNDED.XXL,
+        ['rounded-none']: rounded_edges === ROUNDED.NONE,
+        ['rounded-sm']: rounded_edges === ROUNDED.SM,
+        ['rounded-md']: rounded_edges === ROUNDED.MD,
+        ['rounded-lg']: rounded_edges === ROUNDED.LG,
+        ['rounded-xl']: rounded_edges === ROUNDED.XL,
+        ['rounded-2xl']: rounded_edges === ROUNDED.XXL,
       })}
     />
   )
