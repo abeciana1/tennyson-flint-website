@@ -1,19 +1,19 @@
-import { builder } from "@builder.io/sdk";
-import { RenderBuilderContent } from '@/components/builder'
-import { PageProps } from '@/definitions/interfaces'
-import { pageContentDataFetch } from '@/helper-functions/builder-fetch'
-import { use } from 'react'
+import { PageProps } from '@/storyblok'
+import { fetchStory } from '@/helper-functions/storyblok-fetch'
+import {
+  StoryblokStory,
+  storyblokEditable
+} from "@storyblok/react/rsc";
 
-builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
-
-export default function Page(props: PageProps) {
-  const content = use(pageContentDataFetch(props, 'page'))
-
+export default async function Page(props: PageProps) {
+  const content = await fetchStory('published', ['home'])
   return (
     <>
       <div className='relative'>
-        <main className='min-h-screen relative'>
-          <RenderBuilderContent content={content} model='page' />
+        <main className='min-h-screen relative'
+          {...storyblokEditable(props.blok)}
+        >
+          <StoryblokStory story={content?.story} />
         </main>
       </div>
     </>
