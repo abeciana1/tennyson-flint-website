@@ -7,19 +7,23 @@ describe('HeroSection', () => {
   beforeEach(() => {
     render(
       <HeroSection
-        heading='Hero Section'
-        subheading='Subheading'
-        textBody='Text Body'
-        ctaChildren={[]}
-        image={[
-          {
-            src: '/test.jpg',
-            alt: 'Test Image',
-            width: 100,
-            height: 100,
-            rounded: ROUNDED.MD
-          }
-        ]}
+        blok={{
+          heading: 'Hero Section',
+          subheading: 'Subheading',
+          text_body: 'Text Body',
+          cta_children: [],
+          image: [
+            {
+              file: {
+                filename: '/test.jpg'
+              },
+              alt_text: 'Test Image',
+              width: '100',
+              height: '100',
+              rounded_edges: ROUNDED.MD
+            }
+          ]
+        }}
       />
     )
   })
