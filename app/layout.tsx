@@ -5,8 +5,10 @@ import {
   Cinzel_Decorative
 } from 'next/font/google'
 import type { Metadata } from 'next'
-import NavBar from '@/components/_navigation/NavBar'
-import Footer from '@/components/_navigation/Footer'
+import StoryblokProvider from '@/components/StoryblokProvider'
+import { initStoryblok } from '@/storyblok'
+// import NavBar from '@/components/_navigation/NavBar'
+// import Footer from '@/components/_navigation/Footer'
 
 export const metadata: Metadata = {
   title: {
@@ -34,6 +36,8 @@ const cinzelDecorative = Cinzel_Decorative({
   variable: '--cinzel-dec'
 })
 
+initStoryblok()
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,14 +45,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="icon" href="/favicon.ico" sizes="any" />
-      <body
-        className={`${openSans.variable} ${cinzel.variable} ${cinzelDecorative.variable} antialiased relative flex flex-col`}
-      >
-        <NavBar />
-        {children}
-        <Footer/>
-      </body>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <body
+          className={`${openSans.variable} ${cinzel.variable} ${cinzelDecorative.variable} antialiased relative flex flex-col`}
+          >
+          {/* <NavBar /> */}
+          <StoryblokProvider>
+            {children}
+          </StoryblokProvider>
+          {/* <Footer/> */}
+        </body>
     </html>
   );
 }
