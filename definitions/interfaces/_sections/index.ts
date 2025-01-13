@@ -3,12 +3,14 @@ import { ButtonLinkI, SocialLinkI } from '@/definitions/interfaces/_styled/Links
 import { COLORS } from '@/definitions/enums'
 
 export interface HeroSectionI {
-  preHeading?: string;
-  heading: string;
-  subheading?: string;
-  textBody: string;
-  ctaChildren: ButtonLinkI[];
-  image: ImageI[];
+  blok: {
+    preheading?: string;
+    heading: string;
+    subheading?: string;
+    text_body: string;
+    cta_children: ButtonLinkI[];
+    image: ImageI[];
+  }
 }
 
 export interface MarginSectionI {
