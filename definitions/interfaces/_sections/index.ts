@@ -22,8 +22,10 @@ export interface SocialLinkSectionI {
 }
 
 export interface BlogSectionI {
-  preheading: string;
-  headline: string;
+  blok: {
+    preheading: string;
+    headline: string;
+  }
 }
 
 export interface BlogCollectionI {
