@@ -3,12 +3,12 @@ import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
 export interface BlogTemplateI {
   title: string;
   excerpt?: string;
-  image: ImageI;
+  image: ImageI[];
   publishedDate: string;
 }
 
 export interface BlogContentI {
-  textContent: string;
+  text: string;
 }
 
 export interface BlogPostCardDateI {
@@ -26,5 +26,17 @@ export interface BlogPostCardI {
 }
 
 export interface BlogCategoryI {
-  id: string;
+  name: string;
+}
+
+export interface BlogPostI {
+  name: string;
+  uuid: string;
+  slug: string;
+  first_published_at: string;
+  content: {
+    category: string;
+    excerpt: string;
+    featured_image: ImageI[];
+  }
 }
