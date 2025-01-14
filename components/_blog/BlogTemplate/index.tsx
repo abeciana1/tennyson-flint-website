@@ -4,7 +4,8 @@ import MarginSection from '@/components/_sections/MarginSection'
 import TextContent from '@/components/_styled/Text'
 import {
   FONT_SIZE,
-  FONT_STYLE
+  FONT_STYLE,
+  ROUNDED
 } from '@/definitions/enums'
 import ImageComp from '@/components/_styled/ImageComp'
 
@@ -15,12 +16,12 @@ const BlogTemplate: React.FC<BlogTemplateI> = ({
   publishedDate
 }) => {
   const {
-    src,
-    alt,
+    file,
+    alt_text,
     width,
     height,
-    rounded
-  } = image
+    rounded_edges
+  } = image[0]
   return (
     <>
       <MarginSection>
@@ -54,11 +55,11 @@ const BlogTemplate: React.FC<BlogTemplateI> = ({
             </div>
             <div className='flex justify-center'>
               <ImageComp
-                src={src}
-                alt={alt}
+                file={file}
+                alt_text={alt_text}
                 width={width}
                 height={height}
-                rounded={rounded}
+                rounded_edges={ROUNDED[rounded_edges]}
               />
             </div>
           </section>
