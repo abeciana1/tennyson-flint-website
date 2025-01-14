@@ -1,4 +1,3 @@
-import { use } from 'react'
 import { BlogSectionI } from '@/definitions/interfaces/_sections'
 import { Heading1 } from '@/components/_styled/headings'
 import TextContent from '@/components/_styled/Text'
@@ -10,16 +9,20 @@ import {
   COLORS
 } from '@/definitions/enums'
 import MarginSection from '@/components/_sections/MarginSection'
-import { getBlogPostListData } from '@/helper-functions/builder-fetch'
 import BlogPostCard from '@/components/_blog/BlogPostCard'
 import {format} from 'date-fns'
 import { ButtonLink } from '@/components/_styled/links'
+import { fetchContentStories } from '@/helper-functions/storyblok-fetch'
+import { BlogPostI } from '@/definitions/interfaces/_blog'
 
-const BlogSection: React.FC<BlogSectionI> = ({
-  preheading,
-  headline
+const BlogSection: React.FC<BlogSectionI> = async ({
+  blok
 }) => {
-  const blogList = use(getBlogPostListData(3))
+  const {
+    preheading,
+    headline
+  } = blok
+  const blogList = await fetchContentStories('published', 'blog')
   return (
     <section>
       <MarginSection>
@@ -35,34 +38,34 @@ const BlogSection: React.FC<BlogSectionI> = ({
           fontStyle={FONT_STYLE.MEDIUM}
           fontFamily={FONT_FAMILY.CINZEL}
         />
-        {blogList &&
+        {blogList?.data &&
           <section className='mt-12 flex flex-row flex-wrap gap-6'>
-            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-            {blogList?.map((blogPost: any) => {
+            {blogList?.data?.stories?.map((blogPost: BlogPostI) => {
+              // grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1
               return (
                 <BlogPostCard
-                  key={blogPost?.id}
-                  title={blogPost?.data?.blogPostTitle}
-                  excerpt={blogPost?.data?.excerpt}
-                  href={`/blog/${blogPost?.data?.slug}`}
+                  key={blogPost?.uuid}
+                  title={blogPost?.name}
+                  excerpt={blogPost?.content?.excerpt}
+                  href={`/blog/${blogPost?.slug}`}
                   image={{
-                    src: blogPost?.data?.blogImage,
-                    alt: `${blogPost?.data?.blogPostTitle} featured blog image`,
-                    width: blogPost?.data?.blogImageWidth,
-                    height: blogPost?.data?.blogImageHeight,
-                    rounded: ROUNDED.XL
+                    file: blogPost?.content?.featured_image[0]?.file,
+                    alt_text: `${blogPost?.name} featured blog image`,
+                    width: blogPost?.content?.featured_image[0]?.width,
+                    height: blogPost?.content?.featured_image[0]?.height,
+                    rounded_edges: ROUNDED.XL
                   }}
                   publishedDate={{
-                    month: format(new Date(blogPost?.firstPublished), "MMM"),
-                    day: format(new Date(blogPost?.firstPublished), "d")
+                    month: format(new Date(blogPost?.first_published_at), "MMM"),
+                    day: format(new Date(blogPost?.first_published_at), "d")
                   }}
-                  category={blogPost?.data?.category?.id}
+                  category={blogPost?.content?.category}
                 />
               )
             })}
           </section>
         }
-        {blogList && blogList?.length > 2 &&
+        {blogList && blogList?.data?.stores?.length > 2 &&
           <div className='mt-12 flex justify-center'>
             <ButtonLink
               linkText='View all blogs'
