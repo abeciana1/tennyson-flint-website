@@ -1,9 +1,11 @@
 import { storyblokEditable, StoryblokServerComponent } from '@storyblok/react/rsc';
+import BlogTemplate from '@/components/_blog/BlogTemplate'
+import { format } from 'date-fns'
 
-const Page = ({ blok }: any) => {
+export const Page = ({ blok }: any) => {
   return (
   <main {...storyblokEditable(blok)}>
-    {blok.body.map((nestedBlok: { _uid: string }) => {
+    {blok?.body?.map((nestedBlok: { _uid: string }) => {
       return (
         <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
       )
@@ -11,4 +13,33 @@ const Page = ({ blok }: any) => {
   </main>
 )};
 
-export default Page;
+export const BlogPage = ({ blok }: any) => {
+  console.log('blog page', blok)
+  return (
+  <main {...storyblokEditable(blok)}>
+    {blok &&
+      <BlogTemplate
+        title={blok?.title}
+        excerpt={blok?.excerpt}
+        image={blok?.featured_image}
+        publishedDate={format(new Date(blok?.published_date), 'MM/dd/yyyy')}
+      />
+    }
+    {blok?.body?.map((nestedBlok: { _uid: string }) => {
+      return (
+        <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
+      )
+    })}
+  </main>
+)};
+
+export const BookPage = ({ blok }: any) => {
+  return (
+  <main {...storyblokEditable(blok)}>
+    {blok?.body?.map((nestedBlok: { _uid: string }) => {
+      return (
+        <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
+      )
+    })}
+  </main>
+)};
