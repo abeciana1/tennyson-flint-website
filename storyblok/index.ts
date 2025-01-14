@@ -5,10 +5,13 @@ import {
 } from "@storyblok/react/rsc";
 import FallbackComponent from '@/components/FallbackComponent'
 
-import Page from '@/components/_page'
+import { Page, BlogPage, BookPage } from '@/components/_page'
 import HeroSection from '@/components/_sections/HeroSection'
 import NavBar from '@/components/_navigation/NavBar'
 import NavLink from '@/components/_navigation/NavLink'
+import BlogSection from '@/components/_sections/BlogSection'
+import BlogImage from '@/components/_blog/BlogImage'
+import BlogContent from '@/components/_blog/BlogContent'
 
 export interface SbPageData extends SbBlokData {
   body: SbBlokData[];
@@ -28,7 +31,11 @@ export const initStoryblok = (options = {}) => storyblokInit({
     page: Page,
     "hero-section": HeroSection,
     headerNavigation: NavBar,
-    navLink: NavLink
+    navLink: NavLink,
+    blogSection: BlogSection,
+    blogImage: BlogImage,
+    blogPage: BlogPage,
+    blogContent: BlogContent
   },
   enableFallbackComponent: true,
   customFallbackComponent: FallbackComponent,
