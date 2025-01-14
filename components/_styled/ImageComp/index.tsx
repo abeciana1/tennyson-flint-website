@@ -12,7 +12,7 @@ const ImageComp: React.FC<ImageI> = ({
 }) => {
   return (
     <Image
-      src={file.filename}
+      src={file?.filename}
       alt={alt_text}
       width={Number(width)}
       height={Number(height)}
