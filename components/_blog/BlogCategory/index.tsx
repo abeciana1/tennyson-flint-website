@@ -4,20 +4,17 @@ import {
   FONT_STYLE
 } from '@/definitions/enums'
 import { BlogCategoryI } from '@/definitions/interfaces/_blog'
-import { use } from 'react'
-import { getBlogCategory } from '@/helper-functions/builder-fetch'
 
 const BlogCategory: React.FC<BlogCategoryI> = ({
-  id
+  name
 }) => {
-  const category = use(getBlogCategory(id))
   return (
     <>
-    {category &&
+    {name &&
       <div className='bg-slate-300 rounded-md px-2 py-1 max-w-fit'>
         <TextContent
           dataTestId='category'
-          text={category?.data?.categoryName}
+          text={name}
           fontSize={FONT_SIZE.MD}
           fontStyle={FONT_STYLE.MEDIUM}
         />
