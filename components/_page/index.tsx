@@ -14,7 +14,6 @@ export const Page = ({ blok }: any) => {
 )};
 
 export const BlogPage = ({ blok }: any) => {
-  console.log('blog page', blok)
   return (
   <main {...storyblokEditable(blok)}>
     {blok &&
