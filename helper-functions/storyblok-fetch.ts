@@ -14,12 +14,14 @@ export const fetchStory = async (
 
 export const fetchContentStories = async (
   version: "draft" | "published",
-  dirName: string
+  dirName: string,
+  options = {}
 ) => {
   const storyblokApi: StoryblokClient = getStoryblokApi();
   const content = await storyblokApi.get(`cdn/stories`, {
     version: version,
-    starts_with: dirName
+    starts_with: dirName,
+    ...options
   })
   return content
 }
