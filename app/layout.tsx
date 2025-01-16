@@ -7,7 +7,7 @@ import {
 import type { Metadata } from 'next'
 import StoryblokProvider from '@/components/StoryblokProvider'
 import { initStoryblok } from '@/storyblok'
-// import NavBar from '@/components/_navigation/NavBar'
+import NavBar from '@/components/_navigation/NavBar'
 // import Footer from '@/components/_navigation/Footer'
 
 export const metadata: Metadata = {
@@ -49,7 +49,7 @@ export default function RootLayout({
         <body
           className={`${openSans.variable} ${cinzel.variable} ${cinzelDecorative.variable} antialiased relative flex flex-col`}
           >
-          {/* <NavBar /> */}
+          <NavBar />
           <StoryblokProvider>
             {children}
           </StoryblokProvider>
