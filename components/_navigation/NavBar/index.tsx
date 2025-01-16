@@ -2,10 +2,16 @@ import { Heading1 } from '@/components/_styled/headings'
 import NavLink from '@/components/_navigation/NavLink'
 import MobileMenu from '@/components/_navigation/MobileMenu'
 import Link from 'next/link'
-import { NavBarI } from '@/definitions/interfaces/_navigation'
+import { NavLinkI } from '@/definitions/interfaces/_navigation'
+import { fetchStory } from '@/helper-functions/storyblok-fetch'
+import { use } from 'react'
 
-const NavBar: React.FC<NavBarI> = ({ blok }) => {
-  const { navLinks } = blok
+const NavBar: React.FC = () => {
+  const content = use(fetchStory('published', ['global-content', 'main-menu']))
+  console.log('navbar content', content)
+  const {
+    navLinks
+  } = content?.data?.story?.content?.body[0]
   return (
     <header>
       <nav className='flex flex-row px-5 sm:px-10 py-3 items-center justify-between z-50 bg-white'>
@@ -13,7 +19,7 @@ const NavBar: React.FC<NavBarI> = ({ blok }) => {
           <Heading1 text='Tennyson Flint' fontSize='2xl' />
         </Link>
         <ul className='hidden md:flex flex-row gap-6'>
-          {navLinks && navLinks?.map((link) => {
+          {navLinks && navLinks?.map((link: NavLinkI) => {
             return (
               <NavLink
                 key={link?._uid}
@@ -23,7 +29,7 @@ const NavBar: React.FC<NavBarI> = ({ blok }) => {
             )
           })}
         </ul>
-        <MobileMenu blok={blok} />
+        <MobileMenu navLinks={navLinks} />
       </nav>
     </header>
   )
