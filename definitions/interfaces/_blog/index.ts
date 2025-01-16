@@ -8,7 +8,9 @@ export interface BlogTemplateI {
 }
 
 export interface BlogContentI {
-  text: string;
+  blok: {
+    text: string;
+  }
 }
 
 export interface BlogPostCardDateI {
