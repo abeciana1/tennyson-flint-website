@@ -1,16 +1,19 @@
 import { Heading1 } from '@/components/_styled/headings'
 import { BlogCollectionI } from '@/definitions/interfaces/_sections'
 import MarginSection from '@/components/_sections/MarginSection'
-import { getBlogPostListData } from '@/helper-functions/builder-fetch'
-import { use } from 'react'
 import BlogPostCard from '@/components/_blog/BlogPostCard'
 import { ROUNDED } from '@/definitions/enums'
 import { format } from 'date-fns'
+import { BlogPostI } from '@/definitions/interfaces/_blog'
+import { fetchContentStories } from '@/helper-functions/storyblok-fetch'
 
-const BlogCollection: React.FC<BlogCollectionI> = ({
-  heading
+const BlogCollection: React.FC<BlogCollectionI> = async ({
+  blok
 }) => {
-  const blogList = use(getBlogPostListData(20))
+  const {
+    heading
+  } = blok
+  const blogList = await fetchContentStories('published', 'blog', { content_type: 'blogPage' })
   return (
     <MarginSection>
       <Heading1
@@ -18,27 +21,26 @@ const BlogCollection: React.FC<BlogCollectionI> = ({
       />
       {blogList &&
         <section className='mt-12 flex flex-row flex-wrap gap-6'>
-          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-          {blogList?.map((blogPost: any) => {
+          {blogList?.data?.stories?.map((blogPost: BlogPostI) => {
             return (
-              <BlogPostCard
-                key={blogPost?.id}
-                title={blogPost?.data?.title}
-                excerpt={blogPost?.data?.excerpt}
-                href={`/blog/${blogPost?.data?.slug}`}
-                image={{
-                  src: blogPost?.data?.blogImage,
-                  alt: `${blogPost?.data?.title} featured blog image`,
-                  width: blogPost?.data?.blogImageWidth,
-                  height: blogPost?.data?.blogImageHeight,
-                  rounded: ROUNDED.XL
-                }}
-                publishedDate={{
-                  month: format(new Date(blogPost?.firstPublished), "MMM"),
-                  day: format(new Date(blogPost?.firstPublished), "d")
-                }}
-                category={blogPost?.data?.category?.id}
-              />
+                <BlogPostCard
+                  key={blogPost?.uuid}
+                  title={blogPost?.name}
+                  excerpt={blogPost?.content?.excerpt}
+                  href={`/blog/${blogPost?.slug}`}
+                  image={{
+                    file: blogPost?.content?.featured_image[0]?.file,
+                    alt_text: `${blogPost?.name} featured blog image`,
+                    width: blogPost?.content?.featured_image[0]?.width,
+                    height: blogPost?.content?.featured_image[0]?.height,
+                    rounded_edges: ROUNDED.XL
+                  }}
+                  publishedDate={{
+                    month: format(new Date(blogPost?.first_published_at), "MMM"),
+                    day: format(new Date(blogPost?.first_published_at), "d")
+                  }}
+                  category={blogPost?.content?.category}
+                />
             )
           })}
         </section>
