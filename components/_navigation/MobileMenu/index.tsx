@@ -2,10 +2,9 @@
 import { useState, useEffect } from 'react'
 import NavLink from '@/components/_navigation/NavLink'
 import Hamburger from 'hamburger-react'
-import { NavBarI } from '@/definitions/interfaces/_navigation'
+import { NavBarI, NavLinkI } from '@/definitions/interfaces/_navigation'
 
-const MobileMenu: React.FC<NavBarI> = ({ blok }) => {
-  const { navLinks } = blok
+const MobileMenu: React.FC<NavBarI> = ({ navLinks }) => {
   const [isOpen, setOpen] = useState(false)
 
   useEffect(() => {
@@ -30,7 +29,7 @@ const MobileMenu: React.FC<NavBarI> = ({ blok }) => {
       </div>
       {isOpen &&
         <ul className='md:hidden flex flex-col gap-6 w-full bg-white absolute top-16 left-0 pl-10 pt-4 h-screen z-50'>
-          {navLinks && navLinks?.map((link) => {
+          {navLinks && navLinks?.map((link: NavLinkI) => {
             return (
               <NavLink
                 key={link?._uid}
