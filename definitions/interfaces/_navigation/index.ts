@@ -5,7 +5,5 @@ export interface NavLinkI {
 }
 
 export interface NavBarI {
-  blok: {
-    navLinks: NavLinkI[];
-  }
+  navLinks: NavLinkI[];
 }
