@@ -10,6 +10,7 @@ import {
 import { ButtonLink } from '@/components/_styled/links'
 import BlogDate from '@/components/_blog/BlogDate'
 import BlogCategory from '@/components/_blog/BlogCategory'
+import Link from 'next/link'
 
 const BlogPostCard: React.FC<BlogPostCardI> = ({
   title,
@@ -29,13 +30,18 @@ const BlogPostCard: React.FC<BlogPostCardI> = ({
   return (
     <div className='p-6 max-w-[300px]'>
       <div className='relative max-w-60 max-h-40'>
-        <ImageComp
-          file={file}
-          alt_text={alt_text}
-          width={width}
-          height={height}
-          rounded_edges={rounded_edges}
-        />
+        <Link
+          href={href}
+          title={`Read this blog post - ${title}`}
+        >
+          <ImageComp
+            file={file}
+            alt_text={alt_text}
+            width={width}
+            height={height}
+            rounded_edges={rounded_edges}
+          />
+        </Link>
         <div className='absolute -bottom-8 right-4 text-center'>
           <BlogDate
             month={publishedDate.month}
