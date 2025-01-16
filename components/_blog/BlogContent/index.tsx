@@ -9,7 +9,6 @@ const BlogContent: React.FC<BlogContentI> = ({
   const {
     text
   } = blok
-  console.log('content text', text)
   return (
     <section
       data-testid='blogContent'
