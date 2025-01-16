@@ -9,7 +9,6 @@ import {
 import { RenderBuilderContent } from '@/components/builder'
 import { use } from 'react'
 import { fetchFooter } from '@/helper-functions/builder-fetch'
-import { useEffect, useState } from 'react'
 
 const Footer: React.FC = () => {
   const content = use(fetchFooter())
