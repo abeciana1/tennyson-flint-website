@@ -1,4 +1,3 @@
-// 'use client'
 import TextContent from '@/components/_styled/Text'
 import {
   FONT_FAMILY,
@@ -8,10 +7,10 @@ import {
 } from '@/definitions/enums'
 import { RenderBuilderContent } from '@/components/builder'
 import { use } from 'react'
-import { fetchFooter } from '@/helper-functions/builder-fetch'
+import { fetchStory } from '@/helper-functions/storyblok-fetch'
 
 const Footer: React.FC = () => {
-  const content = use(fetchFooter())
+  const content = use(fetchStory('published', ['global-content', 'main-menu']))
   return (
     <>
       <footer className='bg-darkGray relative bottom-0 w-full px-5 sm:px-10 pt-2 md:pt-4 lg:pt-8'>
