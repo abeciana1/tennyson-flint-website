@@ -8,7 +8,6 @@ import { use } from 'react'
 
 const NavBar: React.FC = () => {
   const content = use(fetchStory('published', ['global-content', 'main-menu']))
-  console.log('navbar content', content)
   const {
     navLinks
   } = content?.data?.story?.content?.body[0]
