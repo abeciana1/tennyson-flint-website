@@ -13,6 +13,7 @@ import BlogSection from '@/components/_sections/BlogSection'
 import BlogImage from '@/components/_blog/BlogImage'
 import BlogContent from '@/components/_blog/BlogContent'
 import BlogCollection from '@/components/_sections/BlogCollection'
+import Footer from '@/components/_navigation/Footer'
 
 export interface SbPageData extends SbBlokData {
   body: SbBlokData[];
@@ -37,7 +38,8 @@ export const initStoryblok = (options = {}) => storyblokInit({
     blogImage: BlogImage,
     blogPage: BlogPage,
     blogContent: BlogContent,
-    blogCollection: BlogCollection
+    blogCollection: BlogCollection,
+    footer: Footer
   },
   enableFallbackComponent: true,
   customFallbackComponent: FallbackComponent,
