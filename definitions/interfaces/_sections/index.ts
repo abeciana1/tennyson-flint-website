@@ -29,7 +29,9 @@ export interface BlogSectionI {
 }
 
 export interface BlogCollectionI {
-  heading: string;
+  blok: {
+    heading: string;
+  }
 }
 
 export interface FormContainerI extends MarginSectionI {
