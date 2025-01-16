@@ -22,7 +22,7 @@ const BlogSection: React.FC<BlogSectionI> = async ({
     preheading,
     headline
   } = blok
-  const blogList = await fetchContentStories('published', 'blog')
+  const blogList = await fetchContentStories('published', 'blog', { content_type: 'blogPage' })
   return (
     <section>
       <MarginSection>
@@ -40,8 +40,8 @@ const BlogSection: React.FC<BlogSectionI> = async ({
         />
         {blogList?.data &&
           <section className='mt-12 flex flex-row flex-wrap gap-6'>
-            {blogList?.data?.stories?.map((blogPost: BlogPostI) => {
-              // grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1
+            {blogList?.data?.stories?.slice(0,3)?.map((blogPost: BlogPostI) => {
+              console.log('blogPost', blogPost)
               return (
                 <BlogPostCard
                   key={blogPost?.uuid}
