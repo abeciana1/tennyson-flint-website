@@ -39,7 +39,8 @@ export const initStoryblok = (options = {}) => storyblokInit({
     blogPage: BlogPage,
     blogContent: BlogContent,
     blogCollection: BlogCollection,
-    footer: Footer
+    footer: Footer,
+    bookPage: BookPage,
   },
   enableFallbackComponent: true,
   customFallbackComponent: FallbackComponent,
