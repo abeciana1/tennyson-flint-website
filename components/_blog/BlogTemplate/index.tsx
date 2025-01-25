@@ -25,10 +25,12 @@ const BlogTemplate: React.FC<BlogTemplateI> = ({
   return (
     <>
       <MarginSection>
-        <section className='md:px-10'>
-          <Heading1
-            text={title}
-          />
+        <section className='md:px-10 max-w-[1024px] mx-auto '>
+          <div className='text-center'>
+            <Heading1
+              text={title}
+            />
+          </div>
           {excerpt &&
             <TextContent
               dataTestId='blogExcerpt'
