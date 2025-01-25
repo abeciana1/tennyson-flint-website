@@ -8,6 +8,7 @@ import { ButtonLinkI } from '@/definitions/interfaces/_styled/Links'
 import { COLORS, ROUNDED } from '@/definitions/enums'
 import MarginSection from '@/components/_sections/MarginSection'
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
+import cx from 'classnames'
 
 const HeroSection: React.FC<HeroSectionI> = ({
   blok
@@ -18,13 +19,16 @@ const HeroSection: React.FC<HeroSectionI> = ({
     subheading = '',
     text_body,
     cta_children,
-    image
+    image,
+    responsive_reverse
   } = blok
   return (
     <MarginSection>
-      <section className='flex items-center mx-auto gap-10 lg:gap-24 justify-around flex-col md:flex-row'>
+      <section className={cx('flex items-center mx-auto gap-10 lg:gap-24 justify-around flex-col lg:flex-row', {
+        ['flex-col-reverse']: responsive_reverse
+      })}>
         <section
-          className='md:max-w-[300px] lg:max-w-[550px]'
+          className='sm:max-w-[300px] md:max-w-2xl lg:max-w-[550px]'
         >
           {preheading &&
             <TextContent
