@@ -10,6 +10,7 @@ export interface HeroSectionI {
     text_body: string;
     cta_children: ButtonLinkI[];
     image: ImageI[];
+    responsive_reverse: boolean;
   }
 }
 
