@@ -1,6 +1,8 @@
 import { storyblokEditable, StoryblokServerComponent } from '@storyblok/react/rsc';
 import BlogTemplate from '@/components/_blog/BlogTemplate'
 import { format } from 'date-fns'
+import { BookPageI } from '@/definitions/interfaces/_pages'
+import BookDetailTemplate from '@/components/_book/BookDetailTemplate'
 
 export const Page = ({ blok }: any) => {
   return (
@@ -32,13 +34,24 @@ export const BlogPage = ({ blok }: any) => {
   </main>
 )};
 
-export const BookPage = ({ blok }: any) => {
+export const BookPage = ({ blok }: BookPageI) => {
+  console.log('blok', blok)
+  const { 
+    book_title,
+    book_cover,
+    preheading,
+  } = blok
   return (
   <main {...storyblokEditable(blok)}>
-    {blok?.body?.map((nestedBlok: { _uid: string }) => {
+    <BookDetailTemplate
+      preheading={preheading[0]}
+      bookTitle={book_title}
+      bookCover={book_cover[0]}
+    />
+    {/* {blok?.body?.map((nestedBlok: { _uid: string }) => {
       return (
         <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
       )
-    })}
+    })} */}
   </main>
 )};
