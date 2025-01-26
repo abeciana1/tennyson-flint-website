@@ -1,10 +1,12 @@
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
 import { BlokTextContentI } from '@/definitions/interfaces/_styled/Text'
+import { TabGroupI } from '@/definitions/interfaces/_styled/TabGroup'
 
 export interface BookDetailTemplateI {
   preheading: BlokTextContentI;
   bookTitle: string;
   bookCover: ImageI;
+  tabGroup: TabGroupI;
 }
 
 export interface MeetTheCharactersI {
