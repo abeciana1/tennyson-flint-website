@@ -1,10 +1,10 @@
 'use client'
-import { TabListI } from '@/definitions/interfaces/_book'
 import { useState } from 'react'
+import { TabGroupI } from '@/definitions/interfaces/_styled/TabGroup'
 import { TabButton } from '@/components/_styled/buttons'
 
-const TabList: React.FC<TabListI> = ({
-  tabList
+const TabGroup: React.FC<TabGroupI> = ({
+  tabs
 }) => {
   const [activeTab, setActiveTab] = useState(0)
   const changeHandler = (index: number) => {
@@ -12,12 +12,12 @@ const TabList: React.FC<TabListI> = ({
   }
   return (
     <div className='max-w-2xl my-6'>
-      {tabList &&
+      {tabs &&
         <ul role='tablist' className='flex gap-6'>
-          {tabList?.map((tab, index) => (
+          {tabs?.map((tab, index) => (
             <TabButton
-              key={tab.tabName + index}
-              label={tab.tabName}
+              key={tab.label + index}
+              label={tab.label}
               active={activeTab === index}
               tabIndex={index}
               changeHandler={changeHandler}
@@ -33,4 +33,4 @@ const TabList: React.FC<TabListI> = ({
   )
 }
 
-export default TabList
+export default TabGroup
