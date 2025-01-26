@@ -5,6 +5,6 @@ export interface PageProps {
 }
 
 export interface ComponentI {
-  _uid: string;
-  component: string;
+  _uid?: string;
+  component?: string;
 }
