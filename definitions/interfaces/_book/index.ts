@@ -33,7 +33,6 @@ export interface CharacterCardI {
 
 export interface BookI {
   data: {
-    // blocks: BuilderElement[],
     bookImage: string;
     bookImageHeight: number;
     bookImageWidth: number;
