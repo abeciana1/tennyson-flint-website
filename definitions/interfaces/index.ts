@@ -3,3 +3,8 @@ export interface PageProps {
     page: string[];
   }>;
 }
+
+export interface ComponentI {
+  _uid: string;
+  component: string;
+}
