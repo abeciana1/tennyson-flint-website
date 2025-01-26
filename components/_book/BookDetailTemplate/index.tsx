@@ -4,11 +4,13 @@ import ImageComp from '@/components/_styled/ImageComp'
 import { ROUNDED } from '@/definitions/enums'
 import MarginSection from '@/components/_sections/MarginSection'
 import { BookDetailTemplateI } from '@/definitions/interfaces/_book'
+import TabGroup from '@/components/_book/TabGroup'
 
 const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
   preheading,
   bookTitle,
   bookCover,
+  tabGroup
 }) => {
   const {
     file,
@@ -17,7 +19,6 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
     height,
     rounded_edges
   } = bookCover
-  console.log('preheading', preheading)
   return (
     <MarginSection>
       <section className='lg:px-10 flex items-center gap-16 lg:32'>
@@ -50,7 +51,9 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
               rounded_edges={ROUNDED[rounded_edges]}
             />
           </div>
-          
+          {tabGroup &&
+            <TabGroup tabs={tabGroup?.tabs} />
+          }
         </div>
       </section>
     </MarginSection>
