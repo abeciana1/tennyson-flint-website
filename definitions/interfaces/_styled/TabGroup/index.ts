@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ComponentI } from '@/definitions/interfaces'
 import { MarkdownTextI } from '@/definitions/interfaces/_styled/Text'
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
@@ -13,4 +14,8 @@ export interface TabI extends ComponentI {
   tabIndex?: number;
   changeHandler?: (tabIndex: number) => void;
   blocks: MarkdownTextI[] | ImageI[] | ButtonLinkI[];
+}
+
+export interface TabContentI {
+  block: MarkdownTextI | ImageI | ButtonLinkI | any;
 }
