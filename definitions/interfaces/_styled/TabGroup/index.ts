@@ -9,8 +9,8 @@ export interface TabGroupI extends ComponentI {
 
 export interface TabI extends ComponentI {
   label: string;
-  active: boolean;
-  tabIndex: number;
-  changeHandler: (tabIndex: number) => void;
+  active?: boolean;
+  tabIndex?: number;
+  changeHandler?: (tabIndex: number) => void;
   blocks: MarkdownTextI[] | ImageI[] | ButtonLinkI[];
 }
