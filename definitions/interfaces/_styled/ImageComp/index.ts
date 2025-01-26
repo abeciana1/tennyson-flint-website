@@ -1,6 +1,7 @@
 import { ROUNDED } from '@/definitions/enums';
+import { ComponentI } from '@/definitions/interfaces'
 
-export interface ImageI {
+export interface ImageI extends ComponentI {
   file: {
     filename: string;
   }

@@ -1,7 +1,8 @@
 import { COLORS, FONT_STYLE, ROUNDED } from '@/definitions/enums'
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
+import { ComponentI } from '@/definitions/interfaces'
 
-export interface BasicLinkI {
+export interface BasicLinkI extends ComponentI {
   title: string;
   href: string;
   targetBlank?: boolean;
