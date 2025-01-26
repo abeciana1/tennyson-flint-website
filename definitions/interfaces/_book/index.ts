@@ -1,25 +1,14 @@
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
-import {
-  type BuilderElement,
-  type Content
-} from '@builder.io/react'
+import { BlokTextContentI } from '@/definitions/interfaces/_styled/Text'
 
 export interface BookDetailTemplateI {
-  preheading: string;
+  preheading: BlokTextContentI;
   bookTitle: string;
   bookCover: ImageI;
-  slug: string;
-}
-
-export interface TabListI {
-  tabList: { tabName: string; blocks: BuilderElement[] }[];
 }
 
 export interface MeetTheCharactersI {
   headingText: string;
-  builderState: {
-    content: Content
-  }
 }
 
 export interface CharacterI {
@@ -42,15 +31,9 @@ export interface CharacterCardI {
   image: ImageI;
 }
 
-export interface BookCollectionI {
-  builderState: {
-    content: Content
-  }
-}
-
 export interface BookI {
   data: {
-    blocks: BuilderElement[],
+    // blocks: BuilderElement[],
     bookImage: string;
     bookImageHeight: number;
     bookImageWidth: number;
