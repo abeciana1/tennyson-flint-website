@@ -1,62 +1,56 @@
 import { Heading1 } from '@/components/_styled/headings'
 import TextContent from '@/components/_styled/Text'
 import ImageComp from '@/components/_styled/ImageComp'
-import {
-  FONT_SIZE
-} from '@/definitions/enums'
+import { ROUNDED } from '@/definitions/enums'
 import MarginSection from '@/components/_sections/MarginSection'
 import { BookDetailTemplateI } from '@/definitions/interfaces/_book'
-import { RenderBuilderContent } from '@/components/builder'
-import { use } from 'react'
-import { getBookTemplateData } from '@/helper-functions/builder-fetch'
 
 const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
   preheading,
   bookTitle,
   bookCover,
-  slug
 }) => {
   const {
-    src,
-    alt,
+    file,
+    alt_text,
     width,
     height,
-    rounded
+    rounded_edges
   } = bookCover
-  const bookTemplateData = use(getBookTemplateData(bookTitle, slug))
+  console.log('preheading', preheading)
   return (
     <MarginSection>
       <section className='lg:px-10 flex items-center gap-16 lg:32'>
         <div className='hidden md:block'>
           <ImageComp
-            src={src}
-            alt={alt}
+            file={file}
+            alt_text={alt_text}
             width={width}
             height={height}
-            rounded={rounded}
+            rounded_edges={ROUNDED[rounded_edges]}
           />
         </div>
         <div>
           <TextContent
             dataTestId='preheading'
-            text={preheading.toUpperCase()}
-            fontSize={FONT_SIZE.XXL}
+            text={preheading?.text?.toUpperCase()}
+            fontSize={preheading?.font_size}
           />
-          <div className='mt-6'>
+          <div>
             <Heading1
               text={bookTitle}
             />
           </div>
           <div className='block md:hidden mt-6'>
             <ImageComp
-              src={src}
-              alt={alt}
+              file={file}
+              alt_text={alt_text}
               width={width}
               height={height}
-              rounded={rounded}
+              rounded_edges={ROUNDED[rounded_edges]}
             />
           </div>
-          <RenderBuilderContent content={bookTemplateData} model='book' />
+          
         </div>
       </section>
     </MarginSection>
