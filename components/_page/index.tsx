@@ -40,6 +40,7 @@ export const BookPage = ({ blok }: BookPageI) => {
     book_title,
     book_cover,
     preheading,
+    tab_group
   } = blok
   return (
   <main {...storyblokEditable(blok)}>
@@ -47,6 +48,7 @@ export const BookPage = ({ blok }: BookPageI) => {
       preheading={preheading[0]}
       bookTitle={book_title}
       bookCover={book_cover[0]}
+      tabGroup={tab_group[0]}
     />
     {/* {blok?.body?.map((nestedBlok: { _uid: string }) => {
       return (
