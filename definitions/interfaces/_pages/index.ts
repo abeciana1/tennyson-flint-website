@@ -1,6 +1,7 @@
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
 import { TextContentI } from '@/definitions/interfaces/_styled/Text'
 import { TabGroupI } from '@/definitions/interfaces/_styled/TabGroup'
+import { ButtonLinkDataI } from '@/definitions/interfaces/_styled/Links'
 
 export interface BookPageI {
   blok: {
@@ -12,5 +13,6 @@ export interface BookPageI {
     number_of_pages: string | number;
     _uid: string;
     tab_group: TabGroupI[];
+    links: ButtonLinkDataI[];
   }
 }
