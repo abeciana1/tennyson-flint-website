@@ -2,7 +2,6 @@
 import { TabListI } from '@/definitions/interfaces/_book'
 import { useState } from 'react'
 import { TabButton } from '@/components/_styled/buttons'
-import { BuilderBlocks } from '@builder.io/react'
 
 const TabList: React.FC<TabListI> = ({
   tabList
@@ -26,15 +25,10 @@ const TabList: React.FC<TabListI> = ({
           ))}
         </ul>
       }
-      {(tabList[activeTab].blocks?.length > 0) &&
+      {/* {(tabList[activeTab].blocks?.length > 0) &&
         <div className='font-sans'>
-          <BuilderBlocks
-            parentElementId={tabList[activeTab].blocks[0].id}
-            dataPath={`tabList.${activeTab}.blocks`}
-            blocks={tabList[activeTab].blocks}
-          />
         </div>
-      }
+      } */}
     </div>
   )
 }
