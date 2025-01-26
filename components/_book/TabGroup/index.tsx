@@ -1,7 +1,44 @@
 'use client'
 import { useState } from 'react'
-import { TabGroupI } from '@/definitions/interfaces/_styled/TabGroup'
+import { TabGroupI, TabContentI } from '@/definitions/interfaces/_styled/TabGroup'
 import { TabButton } from '@/components/_styled/buttons'
+import { MarkdownText } from '@/components/_styled/Text'
+import ImageComp from '@/components/_styled/ImageComp'
+import { ButtonLink } from '@/components/_styled/links'
+
+const TabContent: React.FC<TabContentI> = ({
+  block
+}) => {
+  return (
+    <div className='mt-3 px-4'>
+      {(block?.component === 'markdown_text') &&
+        <MarkdownText text={block?.text} />
+      }
+      {(block?.component === 'image') &&
+        <ImageComp
+          file={block?.file}
+          alt_text={block?.alt_text}
+          width={block?.width}
+          height={block?.height}
+          rounded_edges={block?.rounded_edges}
+        />
+      }
+      {(block?.component === 'buttonLink') &&
+        <ButtonLink
+          linkText={block?.link_text}
+          title={block?.title}
+          href={block?.href}
+          targetBlank={block?.target_blank}
+          textColor={block?.text_color}
+          arrow={block?.arrow_icon}
+          bgColor={block?.background_color}
+          rounded={block?.rounded_edges}
+          fontStyle={block?.font_style}
+        />
+      }
+    </div>
+  )
+}
 
 const TabGroup: React.FC<TabGroupI> = ({
   tabs
@@ -25,10 +62,18 @@ const TabGroup: React.FC<TabGroupI> = ({
           ))}
         </ul>
       }
-      {/* {(tabList[activeTab].blocks?.length > 0) &&
+      {(tabs[activeTab].blocks?.length > 0) &&
         <div className='font-sans'>
+          {tabs?.[activeTab]?.blocks?.map((content) => {
+            return (
+              <TabContent
+                key={content._uid}
+                block={content}
+              />
+            )
+          })}
         </div>
-      } */}
+      }
     </div>
   )
 }
