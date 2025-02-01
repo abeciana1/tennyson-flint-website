@@ -40,8 +40,10 @@ export const BookPage = ({ blok }: BookPageI) => {
     book_cover,
     preheading,
     tab_group,
-    links
+    links,
+    body
   } = blok
+  console.log({ blok })
   return (
   <main {...storyblokEditable(blok)}>
     <BookDetailTemplate
@@ -51,10 +53,10 @@ export const BookPage = ({ blok }: BookPageI) => {
       tabGroup={tab_group}
       links={links}
     />
-    {/* {blok?.body?.map((nestedBlok: { _uid: string }) => {
+    {body?.map((nestedBlok: { _uid: string }) => {
       return (
         <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
       )
-    })} */}
+    })}
   </main>
 )};
