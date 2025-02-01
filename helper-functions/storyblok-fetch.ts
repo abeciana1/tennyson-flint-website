@@ -9,7 +9,10 @@ export const fetchStory = async (
 ) => {
   const correctSlug = `/${slug ? slug.join("/") : "home"}`;
   const storyblokApi: StoryblokClient = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/${correctSlug}`, { version: version});
+  return storyblokApi.get(`cdn/stories/${correctSlug}`,
+    { version: version,
+      resolve_relations: (correctSlug.indexOf('/books/') > -1) ? 'meetCharacters.characters' : ''
+    });
 };
 
 export const fetchContentStories = async (
