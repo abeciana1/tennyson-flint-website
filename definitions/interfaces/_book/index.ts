@@ -2,6 +2,7 @@ import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
 import { BlokTextContentI } from '@/definitions/interfaces/_styled/Text'
 import { TabGroupI } from '@/definitions/interfaces/_styled/TabGroup'
 import { ButtonLinkDataI } from '@/definitions/interfaces/_styled/Links'
+import { ComponentI } from '@/definitions/interfaces'
 
 export interface BookDetailTemplateI {
   preheading: BlokTextContentI;
@@ -12,24 +13,22 @@ export interface BookDetailTemplateI {
 }
 
 export interface MeetTheCharactersI {
-  headingText: string;
-}
-
-export interface CharacterI {
-  character: {
-    value: {
-      data: {
-        characterName: string;
-        characterBio: string;
-        characterImage: string;
-        characterImgHeight: number;
-        characterImgWidth: number;
-      }
-    }
+  blok: {
+    heading_text: string;
+    characters: CharacterI[];
   }
 }
 
-export interface CharacterCardI {
+export interface CharacterI {
+  content: {
+    _uid: string;
+    name: string;
+    description: string;
+    image: ImageI[] & ComponentI;
+  }
+}
+
+export interface CharacterCardI extends ComponentI {
   name: string;
   description: string;
   image: ImageI;
