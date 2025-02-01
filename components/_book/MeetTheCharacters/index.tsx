@@ -5,30 +5,34 @@ import CharacterCard from '@/components/_book/CharacterCard'
 import { ROUNDED } from '@/definitions/enums'
 
 const MeetTheCharacters: React.FC<MeetTheCharactersI> = ({
-  headingText,
-  builderState
+  blok
 }) => {
+  const {
+    heading_text,
+    characters
+  } = blok
+  console.log({ characters })
   return (
     <MarginSection>
       <Heading2
-        text={headingText}
+        text={heading_text}
       />
-      {(builderState?.content?.data?.characters) &&
+      {(characters && characters?.length > 0) &&
         <div className='flex flex-wrap gap-12 mt-6'>
-          {builderState?.content?.data?.characters?.map(({
-            character
-          }: CharacterI, index: number) => {
+          {characters?.map((
+            character: CharacterI) => {
+            console.log({ character })
             return (
               <CharacterCard
-                key={character?.value?.data?.characterName+index}
-                name={character?.value?.data?.characterName}
-                description={character?.value?.data?.characterBio}
+                key={character?.content?._uid}
+                name={character?.content?.name}
+                description={character?.content?.description}
                 image={{
-                  src: character?.value?.data?.characterImage,
-                  alt: `${character?.value?.data?.characterName} image`,
-                  width: character?.value?.data?.characterImgWidth,
-                  height: character?.value?.data?.characterImgHeight,
-                  rounded: ROUNDED.MD
+                  file: character?.content?.image[0]?.file,
+                  alt_text: character?.content?.image[0]?.alt_text,
+                  width: character?.content?.image[0]?.width,
+                  height: character?.content?.image[0]?.height,
+                  rounded_edges: ROUNDED.MD
                 }}
               />
             )
