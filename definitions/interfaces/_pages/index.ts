@@ -14,5 +14,6 @@ export interface BookPageI {
     _uid: string;
     tab_group: TabGroupI[];
     links: ButtonLinkDataI[];
+    body: any[];
   }
 }
