@@ -64,7 +64,6 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
           {(links && links?.length > 0) &&
             <div className='mt-6'>
               {links?.map((link: ButtonLinkDataI) => {
-                console.log({ link })
                 return (
                   <ButtonLink
                     key={link._uid}
