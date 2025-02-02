@@ -10,7 +10,7 @@ const SocialLinksSection: React.FC<SocialLinkSectionI> = ({
   } = blok
   console.log('blok links', links)
   return (
-    <div className='flex gap-3 justify-center'>
+    <div className='flex gap-3 justify-center my-5'>
       {links.map(({
         _uid,
         title,
