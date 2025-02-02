@@ -16,6 +16,7 @@ import BlogCollection from '@/components/_sections/BlogCollection'
 import Footer from '@/components/_navigation/Footer'
 import CharacterCard from "@/components/_book/CharacterCard";
 import MeetTheCharacters from "@/components/_book/MeetTheCharacters";
+import BookCollection from '@/components/_sections/BookCollection'
 
 export interface SbPageData extends SbBlokData {
   body: SbBlokData[];
@@ -44,7 +45,8 @@ export const initStoryblok = (options = {}) => storyblokInit({
     footer: Footer,
     bookPage: BookPage,
     character: CharacterCard,
-    meetCharacters: MeetTheCharacters
+    meetCharacters: MeetTheCharacters,
+    bookCollection: BookCollection
   },
   enableFallbackComponent: true,
   customFallbackComponent: FallbackComponent,
