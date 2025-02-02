@@ -38,7 +38,7 @@ const FormContainer:React.FC<FormContainerI> = ({
       />
       <div
         data-testid='formTestBody'
-        className={cx('blog-content mt-2.5', {
+        className={cx('blog-content font-sans text-xl mt-2.5', {
           ['text-navy']: textColor === COLORS.NAVY,
           ['text-white']: textColor === COLORS.WHITE,
           ['text-black']: textColor === COLORS.BLACK,
