@@ -2,12 +2,13 @@ import '@testing-library/jest-dom';
 import { render, screen }  from '@testing-library/react'
 import TextContent from '@/components/_styled/Text'
 
-
 describe('TextContent', () => {
   beforeEach(() => {
     render(
       <TextContent
-        text='Hello World!'
+        blok={{
+          text: 'Hello World!'
+        }}
       />
     )
   })
