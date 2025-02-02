@@ -7,11 +7,13 @@ describe('ImageComp', () => {
   beforeEach(() => {
     render(
       <ImageComp
-        src='/test.jpg'
-        alt='Test Image'
+        file={{
+          filename: '/test.jpg'
+        }}
+        alt_text='Test Image'
         width={100}
         height={100}
-        rounded={ROUNDED.MD}
+        rounded_edges={ROUNDED.MD}
       />
     )
   })

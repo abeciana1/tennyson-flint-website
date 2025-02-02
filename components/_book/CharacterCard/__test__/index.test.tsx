@@ -10,11 +10,13 @@ describe('CharacterCard', () => {
         name='Alex'
         description='character bio'
         image={{
-          src: '/test.jpg',
-          alt: 'Character image',
+          file: {
+            filename: '/test.jpg'
+          },
+          alt_text: 'Character image',
           width: 200,
           height: 200,
-          rounded: ROUNDED.MD
+          rounded_edges: ROUNDED.MD
         }}
       />
     )
@@ -30,10 +32,10 @@ describe('CharacterCard', () => {
     expect(description).toBeInTheDocument()
   })
   test('should render character image', () => {
-    const image = screen.getByRole('img')
-    expect(image).toHaveAttribute('alt', 'Character image')
-    expect(image).toHaveAttribute('width', '200')
-    expect(image).toHaveAttribute('height', '200')
-    expect(image).toBeInTheDocument()
+    const images = screen.getAllByRole('img')
+    expect(images[0]).toHaveAttribute('alt', 'Character image')
+    expect(images[0]).toHaveAttribute('width', '200')
+    expect(images[0]).toHaveAttribute('height', '200')
+    expect(images[0]).toBeInTheDocument()
   })
 })
