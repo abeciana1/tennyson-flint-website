@@ -14,8 +14,11 @@ export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
     seo_description,
   } = content?.data?.story?.content
   return {
-    title: seo_title,
+    title: `${seo_title} | Tennyson Flint`,
     description: seo_description,
+    alternates: {
+      canonical: '/'
+    }
   }
 }
 
