@@ -10,11 +10,14 @@ import {
 import ImageComp from '@/components/_styled/ImageComp'
 
 const BlogTemplate: React.FC<BlogTemplateI> = ({
-  title,
-  excerpt,
-  image,
-  publishedDate
+  blok
 }) => {
+  const {
+    title,
+    excerpt,
+    image,
+    publishedDate
+  } = blok
   const {
     file,
     alt_text,
