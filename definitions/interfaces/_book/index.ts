@@ -35,15 +35,12 @@ export interface CharacterCardI extends ComponentI {
 }
 
 export interface BookI {
-  data: {
-    bookImage: string;
-    bookImageHeight: number;
-    bookImageWidth: number;
-    bookTitle: string;
-    slug: string;
-    state: object;
-    httpRequests: object;
-    inputs: [];
+  name: string;
+  uuid: string;
+  slug: string;
+  content: {
+    book_title: string;
+    book_cover: ImageI[];
   }
 }
 
