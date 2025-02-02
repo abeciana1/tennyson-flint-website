@@ -17,8 +17,7 @@ const config: Config = {
   },
   moduleNameMapper: {
     "react-markdown": "<rootDir>/__mocks__/react-markdown.js",
-  },
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+  }
 }
 
 export default createJestConfig(config)
