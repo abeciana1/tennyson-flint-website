@@ -16,7 +16,7 @@ const BlogContent: React.FC<BlogContentI> = ({
     >
       <Markdown
         components={{
-          a(props) {
+          a(props: any) {
             const { node, children } = props
             const hrefLink = node?.properties?.href as string
             const isExternal = hrefLink?.match(/http/i)
