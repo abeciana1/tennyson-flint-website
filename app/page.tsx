@@ -27,7 +27,7 @@ export default async function Page(props: PageProps) {
   const content = await fetchStory('published', slug)
   return (
     <>
-      <div className='relative'>
+      <div className='relative grow'>
         <main className='min-h-screen relative'
           {...storyblokEditable(props.blok)}
         >
