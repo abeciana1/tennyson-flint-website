@@ -27,9 +27,7 @@ const MoreBooksComingSoon = () => {
 }
 
 const BookCollection: React.FC = () => {
-  console.log('testing')
   const books = use(fetchContentStories('published', 'books', { content_type: 'bookPage' }))
-  console.log('BookCollection books', books)
   return (
     <MarginSection>
       <section className='px-10'>
