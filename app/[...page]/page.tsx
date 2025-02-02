@@ -6,6 +6,7 @@ import {
   StoryblokStory
 } from "@storyblok/react/rsc";
 import { format } from 'date-fns'
+import { notFound } from 'next/navigation'
 
 export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   const pageSlug = (await props?.params).page;
@@ -56,8 +57,14 @@ export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
 
 export default async function Page(props: PageProps) {
   const slug = (await props?.params).page;
-  const content = await fetchStory('published', slug)
+  let content
+  try {
+    content = await fetchStory('published', slug);
+  } catch {
+    return notFound();
+  }
   let jsonLd = {}
+
   if (content?.data?.story?.content?.component === 'bookPage') {
     jsonLd = {
       '@context': 'https://schema.org',
@@ -135,7 +142,7 @@ export default async function Page(props: PageProps) {
   }
   return (
     <>
-      <div className='relative'>
+      <div className='relative grow'>
         {(content?.data?.story?.content?.component === 'bookPage' || content?.data?.story?.content?.component === 'blogPage') &&
           <script
             type="application/ld+json"
