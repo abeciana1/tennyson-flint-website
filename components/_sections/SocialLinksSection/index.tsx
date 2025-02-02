@@ -3,17 +3,22 @@ import { SocialLink } from '@/components/_styled/links'
 import { SocialLinkI } from '@/definitions/interfaces/_styled/Links'
 
 const SocialLinksSection: React.FC<SocialLinkSectionI> = ({
-  socialLinks
+  blok
 }) => {
+  const { 
+    links
+  } = blok
+  console.log('blok links', links)
   return (
     <div className='flex gap-3 justify-center'>
-      {socialLinks.map(({
+      {links.map(({
+        _uid,
         title,
         href,
         image
-      }: SocialLinkI, index) => (
+      }: SocialLinkI) => (
         <SocialLink
-          key={index}
+          key={_uid}
           title={title}
           href={href}
           image={image}
