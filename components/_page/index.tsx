@@ -43,7 +43,6 @@ export const BookPage = ({ blok }: BookPageI) => {
     links,
     body
   } = blok
-  console.log({ blok })
   return (
   <main {...storyblokEditable(blok)}>
     <BookDetailTemplate
