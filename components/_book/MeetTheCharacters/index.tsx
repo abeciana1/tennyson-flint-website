@@ -11,7 +11,6 @@ const MeetTheCharacters: React.FC<MeetTheCharactersI> = ({
     heading_text,
     characters
   } = blok
-  console.log({ characters })
   return (
     <MarginSection>
       <Heading2
