@@ -10,3 +10,7 @@ export interface ImageI extends ComponentI {
   height: string | number;
   rounded_edges: ROUNDED;
 }
+
+export interface BlogImageI {
+  blok: ImageI
+}
