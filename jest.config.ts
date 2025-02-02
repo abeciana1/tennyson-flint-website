@@ -8,6 +8,17 @@ const createJestConfig = nextJest({
 const config: Config = {
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
+  transformIgnorePatterns: [
+    "node_modules/(?!(react-markdown|remark-.*|rehype-.*)/)" // Allow Jest to transform ES modules
+  ],
+  transform: {
+    "^.+\\.jsx?$": "babel-jest",
+    "^.+\\.tsx?$": "babel-jest",
+  },
+  moduleNameMapper: {
+    "react-markdown": "<rootDir>/__mocks__/react-markdown.js",
+  },
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
 }
 
 export default createJestConfig(config)
