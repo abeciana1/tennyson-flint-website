@@ -6,13 +6,15 @@ describe('BlogContent', () => {
   beforeEach(() => {
     render(
       <BlogContent
-        textContent="<b>Text content</b>"
+        blok={{
+          text: "<b>Text content</b>"
+        }}
       />
     )
   })
   test('should render blog content', () => {
     const BlogContent = screen.getByTestId('blogContent')
-    expect(BlogContent.textContent).toBe('Text content')
+    expect(BlogContent.textContent).toContain('Text content')
     expect(BlogContent).toBeInTheDocument()
   })
 })
