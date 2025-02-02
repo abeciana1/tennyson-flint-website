@@ -32,10 +32,12 @@ const CharacterCard: React.FC<CharacterCardI> = ({
       </div>
       <div>
         <TextContent
-          text={name}
-          dataTestId='characterName'
-          fontSize={FONT_SIZE.XL}
-          fontStyle={FONT_STYLE.SEMI_BOLD}
+          blok={{
+            text: name,
+            data_test_id: 'characterName',
+            font_size: FONT_SIZE.XL,
+            font_style: FONT_STYLE.SEMI_BOLD
+          }}
         />
         <div className='block sm:hidden mt-6 sm:mt-0'>
           <ImageComp
@@ -48,8 +50,10 @@ const CharacterCard: React.FC<CharacterCardI> = ({
         </div>
         <div className='mt-6'>
           <TextContent
-            dataTestId='characterDescription'
-            text={description}
+            blok={{
+              data_test_id: 'characterDescription',
+              text: description
+            }}
           />
         </div>
       </div>

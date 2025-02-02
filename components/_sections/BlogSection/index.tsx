@@ -32,11 +32,13 @@ const BlogSection: React.FC<BlogSectionI> = async ({
           fontFamily={FONT_FAMILY.SANS}
         />
         <TextContent
-          text={headline}
-          dataTestId='headline'
-          fontSize={FONT_SIZE.XXXXL}
-          fontStyle={FONT_STYLE.MEDIUM}
-          fontFamily={FONT_FAMILY.CINZEL}
+          blok={{
+            text: headline,
+            data_test_id: 'headline',
+            font_size: FONT_SIZE.XXXXL,
+            font_style: FONT_STYLE.MEDIUM,
+            font_family: FONT_FAMILY.CINZEL
+          }}
         />
         {blogList?.data &&
           <section className='mt-12 flex flex-row flex-wrap gap-6'>

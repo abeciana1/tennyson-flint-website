@@ -57,18 +57,22 @@ const BlogPostCard: React.FC<BlogPostCardI> = ({
         </div>
         <div className='mt-2'>
           <TextContent
-            dataTestId='title'
-            text={title}
-            fontSize={FONT_SIZE.XL}
-            fontStyle={FONT_STYLE.SEMI_BOLD}
+            blok={{
+              data_test_id: 'title',
+              text: title,
+              font_size: FONT_SIZE.XL,
+              font_style: FONT_STYLE.SEMI_BOLD
+            }}
           />
         </div>
       </div>
       <div className='mt-4'>
         <TextContent
-          dataTestId='excerpt'
-          text={excerpt?.substring(0, 46) + '...'}
-          fontSize={FONT_SIZE.XL}
+          blok={{
+            data_test_id: 'excerpt',
+            text: excerpt?.substring(0, 46) + '...',
+            font_size: FONT_SIZE.XL
+          }}
         />
       </div>
       <div className='mt-5'>

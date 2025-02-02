@@ -33,10 +33,12 @@ const BlogTemplate: React.FC<BlogTemplateI> = ({
           </div>
           {excerpt &&
             <TextContent
-              dataTestId='blogExcerpt'
-              text={excerpt}
-              fontSize={FONT_SIZE.XXL}
-              fontStyle={FONT_STYLE.ITALIC}
+              blok={{
+                data_test_id: 'blogExcerpt',
+                text: excerpt,
+                font_size: FONT_SIZE.XXL,
+                font_style: FONT_STYLE.ITALIC
+              }}
             />
           }
           <section>
@@ -44,15 +46,19 @@ const BlogTemplate: React.FC<BlogTemplateI> = ({
               className='flex justify-between my-2'
             >
               <TextContent
-                text='By Tennyson Flint'
-                fontSize={FONT_SIZE.XXL}
-                fontStyle={FONT_STYLE.MEDIUM}
+                blok={{
+                  text: 'By Tennyson Flint',
+                  font_size: FONT_SIZE.XXL,
+                  font_style: FONT_STYLE.MEDIUM
+                }}
               />
               <TextContent
-                dataTestId='publishedDate'
-                text={publishedDate}
-                fontSize={FONT_SIZE.XXL}
-                fontStyle={FONT_STYLE.MEDIUM}
+                blok={{
+                  text: publishedDate,
+                  font_size: FONT_SIZE.XXL,
+                  font_style: FONT_STYLE.MEDIUM,
+                  data_test_id: 'publishedDate'
+                }}
               />
             </div>
             <div className='flex justify-center'>

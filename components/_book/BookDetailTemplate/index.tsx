@@ -40,9 +40,11 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
         </div>
         <div>
           <TextContent
-            dataTestId='preheading'
-            text={preheading?.text?.toUpperCase()}
-            fontSize={preheading?.font_size}
+            blok={{
+              data_test_id: 'preheading',
+              text: preheading?.text?.toUpperCase(),
+              font_size: preheading?.font_size
+            }}
           />
           <div>
             <Heading1

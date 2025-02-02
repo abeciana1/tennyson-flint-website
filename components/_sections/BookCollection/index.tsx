@@ -14,13 +14,17 @@ const MoreBooksComingSoon = () => {
   return (
     <div className='relative flex flex-col items-center bg-gray text-center lg:max-h-56 max-w-3xl p-10 rounded-lg'>
       <TextContent
-        text='The start of my book collection'
-        fontFamily={FONT_FAMILY.CINZEL_DEC}
-        fontSize={FONT_SIZE.XXXL}
+        blok={{
+          text: 'The start of my book collection',
+          font_family: FONT_FAMILY.CINZEL_DEC,
+          font_size: FONT_SIZE.XXXL
+        }}
       />
       <TextContent
-        text='More work coming soon, stay tuned!'
-        fontSize={FONT_SIZE.XXXL}
+        blok={{
+          text: 'More work coming soon, stay tuned!',
+          font_size: FONT_SIZE.XXXL
+        }}
       />
     </div>
   )

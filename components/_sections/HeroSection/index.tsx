@@ -32,8 +32,10 @@ const HeroSection: React.FC<HeroSectionI> = ({
         >
           {preheading &&
             <TextContent
-              text={preheading.toUpperCase()}
-              fontSize={FONT_SIZE.XXL}
+              blok={{
+                text: preheading.toUpperCase(),
+                font_size: FONT_SIZE.XXL
+              }}
             />
           }
           <Heading1
@@ -47,8 +49,10 @@ const HeroSection: React.FC<HeroSectionI> = ({
             />
           }
           <TextContent
-            text={text_body}
-            fontSize={FONT_SIZE.XXL}
+            blok={{
+              text: text_body,
+              font_size: FONT_SIZE.XXL
+            }}
           />
           {cta_children && 
             <div className='flex flex-wrap gap-5'>
@@ -84,7 +88,7 @@ const HeroSection: React.FC<HeroSectionI> = ({
             rounded_edges
           }: ImageI, index: number) => (
             <ImageComp
-              key={index + width + height}
+              key={index}
               file={file}
               alt_text={alt_text}
               width={width}

@@ -12,14 +12,18 @@ const BlogDate: React.FC<BlogPostCardDateI> = ({
   return (
     <div className='h-14 w-14 relative rounded-full flex flex-col justify-center bg-slate-300 text-center'>
       <TextContent
-        text={month}
-        fontStyle={FONT_STYLE.BOLD}
-        fontSize={FONT_SIZE.LG}
+        blok={{
+          text: month,
+          font_style: FONT_STYLE.BOLD,
+          font_size: FONT_SIZE.LG
+        }}
       />
       <TextContent
-        text={day}
-        fontStyle={FONT_STYLE.BOLD}
-        fontSize={FONT_SIZE.LG}
+        blok={{
+          text: day,
+          font_style: FONT_STYLE.BOLD,
+          font_size: FONT_SIZE.LG
+        }}
       />
     </div>
   )
