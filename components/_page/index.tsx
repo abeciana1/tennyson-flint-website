@@ -6,18 +6,18 @@ import BookDetailTemplate from '@/components/_book/BookDetailTemplate'
 
 export const Page = ({ blok }: any) => {
   return (
-  <main {...storyblokEditable(blok)}>
+  <section {...storyblokEditable(blok)}>
     {blok?.body?.map((nestedBlok: { _uid: string }) => {
       return (
         <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
       )
     })}
-  </main>
+  </section>
 )};
 
 export const BlogPage = ({ blok }: any) => {
   return (
-  <main {...storyblokEditable(blok)}>
+  <section {...storyblokEditable(blok)}>
     {blok &&
       <BlogTemplate
         title={blok?.title}
@@ -31,7 +31,7 @@ export const BlogPage = ({ blok }: any) => {
         <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
       )
     })}
-  </main>
+  </section>
 )};
 
 export const BookPage = ({ blok }: BookPageI) => {
@@ -44,7 +44,7 @@ export const BookPage = ({ blok }: BookPageI) => {
     body
   } = blok
   return (
-  <main {...storyblokEditable(blok)}>
+  <section {...storyblokEditable(blok)}>
     <BookDetailTemplate
       preheading={preheading[0]}
       bookTitle={book_title}
@@ -57,5 +57,5 @@ export const BookPage = ({ blok }: BookPageI) => {
         <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
       )
     })}
-  </main>
+  </section>
 )};
