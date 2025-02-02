@@ -1,3 +1,4 @@
+'use client'
 import FieldSet from '@/components/_form-fields/FieldSet'
 import ShortTextField from '@/components/_form-fields/ShortTextField'
 import { ContactFormI } from '@/definitions/interfaces/_sections'
@@ -14,10 +15,7 @@ import MarginSection from '@/components/_sections/MarginSection'
 import axios from 'axios'
 
 const ContactForm:React.FC<ContactFormI> = ({
-  heading,
-  textBody,
-  bgColor,
-  textColor
+  blok
 }) => {
   const {
     register,
@@ -32,6 +30,12 @@ const ContactForm:React.FC<ContactFormI> = ({
       textBody: ''
     }
   })
+  const {
+    heading,
+    text_body,
+    background_color,
+    text_color
+  } = blok
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const contactRes = await axios.post('/api/contact', data, {
       headers: {
@@ -45,9 +49,9 @@ const ContactForm:React.FC<ContactFormI> = ({
     <MarginSection>
       <FormContainer
         heading={heading}
-        textBody={textBody}
-        bgColor={bgColor}
-        textColor={textColor}
+        textBody={text_body}
+        bgColor={background_color}
+        textColor={text_color}
       >
         <FieldSet>
           <ShortTextField
@@ -56,7 +60,7 @@ const ContactForm:React.FC<ContactFormI> = ({
             label='First name'
             required
             register={register}
-            textColor={textColor}
+            textColor={text_color}
             errors={errors}
           />
           <ShortTextField
@@ -65,7 +69,7 @@ const ContactForm:React.FC<ContactFormI> = ({
             label='Last name'
             required
             register={register}
-            textColor={textColor}
+            textColor={text_color}
             errors={errors}
           />
         </FieldSet>
@@ -76,7 +80,7 @@ const ContactForm:React.FC<ContactFormI> = ({
             label='Email Address'
             required
             register={register}
-            textColor={textColor}
+            textColor={text_color}
             errors={errors}
           />
         </FieldSet>
@@ -86,7 +90,7 @@ const ContactForm:React.FC<ContactFormI> = ({
             label='Text Body'
             required
             register={register}
-            textColor={textColor}
+            textColor={text_color}
             errors={errors}
           />
         </FieldSet>
