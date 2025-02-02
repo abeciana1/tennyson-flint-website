@@ -8,7 +8,7 @@ import type { Metadata } from 'next'
 import StoryblokProvider from '@/components/StoryblokProvider'
 import { initStoryblok } from '@/storyblok'
 import NavBar from '@/components/_navigation/NavBar'
-// import Footer from '@/components/_navigation/Footer'
+import Footer from '@/components/_navigation/Footer'
 
 export const metadata: Metadata = {
   title: {
@@ -53,7 +53,7 @@ export default function RootLayout({
           <StoryblokProvider>
             {children}
           </StoryblokProvider>
-          {/* <Footer/> */}
+          <Footer/>
         </body>
     </html>
   );
