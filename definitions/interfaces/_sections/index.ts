@@ -45,9 +45,15 @@ export interface FormContainerI extends MarginSectionI {
 // forms
 
 export interface ContactFormI extends FormContainerI {
-  submitBtnText: string;
-  submitBtnColor: COLORS;
-  submitBtnTextColor: COLORS;
+  blok: {
+    heading: string;
+    text_body: string;
+    background_color: COLORS;
+    text_color: COLORS;
+  }
+  // submitBtnText: string;
+  // submitBtnColor: COLORS;
+  // submitBtnTextColor: COLORS;
 }
 
 // form data
