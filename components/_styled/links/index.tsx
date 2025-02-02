@@ -62,8 +62,8 @@ export const SocialLink: React.FC<SocialLinkI> = ({
   image
 }) => {
   const {
-    src,
-    alt,
+    file,
+    alt_text,
     width,
     height
   } = image[0]
@@ -75,11 +75,11 @@ export const SocialLink: React.FC<SocialLinkI> = ({
       className='bg-white rounded-full p-2.5'
     >
       <ImageComp
-        src={src}
-        alt={alt}
+        file={file}
+        alt_text={alt_text}
         width={width}
         height={height}
-        rounded={ROUNDED.NONE}
+        rounded_edges={ROUNDED.NONE}
       />
     </Link>
   )
