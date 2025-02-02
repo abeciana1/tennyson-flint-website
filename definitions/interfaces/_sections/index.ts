@@ -19,7 +19,9 @@ export interface MarginSectionI {
 }
 
 export interface SocialLinkSectionI {
-  socialLinks: SocialLinkI[];
+  blok: {
+    links: SocialLinkI[];
+  }
 }
 
 export interface BlogSectionI {

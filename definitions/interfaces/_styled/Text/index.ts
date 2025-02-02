@@ -7,12 +7,14 @@ import {
 import { ComponentI } from '@/definitions/interfaces'
 
 export interface TextContentI {
-  text: string;
-  fontSize?: FONT_SIZE;
-  fontStyle?: FONT_STYLE;
-  fontFamily?: FONT_FAMILY;
-  color?: COLORS;
-  dataTestId?: string;
+  blok: {
+    text: string;
+    font_size?: FONT_SIZE;
+    font_style?: FONT_STYLE;
+    font_family?: FONT_FAMILY;
+    color?: COLORS;
+    data_test_id?: string;
+  }
 }
 
 export interface MarkdownTextI extends ComponentI {
