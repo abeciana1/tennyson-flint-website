@@ -8,16 +8,20 @@ describe('BlogTemplate', () => {
   beforeEach(() => {
     render(
       <BlogTemplate
-        title="Blog Template Title"
-        excerpt="Blog Template Excerpt"
-        image={{
-          src: '/test.jpg',
-          alt: 'Test Image',
-          width: 100,
-          height: 100,
-          rounded: ROUNDED.MD
+        blok={{
+          title: "Blog Template Title",
+          excerpt: "Blog Template Excerpt",
+          image: [{
+            file: {
+              filename: '/test.jpg'
+            },
+            alt_text: 'Test Image',
+            width: 100,
+            height: 100,
+            rounded_edges: ROUNDED.MD
+          }],
+          publishedDate: format(new Date(), "MM/dd/yyyy")
         }}
-        publishedDate={format(new Date(), "MM/dd/yyyy")}
       />
     )
   })

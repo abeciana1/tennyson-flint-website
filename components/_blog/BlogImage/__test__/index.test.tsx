@@ -7,11 +7,15 @@ describe('BlogImage', () => {
   beforeEach(() => {
     render(
       <BlogImage
-        src='/test.jpg'
-        alt='Test Image'
-        width={100}
-        height={100}
-        rounded={ROUNDED.MD}
+        blok={{
+          file: {
+            filename: '/test.jpg'
+          },
+          alt_text: 'Test Image',
+          width: 100,
+          height: 100,
+          rounded_edges: ROUNDED.MD
+        }}
       />
     )
   })
