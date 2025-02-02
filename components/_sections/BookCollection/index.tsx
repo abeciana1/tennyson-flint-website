@@ -1,4 +1,4 @@
-import { BookCollectionI, BookI } from '@/definitions/interfaces/_book'
+import { BookI } from '@/definitions/interfaces/_book'
 import MarginSection from '@/components/_sections/MarginSection'
 import {
   ROUNDED,
@@ -7,6 +7,8 @@ import {
 } from '@/definitions/enums'
 import BookCard from '@/components/_book/BookCard'
 import TextContent from '@/components/_styled/Text'
+import { fetchContentStories } from '@/helper-functions/storyblok-fetch'
+import { use } from 'react'
 
 const MoreBooksComingSoon = () => {
   return (
@@ -24,32 +26,34 @@ const MoreBooksComingSoon = () => {
   )
 }
 
-const BookCollection: React.FC<BookCollectionI> = ({ builderState }) => {
-  const books = builderState?.content?.data?.state?.bookPage?.results
+const BookCollection: React.FC = () => {
+  console.log('testing')
+  const books = use(fetchContentStories('published', 'books', { content_type: 'bookPage' }))
+  console.log('BookCollection books', books)
   return (
     <MarginSection>
       <section className='px-10'>
-        {(books) &&
+        {(books && books?.data?.stories?.length > 0) &&
           <section className='flex flex-col md:flex-row gap-12 md:gap-36 items-center'>
-            {(books) &&
-              books.map(({data}: BookI, index: number) => {
+            {(books?.data?.stories) &&
+              books?.data?.stories?.map((book: BookI, index: number) => {
                 return (
                   <BookCard
-                    key={data?.slug + index}
-                    bookTitle={data?.bookTitle}
-                    slug={data?.slug}
+                    key={book?.uuid}
+                    bookTitle={book?.name}
+                    slug={book?.slug}
                     bookCover={{
-                      src: data?.bookImage,
-                      alt: data?.bookTitle,
+                      file: book?.content?.book_cover[0]?.file,
+                      alt_text: book?.content?.book_cover[0]?.alt_text,
                       width: 237,
                       height: 385,
-                      rounded: ROUNDED.NONE,
+                      rounded_edges: ROUNDED.NONE,
                     }}
                   />
                 )
               })
             }
-            {books && (books?.length < 3) &&
+            {books?.data?.stories && (books?.data?.stories?.length < 3) &&
               <MoreBooksComingSoon />
             }
           </section>
