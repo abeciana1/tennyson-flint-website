@@ -30,5 +30,8 @@ export interface ButtonLinkI extends BasicLinkI {
 }
 
 export interface SocialLinkI extends BasicLinkI {
+  title: string;
+  href: string;
   image: ImageI[];
+  _uid?: string;
 }
