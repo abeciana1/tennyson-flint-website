@@ -41,7 +41,6 @@ const BlogSection: React.FC<BlogSectionI> = async ({
         {blogList?.data &&
           <section className='mt-12 flex flex-row flex-wrap gap-6'>
             {blogList?.data?.stories?.slice(0,3)?.map((blogPost: BlogPostI) => {
-              console.log('blogPost', blogPost)
               return (
                 <BlogPostCard
                   key={blogPost?.uuid}

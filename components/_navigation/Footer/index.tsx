@@ -1,11 +1,4 @@
-import TextContent from '@/components/_styled/Text'
-import {
-  FONT_FAMILY,
-  FONT_SIZE,
-  COLORS,
-  FONT_STYLE
-} from '@/definitions/enums'
-import { RenderBuilderContent } from '@/components/builder'
+// import TextContent from '@/components/_styled/Text'
 import { use } from 'react'
 import { fetchStory } from '@/helper-functions/storyblok-fetch'
 
