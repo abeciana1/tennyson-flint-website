@@ -15,7 +15,6 @@ const BlogCollection: React.FC<BlogCollectionI> = async ({
   } = blok
   const blogList = await fetchContentStories('published', 'blog', { content_type: 'blogPage' })
   const mappedJsonLdPosts = blogList?.data?.stories?.map((blogPost: BlogPostI) => {
-    console.log('blogPost', blogPost)
     return {
       "@type": "BlogPosting",
       "@id": `https://tennysonflinthttps://tennysonflint.com.com/${blogPost?.full_slug}`,
