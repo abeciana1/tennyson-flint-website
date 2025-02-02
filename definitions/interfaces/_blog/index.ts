@@ -36,9 +36,11 @@ export interface BlogPostI {
   uuid: string;
   slug: string;
   first_published_at: string;
+  full_slug: string;
   content: {
     category: string;
     excerpt: string;
     featured_image: ImageI[];
+    published_date: string;
   }
 }
