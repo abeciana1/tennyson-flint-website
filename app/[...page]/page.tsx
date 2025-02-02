@@ -124,8 +124,8 @@ export default async function Page(props: PageProps) {
       "datePublished": format(content?.data?.story?.content?.published_date, 'yyyy-MM-dd'),
       "image": {
         "@type": "ImageObject",
-        "@id": content?.data?.story?.content?.featured_image[0].file.filename,
-        "url": content?.data?.story?.content?.featured_image[0].file.filename,
+        "@id": content?.data?.story?.content?.featured_image[0]?.file.filename,
+        "url": content?.data?.story?.content?.featured_image[0]?.file.filename,
         "width": content?.data?.story?.content?.featured_image[0]?.width,
         "height": content?.data?.story?.content?.featured_image[0]?.height,
       },
