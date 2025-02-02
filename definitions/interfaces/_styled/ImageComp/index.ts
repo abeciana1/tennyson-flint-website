@@ -6,7 +6,7 @@ export interface ImageI extends ComponentI {
     filename: string;
   }
   alt_text: string;
-  width: string;
-  height: string;
+  width: string | number;
+  height: string | number;
   rounded_edges: ROUNDED;
 }
