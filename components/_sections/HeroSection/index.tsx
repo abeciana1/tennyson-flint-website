@@ -22,6 +22,7 @@ const HeroSection: React.FC<HeroSectionI> = ({
     image,
     responsive_reverse
   } = blok
+  console.log('blok', blok)
   return (
     <MarginSection>
       <section className={cx('flex items-center mx-auto gap-10 lg:gap-24 justify-around flex-col lg:flex-row', {
@@ -57,23 +58,27 @@ const HeroSection: React.FC<HeroSectionI> = ({
           {cta_children && 
             <div className='flex flex-wrap gap-5'>
               {cta_children?.map(({
-                linkText,
+                link_text,
                 title,
                 href,
-                targetBlank,
-                bgColor,
-                rounded,
-                arrow
+                target_blank,
+                background_color,
+                rounded_edges,
+                arrow_icon,
+                text_color,
+                font_style
               }: ButtonLinkI) => (
                 <ButtonLink
-                  key={linkText}
-                  linkText={linkText}
+                  key={link_text}
+                  link_text={link_text}
                   title={title}
                   href={href}
-                  targetBlank={targetBlank}
-                  bgColor={COLORS[bgColor]}
-                  rounded={ROUNDED[rounded]}
-                  arrow={arrow}
+                  text_color={text_color ? COLORS[text_color] : COLORS.WHITE}
+                  target_blank={target_blank}
+                  background_color={COLORS[background_color]}
+                  rounded_edges={ROUNDED[rounded_edges]}
+                  arrow_icon={arrow_icon}
+                  font_style={font_style ? FONT_STYLE[font_style] : FONT_STYLE.NORMAL}
                 />
               ))}
             </div>

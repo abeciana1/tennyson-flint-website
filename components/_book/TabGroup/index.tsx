@@ -25,15 +25,15 @@ const TabContent: React.FC<TabContentI> = ({
       }
       {(block?.component === 'buttonLink') &&
         <ButtonLink
-          linkText={block?.link_text}
+          link_text={block?.link_text}
           title={block?.title}
           href={block?.href}
-          targetBlank={block?.target_blank}
-          textColor={block?.text_color}
-          arrow={block?.arrow_icon}
-          bgColor={block?.background_color}
-          rounded={block?.rounded_edges}
-          fontStyle={block?.font_style}
+          target_blank={block?.target_blank}
+          text_color={block?.text_color}
+          arrow_icon={block?.arrow_icon}
+          background_color={block?.background_color}
+          rounded_edges={block?.rounded_edges}
+          font_style={block?.font_style}
         />
       }
     </div>

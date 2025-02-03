@@ -10,46 +10,46 @@ import { FaArrowRight } from "react-icons/fa";
 import ImageComp from '@/components/_styled/ImageComp'
 
 export const ButtonLink: React.FC<ButtonLinkI> = ({
-  linkText,
+  link_text,
   title,
   href,
-  targetBlank = false,
-  bgColor = COLORS.WHITE,
-  rounded = ROUNDED.NONE,
-  arrow = false,
-  textColor = COLORS.WHITE,
-  fontStyle = FONT_STYLE.NORMAL
+  target_blank = false,
+  background_color = COLORS.WHITE,
+  rounded_edges = ROUNDED.NONE,
+  arrow_icon = false,
+  text_color = COLORS.WHITE,
+  font_style = FONT_STYLE.NORMAL
 }) => {
   return (
     <Link
       href={href}
       title={title}
-      target={targetBlank ? "_blank" : ""}
+      target={target_blank ? "_blank" : ""}
       className={cx('font-sans text-lg max-w-fit py-1 px-2', {
-        ['flex items-center gap-5']: arrow,
-        ['bg-white border-black border-2']: bgColor === COLORS.WHITE,
-        ['bg-black']: bgColor === COLORS.BLACK,
-        ['bg-navy']: bgColor === COLORS.NAVY,
-        ['bg-gold']: bgColor === COLORS.GOLD,
-        ['bg-violet']: bgColor === COLORS.VIOLET,
-        ['bg-red']: bgColor === COLORS.RED,
-        ['bg-pink']: bgColor === COLORS.PINK,
-        ['rounded-none']: rounded === ROUNDED.NONE,
-        ['rounded-sm']: rounded === ROUNDED.SM,
-        ['rounded-md']: rounded === ROUNDED.MD,
-        ['rounded-lg']: rounded === ROUNDED.LG,
-        ['rounded-xl']: rounded === ROUNDED.XL,
-        ['rounded-2xl']: rounded === ROUNDED.XXL,
-        ['text-white']: textColor === COLORS.WHITE,
-        ['text-black']: textColor === COLORS.BLACK,
-        ['text-gold']: textColor === COLORS.GOLD,
-        ['font-bold']: fontStyle === FONT_STYLE.BOLD,
-        ['font-semibold']: fontStyle === FONT_STYLE.SEMI_BOLD,
-        ['font-medium']: fontStyle === FONT_STYLE.MEDIUM
+        ['flex items-center gap-5']: arrow_icon,
+        ['bg-white border-black border-2']: background_color === COLORS.WHITE,
+        ['bg-black']: background_color === COLORS.BLACK,
+        ['bg-navy']: background_color === COLORS.NAVY,
+        ['bg-gold']: background_color === COLORS.GOLD,
+        ['bg-violet']: background_color === COLORS.VIOLET,
+        ['bg-red']: background_color === COLORS.RED,
+        ['bg-pink']: background_color === COLORS.PINK,
+        ['rounded-none']: rounded_edges === ROUNDED.NONE,
+        ['rounded-sm']: rounded_edges === ROUNDED.SM,
+        ['rounded-md']: rounded_edges === ROUNDED.MD,
+        ['rounded-lg']: rounded_edges === ROUNDED.LG,
+        ['rounded-xl']: rounded_edges === ROUNDED.XL,
+        ['rounded-2xl']: rounded_edges === ROUNDED.XXL,
+        ['text-white']: text_color === COLORS.WHITE,
+        ['text-black']: text_color === COLORS.BLACK,
+        ['text-gold']: text_color === COLORS.GOLD,
+        ['font-bold']: font_style === FONT_STYLE.BOLD,
+        ['font-semibold']: font_style === FONT_STYLE.SEMI_BOLD,
+        ['font-medium']: font_style === FONT_STYLE.MEDIUM
       })}
     >
-      {linkText}
-      {arrow &&
+      {link_text}
+      {arrow_icon &&
         <FaArrowRight strokeWidth='1' size={20} />
       }
     </Link>

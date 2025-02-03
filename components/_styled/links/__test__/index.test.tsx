@@ -8,13 +8,13 @@ describe('Links', () => {
     beforeEach(() => {
       render(
         <ButtonLink
-          linkText='Link'
+          link_text='Link'
           href='/books'
-          targetBlank
-          arrow
+          target_blank
+          arrow_icon
           title='Link to Books page'
-          bgColor={COLORS.NAVY}
-          rounded={ROUNDED.MD}
+          background_color={COLORS.NAVY}
+          rounded_edges={ROUNDED.MD}
         />
       )
     })

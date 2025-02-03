@@ -17,16 +17,16 @@ export interface ButtonLinkDataI extends ComponentI {
 export interface BasicLinkI extends ComponentI {
   title: string;
   href: string;
-  targetBlank?: boolean;
+  target_blank?: boolean;
 }
 
 export interface ButtonLinkI extends BasicLinkI {
-  linkText: string;
-  bgColor: COLORS;
-  arrow?: boolean;
-  rounded: ROUNDED;
-  textColor?: COLORS;
-  fontStyle?: FONT_STYLE;
+  link_text: string;
+  background_color: COLORS;
+  arrow_icon?: boolean;
+  rounded_edges: ROUNDED;
+  text_color?: COLORS;
+  font_style?: FONT_STYLE;
 }
 
 export interface SocialLinkI extends BasicLinkI {

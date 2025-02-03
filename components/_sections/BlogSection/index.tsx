@@ -70,13 +70,13 @@ const BlogSection: React.FC<BlogSectionI> = ({
         {blogList && blogList?.data?.stores?.length > 2 &&
           <div className='mt-12 flex justify-center'>
             <ButtonLink
-              linkText='View all blogs'
+              link_text='View all blogs'
               title='Link to all blog posts pages'
               href='/blog'
-              bgColor={COLORS.NAVY}
-              textColor={COLORS.GOLD}
-              rounded={ROUNDED.MD}
-              fontStyle={FONT_STYLE.BOLD}
+              background_color={COLORS.NAVY}
+              text_color={COLORS.GOLD}
+              rounded_edges={ROUNDED.MD}
+              font_style={FONT_STYLE.BOLD}
             />
           </div>
         }

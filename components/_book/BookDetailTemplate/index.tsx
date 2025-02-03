@@ -69,15 +69,15 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
                 return (
                   <ButtonLink
                     key={link._uid}
-                    linkText={link?.link_text}
+                    link_text={link?.link_text}
                     title={link?.title}
                     href={link?.href}
-                    targetBlank={link?.target_blank}
-                    textColor={COLORS[link?.text_color]}
-                    arrow={link?.arrow_icon}
-                    bgColor={COLORS[link?.background_color]}
-                    rounded={ROUNDED[link?.rounded_edges]}
-                    fontStyle={FONT_STYLE[link?.font_style]}
+                    target_blank={link?.target_blank}
+                    text_color={COLORS[link?.text_color]}
+                    arrow_icon={link?.arrow_icon}
+                    background_color={COLORS[link?.background_color]}
+                    rounded_edges={ROUNDED[link?.rounded_edges]}
+                    font_style={FONT_STYLE[link?.font_style]}
                   />
                 )
               })}

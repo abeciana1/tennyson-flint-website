@@ -77,12 +77,12 @@ const BlogPostCard: React.FC<BlogPostCardI> = ({
       </div>
       <div className='mt-5'>
         <ButtonLink
-          linkText='Read more'
+          link_text='Read more'
           title='Read more about this article'
           href={href}
-          bgColor={COLORS.PINK}
-          rounded={ROUNDED.MD}
-          fontStyle={FONT_STYLE.SEMI_BOLD}
+          background_color={COLORS.PINK}
+          rounded_edges={ROUNDED.MD}
+          font_style={FONT_STYLE.SEMI_BOLD}
         />
       </div>
     </div>

@@ -30,14 +30,14 @@ const NotFound = () => {
             />
           </div>
           <ButtonLink
-            linkText='Return to the homepage'
+            link_text='Return to the homepage'
             href='/'
             title='Return to the homepage'
-            bgColor={COLORS.NAVY}
-            textColor={COLORS.GOLD}
-            rounded={ROUNDED.MD}
-            fontStyle={FONT_STYLE.MEDIUM}
-            arrow
+            background_color={COLORS.NAVY}
+            text_color={COLORS.GOLD}
+            rounded_edges={ROUNDED.MD}
+            font_style={FONT_STYLE.MEDIUM}
+            arrow_icon
           />
         </section>
       </main>
