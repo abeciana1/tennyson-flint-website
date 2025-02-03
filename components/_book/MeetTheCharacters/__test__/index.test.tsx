@@ -6,7 +6,10 @@ describe('MeetTheCharacters', () => {
   beforeEach(() => {
     render(
       <MeetTheCharacters
-        headingText='Meet the Characters'
+        blok={{
+          heading_text: 'Meet the Characters',
+          characters: []
+        }}
       />
     )
   })
