@@ -10,11 +10,13 @@ describe('BookCard', () => {
         bookTitle='title'
         slug='test'
         bookCover={{
-          src: '/test.jpg',
-          alt: 'test',
+          file: {
+            filename: '/test.jpg'
+          },
+          alt_text: 'test',
           width: 200,
           height: 300,
-          rounded: ROUNDED.MD
+          rounded_edges: ROUNDED.MD
         }}
       />
     )

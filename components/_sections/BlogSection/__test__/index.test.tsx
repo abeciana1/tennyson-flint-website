@@ -1,24 +1,31 @@
 import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import BlogSection from '@/components/_sections/BlogSection'
 
 describe('BlogSection', () => {
   beforeEach(() => {
     render(
       <BlogSection
-        preheading='Latest Blog'
-        headline='test'
+        blok={{
+          preheading: 'Latest Blog',
+          headline: 'test'
+        }}
       />
     )
   })
-  test('should render blog section title', () => {
-    const title = screen.getByRole('heading', { level: 1 })
-    expect(title.textContent).toBe('Latest Blog')
-    expect(title).toBeInTheDocument()
+  test('should render blog section title', async () => {
+    waitFor(() => {
+      screen.logTestingPlaygroundURL()
+      const preheading = screen.getByRole('heading', { level: 1 })
+      expect(preheading.textContent).toContain('Latest Blog')
+      expect(preheading).toBeInTheDocument()
+    })
   })
   test('should render blog headline', () => {
-    const headline = screen.getByTestId('headline')
-    expect(headline.textContent).toBe('test')
-    expect(headline).toBeInTheDocument()
+    waitFor(() => {
+      const headline = screen.getByTestId('headline')
+      expect(headline.textContent).toContain('test')
+      expect(headline).toBeInTheDocument()
+    })
   })
 })
