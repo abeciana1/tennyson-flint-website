@@ -2,6 +2,7 @@ import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import TextArea from '@/components/_form-fields/TextArea'
 import { useForm, FormProvider } from 'react-hook-form';
+import { COLORS } from '@/definitions/enums'
 
 const Wrapper = ({ children }: {children: React.ReactNode[] | React.ReactNode}) => {
   const methods = useForm();
@@ -19,6 +20,8 @@ describe('TextArea', () => {
           required
           helperText='helper text'
           register={mockRegister}
+          textColor={COLORS.NAVY}
+          errors={{}}
         />
       </Wrapper>
     )
