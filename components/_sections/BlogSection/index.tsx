@@ -14,15 +14,16 @@ import {format} from 'date-fns'
 import { ButtonLink } from '@/components/_styled/links'
 import { fetchContentStories } from '@/helper-functions/storyblok-fetch'
 import { BlogPostI } from '@/definitions/interfaces/_blog'
+import { use } from 'react'
 
-const BlogSection: React.FC<BlogSectionI> = async ({
+const BlogSection: React.FC<BlogSectionI> = ({
   blok
 }) => {
   const {
     preheading,
     headline
   } = blok
-  const blogList = await fetchContentStories('published', 'blog', { content_type: 'blogPage' })
+  const blogList = use(fetchContentStories('published', 'blog', { content_type: 'blogPage' }))
   return (
     <section>
       <MarginSection>
