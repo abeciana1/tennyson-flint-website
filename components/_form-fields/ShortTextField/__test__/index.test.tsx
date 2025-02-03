@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import ShortTextField from '@/components/_form-fields/ShortTextField'
-import { FIELD_TYPE } from '@/definitions/enums'
+import { FIELD_TYPE, COLORS } from '@/definitions/enums'
 import { useForm, FormProvider } from 'react-hook-form';
 import { ReactNode } from 'react';
 
@@ -22,6 +22,8 @@ describe('ShortTextField', () => {
           required
           helperText='Enter text here'
           register={mockRegister}
+          textColor={COLORS.NAVY}
+          errors={{}}
         />
       </Wrapper>
     )
