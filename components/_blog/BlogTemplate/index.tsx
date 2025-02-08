@@ -10,14 +10,11 @@ import {
 import ImageComp from '@/components/_styled/ImageComp'
 
 const BlogTemplate: React.FC<BlogTemplateI> = ({
-  blok
+  title,
+  excerpt,
+  image,
+  publishedDate
 }) => {
-  const {
-    title,
-    excerpt,
-    image,
-    publishedDate
-  } = blok
   const {
     file,
     alt_text,
@@ -28,7 +25,7 @@ const BlogTemplate: React.FC<BlogTemplateI> = ({
   return (
     <>
       <MarginSection>
-        <section className='md:px-10 max-w-[1024px] mx-auto '>
+        <section className='md:px-10 max-w-[1024px] mx-auto'>
           <div className='text-center'>
             <Heading1
               text={title}
