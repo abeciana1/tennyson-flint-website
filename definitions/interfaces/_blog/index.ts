@@ -1,12 +1,10 @@
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
 
 export interface BlogTemplateI {
-  blok: {
-    title: string;
-    excerpt?: string;
-    image: ImageI[];
-    publishedDate: string;
-  }
+  title: string;
+  excerpt?: string;
+  image: ImageI[];
+  publishedDate: string;
 }
 
 export interface BlogContentI {
