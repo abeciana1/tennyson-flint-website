@@ -149,7 +149,7 @@ export default async function Page(props: PageProps) {
             dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
           />
         }
-        <main className='min-h-screen relative'
+        <main className='relative'
           {...storyblokEditable(props.blok)}
         >
           <StoryblokStory story={content?.data?.story} />
