@@ -17,7 +17,7 @@ export const Page = ({ blok }: any) => {
 
 export const BlogPage = ({ blok }: any) => {
   return (
-  <section {...storyblokEditable(blok)}>
+  <section {...storyblokEditable(blok)} className='pb-10 lg:pb-20'>
     {blok &&
       <BlogTemplate
         title={blok?.title}
