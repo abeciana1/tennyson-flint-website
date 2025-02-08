@@ -73,7 +73,7 @@ const BlogTemplate: React.FC<BlogTemplateI> = ({
           </section>
         </section>
       </MarginSection>
-      <hr className='mx-5 sm:mx-20 text-gray' />
+      <hr className='mx-5 sm:mx-20 text-gray mb-4 md:mb-8 lg:mb-16' />
     </>
   )
 }
