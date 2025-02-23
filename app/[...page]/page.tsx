@@ -150,7 +150,7 @@ export default async function Page(props: PageProps) {
           />
         }
         <main className='relative'
-          {...storyblokEditable(props.blok)}
+          {...props?.blok && {...storyblokEditable(props?.blok)}}
         >
           <StoryblokStory story={content?.data?.story} />
         </main>
