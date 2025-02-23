@@ -24,7 +24,7 @@ const ShortTextField: React.FC<ShortTextFieldI> = ({
       {errors[name] &&
           <div
             role='alert'
-            className='text-red font-sans text-sm absolute -top-6'
+            className='bg-red text-white font-sans text-sm absolute -top-6 px-1'
           >
             {errors[name]?.message as string}
           </div>
