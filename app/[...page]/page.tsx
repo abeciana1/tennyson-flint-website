@@ -55,7 +55,7 @@ export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   }
 }
 
-export default async function Page(props: PageProps) {
+const Page = async (props: PageProps) => {
   const slug = (await props?.params).page;
   let content
   try {
@@ -158,3 +158,5 @@ export default async function Page(props: PageProps) {
     </>
   );
 }
+
+export default Page
