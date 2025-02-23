@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import Mail from 'nodemailer/lib/mailer';
 import { sendEmail } from '@/helper-functions/nodemailer'
 
 export const POST = async (req: NextRequest) => {
