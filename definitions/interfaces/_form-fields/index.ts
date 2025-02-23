@@ -1,5 +1,5 @@
 import { FIELD_TYPE, COLORS } from "@/definitions/enums";
-import { UseFormRegister, FieldValues } from 'react-hook-form'
+import { UseFormRegister, FieldValues, FieldErrors } from 'react-hook-form'
 
 export interface ShortTextFieldI {
   type: FIELD_TYPE;
@@ -9,11 +9,7 @@ export interface ShortTextFieldI {
   register: UseFormRegister<FieldValues>;
   name: string;
   textColor: COLORS;
-  errors: {
-    [key: string]: {
-      message: string;
-    };
-  };
+  errors: FieldErrors
 }
 
 export interface TextAreaI {
@@ -23,9 +19,5 @@ export interface TextAreaI {
   register: UseFormRegister<FieldValues>;
   name: string;
   textColor: COLORS;
-  errors: {
-    [key: string]: {
-      message: string;
-    };
-  };
+  errors: FieldErrors
 }
