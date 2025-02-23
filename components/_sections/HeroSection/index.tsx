@@ -22,7 +22,6 @@ const HeroSection: React.FC<HeroSectionI> = ({
     image,
     responsive_reverse
   } = blok
-  console.log('blok', blok)
   return (
     <MarginSection>
       <section className={cx('flex items-center mx-auto gap-10 lg:gap-24 justify-around flex-col lg:flex-row', {
