@@ -38,7 +38,7 @@ const BookCollection: React.FC = () => {
         {(books && books?.data?.stories?.length > 0) &&
           <section className='flex flex-col md:flex-row gap-12 md:gap-36 items-center'>
             {(books?.data?.stories) &&
-              books?.data?.stories?.map((book: BookI, index: number) => {
+              books?.data?.stories?.map((book: BookI) => {
                 return (
                   <BookCard
                     key={book?.uuid}
