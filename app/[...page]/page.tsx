@@ -55,7 +55,7 @@ export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
 }
 
 export default async function Page(props: PageProps) {
-  const slug = (await props?.params).page;
+  const slug = (await props?.params)?.page;
   let content
   try {
     content = await fetchStory('published', slug);
