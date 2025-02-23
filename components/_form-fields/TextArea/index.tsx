@@ -24,7 +24,7 @@ const TextArea:React.FC<TextAreaI> = ({
             role='alert'
             className='text-red font-sans text-sm absolute -top-6'
           >
-            {errors[name]?.message}
+            {errors[name]?.message as string}
           </div>
       }
       <textarea
