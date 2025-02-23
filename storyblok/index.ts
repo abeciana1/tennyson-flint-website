@@ -26,9 +26,9 @@ export interface SbPageData extends SbBlokData {
 
 export interface PageProps {
   blok: SbBlokData;
-  params: Promise<{
+  params: {
     page: string[];
-  }>;
+  };
 }
 
 export const initStoryblok = (options = {}) => storyblokInit({
