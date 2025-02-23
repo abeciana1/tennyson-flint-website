@@ -1,8 +1,7 @@
 import { PageProps } from '@/storyblok'
 import { fetchStory } from '@/helper-functions/storyblok-fetch'
 import {
-  StoryblokStory,
-  storyblokEditable
+  StoryblokStory
 } from "@storyblok/react/rsc";
 import type { Metadata } from 'next'
 
@@ -27,9 +26,7 @@ export default async function Page(props: PageProps) {
   const content = await fetchStory('published', slug)
   return (
     <>
-      <main className='relative grow'
-        {...storyblokEditable(props.blok)}
-      >
+      <main className='relative grow'>
         <StoryblokStory story={content?.data?.story} />
       </main>
     </>

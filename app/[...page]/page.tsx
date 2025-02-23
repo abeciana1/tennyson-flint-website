@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { PageProps } from '@/storyblok'
 import { fetchStory } from '@/helper-functions/storyblok-fetch'
 import {
-  storyblokEditable,
   StoryblokStory
 } from "@storyblok/react/rsc";
 import { format } from 'date-fns'
@@ -149,9 +148,7 @@ const Page = async (props: PageProps) => {
             dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
           />
         }
-        <main className='relative'
-          {...props?.blok && {...storyblokEditable(props?.blok)}}
-        >
+        <main className='relative'>
           <StoryblokStory story={content?.data?.story} />
         </main>
       </div>
