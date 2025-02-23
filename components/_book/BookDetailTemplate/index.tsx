@@ -28,7 +28,7 @@ const BookDetailTemplate: React.FC<BookDetailTemplateI> = ({
   } = bookCover
   return (
     <MarginSection>
-      <section className='lg:px-10 flex items-center gap-16 lg:32'>
+      <section className='lg:px-10 flex items-center justify-evenly gap-16 lg:32'>
         <div className='hidden md:block'>
           <ImageComp
             file={file}
