@@ -36,7 +36,7 @@ const BookCollection: React.FC = () => {
     <MarginSection>
       <section className='px-10'>
         {(books && books?.data?.stories?.length > 0) &&
-          <section className='flex flex-col md:flex-row gap-12 md:gap-36 items-center'>
+          <section className='flex flex-col md:flex-row gap-12 md:gap-36 items-center justify-center'>
             {(books?.data?.stories) &&
               books?.data?.stories?.map((book: BookI) => {
                 return (
