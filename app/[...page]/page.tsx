@@ -86,7 +86,7 @@ export default async function Page(props: PageProps) {
       "about": content?.data?.story?.content?.about,
       "description": content?.data?.story?.content?.about,
       "image": content?.data?.story?.content?.book_cover[0]?.file?.filename,
-      "url": `https://tennysonflint.com/${content?.data?.story?.full_slug}}`,
+      "url": `https://tennysonflint.com/${content?.data?.story?.full_slug}`,
       "inLanguage": "en-US",
       "isbn": content?.data?.story?.content?.isbn,
       "numberOfPages": content?.data?.story?.content?.number_of_pages,
@@ -106,7 +106,7 @@ export default async function Page(props: PageProps) {
     jsonLd = {
       '@context': 'https://schema.org',
       "@type": "BlogPosting",
-      "mainEntityOfPage": `https://tennysonflint.com/${content?.data?.story?.full_slug}}`,
+      "mainEntityOfPage": `https://tennysonflint.com/${content?.data?.story?.full_slug}`,
       "headline": content?.data?.story?.content?.title,
       "name": content?.data?.story?.content?.title,
       "description": content?.data?.story?.content?.excerpt,
