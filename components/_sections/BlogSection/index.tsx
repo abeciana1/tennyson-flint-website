@@ -67,7 +67,7 @@ const BlogSection: React.FC<BlogSectionI> = ({
             })}
           </section>
         }
-        {blogList && blogList?.data?.stores?.length > 2 &&
+        {blogList && blogList?.data?.stories?.length > 2 &&
           <div className='mt-12 flex justify-center'>
             <ButtonLink
               link_text='View all blogs'
