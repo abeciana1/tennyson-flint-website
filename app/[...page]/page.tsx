@@ -126,7 +126,7 @@ export default async function Page(props: PageProps) {
       "isPartOf": {
         "@type" : "Blog",
         "@id": "https://tennysonflint.com/blog",
-        "name": "Tennyson Flint Blog",
+        "name": "Tennyson Flint Blog"
       },
       "datePublished": format(content?.data?.story?.content?.published_date, 'yyyy-MM-dd'),
       "image": {
