@@ -1,3 +1,4 @@
+'use cache'
 import { PageProps } from '@/storyblok'
 import { fetchStory } from '@/helper-functions/storyblok-fetch'
 import {
