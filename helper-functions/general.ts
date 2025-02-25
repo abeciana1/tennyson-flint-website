@@ -1,5 +1,3 @@
-import { ContactFormDataI } from '@/definitions/interfaces/_sections'
-
 export const slugify = (str: string) => {
   str = str.replace(/^\s+|\s+$/g, '');
   str = str.toLowerCase();
