@@ -7,7 +7,6 @@ export const fetchStory = async (
   version: "draft" | "published",
   slug?: string[]
 ) => {
-  'use cache'
   const correctSlug = `/${slug ? slug.join("/") : "home"}`;
   const storyblokApi: StoryblokClient = getStoryblokApi();
   return storyblokApi.get(`cdn/stories/${correctSlug}`,
@@ -21,7 +20,6 @@ export const fetchContentStories = async (
   dirName: string,
   options = {}
 ) => {
-  'use cache'
   const storyblokApi: StoryblokClient = getStoryblokApi();
   const content = await storyblokApi.get(`cdn/stories`, {
     version: version,
