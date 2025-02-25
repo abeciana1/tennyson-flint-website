@@ -1,9 +1,9 @@
-import { use } from 'react'
+'use cache'
 import { fetchStory } from '@/helper-functions/storyblok-fetch'
 import { storyblokEditable, StoryblokStory } from '@storyblok/react/rsc';
 
-const Footer: React.FC = () => {
-  const footerContent = use(fetchStory('published', ['global-content', 'footer-menu']))
+const Footer: React.FC = async () => {
+  const footerContent = await fetchStory('published', ['global-content', 'footer-menu'])
   return (
     <>
       <footer

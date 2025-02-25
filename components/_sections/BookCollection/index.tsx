@@ -1,3 +1,4 @@
+'use cache'
 import { BookI } from '@/definitions/interfaces/_book'
 import MarginSection from '@/components/_sections/MarginSection'
 import {
@@ -8,7 +9,6 @@ import {
 import BookCard from '@/components/_book/BookCard'
 import TextContent from '@/components/_styled/Text'
 import { fetchContentStories } from '@/helper-functions/storyblok-fetch'
-import { use } from 'react'
 
 const MoreBooksComingSoon = () => {
   return (
@@ -30,8 +30,8 @@ const MoreBooksComingSoon = () => {
   )
 }
 
-const BookCollection: React.FC = () => {
-  const books = use(fetchContentStories('published', 'books', { content_type: 'bookPage' }))
+const BookCollection: React.FC = async () => {
+  const books = await fetchContentStories('published', 'books', { content_type: 'bookPage' })
   return (
     <MarginSection>
       <section className='px-10'>

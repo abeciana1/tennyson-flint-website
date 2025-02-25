@@ -1,3 +1,4 @@
+'use cache'
 import { Heading1 } from '@/components/_styled/headings'
 import { BlogCollectionI } from '@/definitions/interfaces/_sections'
 import MarginSection from '@/components/_sections/MarginSection'

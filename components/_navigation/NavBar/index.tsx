@@ -1,13 +1,13 @@
+'use cache'
 import { Heading1 } from '@/components/_styled/headings'
 import NavLink from '@/components/_navigation/NavLink'
 import MobileMenu from '@/components/_navigation/MobileMenu'
 import Link from 'next/link'
 import { NavLinkI } from '@/definitions/interfaces/_navigation'
 import { fetchStory } from '@/helper-functions/storyblok-fetch'
-import { use } from 'react'
 
-const NavBar: React.FC = () => {
-  const content = use(fetchStory('published', ['global-content', 'main-menu']))
+const NavBar: React.FC = async () => {
+  const content = await fetchStory('published', ['global-content', 'main-menu'])
   const {
     navLinks
   } = content?.data?.story?.content?.body[0]
