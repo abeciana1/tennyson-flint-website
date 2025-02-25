@@ -11,7 +11,7 @@ export const fetchStory = async (
   const storyblokApi: StoryblokClient = getStoryblokApi();
   return storyblokApi.get(`cdn/stories/${correctSlug}`,
     { version: version,
-      resolve_relations: (correctSlug.indexOf('/books/') > -1) ? 'meetCharacters.characters' : ''
+      resolve_relations: (correctSlug.indexOf('/books/') > -1) ? 'meetCharacters.characters' : '',
     });
 };
 
@@ -21,7 +21,7 @@ export const fetchContentStories = async (
   options = {}
 ) => {
   const storyblokApi: StoryblokClient = getStoryblokApi();
-  const content = await storyblokApi.get(`cdn/stories`, {
+  const content = await storyblokApi?.get(`cdn/stories`, {
     version: version,
     starts_with: dirName,
     ...options
