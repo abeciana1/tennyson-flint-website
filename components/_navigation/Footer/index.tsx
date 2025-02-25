@@ -1,4 +1,3 @@
-'use cache'
 import { fetchStory } from '@/helper-functions/storyblok-fetch'
 import { storyblokEditable, StoryblokStory } from '@storyblok/react/rsc';
 

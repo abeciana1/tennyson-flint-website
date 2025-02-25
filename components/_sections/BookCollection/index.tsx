@@ -1,4 +1,3 @@
-'use cache'
 import { BookI } from '@/definitions/interfaces/_book'
 import MarginSection from '@/components/_sections/MarginSection'
 import {

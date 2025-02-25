@@ -1,4 +1,3 @@
-'use cache'
 import { Heading1 } from '@/components/_styled/headings'
 import NavLink from '@/components/_navigation/NavLink'
 import MobileMenu from '@/components/_navigation/MobileMenu'
