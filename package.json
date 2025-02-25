@@ -13,14 +13,13 @@
     "test:w": "jest --watch"
   },
   "dependencies": {
-    "@storyblok/react": "^4.3.3",
     "@types/nodemailer": "^6.4.17",
     "axios": "^1.7.9",
     "classnames": "^2.5.1",
     "date-fns": "^4.1.0",
     "hamburger-react": "^2.5.1",
     "isomorphic-dompurify": "^2.19.0",
-    "next": "^15.2.0-canary.74",
+    "next": "^15",
     "nodemailer": "^6.9.16",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
