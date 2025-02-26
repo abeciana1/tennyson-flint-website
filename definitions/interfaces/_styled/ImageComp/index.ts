@@ -14,3 +14,5 @@ export interface ImageI extends ComponentI {
 export interface BlogImageI {
   blok: ImageI
 }
+
+export type RoundedType = 'NONE' | 'SM' | 'MD' | 'LG' | 'XL' | 'FULL' | 'XXL'
