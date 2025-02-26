@@ -9,7 +9,7 @@ const NavBar: React.FC = async () => {
   const content = await fetchStory('published', ['global-content', 'main-menu'])
   const {
     navLinks
-  } = content?.data?.story?.content?.body[0]
+  } = content?.story?.content?.body[0]
   return (
     <header>
       <nav className='flex flex-row px-5 sm:px-10 py-3 items-center justify-between z-50 bg-white'>
