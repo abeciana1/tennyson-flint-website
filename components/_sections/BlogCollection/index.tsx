@@ -13,8 +13,8 @@ const BlogCollection: React.FC<BlogCollectionI> = async ({
   const {
     heading
   } = blok
-  const blogList = await fetchContentStories('published', 'blog', { content_type: 'blogPage' })
-  const mappedJsonLdPosts = blogList?.data?.stories?.map((blogPost: BlogPostI) => {
+  const { stories } = await fetchContentStories('published', 'blog', { content_type: 'blogPage' })
+  const mappedJsonLdPosts = stories?.map((blogPost: BlogPostI) => {
     return {
       "@type": "BlogPosting",
       "@id": `https://tennysonflinthttps://tennysonflint.com.com/${blogPost?.full_slug}`,
@@ -63,9 +63,9 @@ const BlogCollection: React.FC<BlogCollectionI> = async ({
       <Heading1
         text={heading}
       />
-      {blogList &&
+      {stories &&
         <section className='mt-12 flex flex-row flex-wrap gap-6'>
-          {blogList?.data?.stories?.map((blogPost: BlogPostI) => {
+          {stories?.map((blogPost: BlogPostI) => {
             return (
                 <BlogPostCard
                   key={blogPost?.uuid}
