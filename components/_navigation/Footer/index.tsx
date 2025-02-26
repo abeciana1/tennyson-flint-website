@@ -9,7 +9,7 @@ const Footer: React.FC = async () => {
         className='bg-darkGray relative bottom-0 w-full px-5 sm:px-10 pt-2 md:pt-4 lg:pt-8'
       >
         <section className='mx-auto text-center' {...storyblokEditable(footerContent?.data?.story?.content)}>
-          <StoryblokStory story={footerContent?.data?.story} />
+          <StoryblokStory story={footerContent?.story} />
         </section>
       </footer>
     </>
