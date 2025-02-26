@@ -30,14 +30,14 @@ const MoreBooksComingSoon = () => {
 }
 
 const BookCollection: React.FC = async () => {
-  const books = await fetchContentStories('published', 'books', { content_type: 'bookPage' })
+  const { stories } = await fetchContentStories('published', 'books', { content_type: 'bookPage' })
   return (
     <MarginSection>
       <section className='px-10'>
-        {(books && books?.data?.stories?.length > 0) &&
+        {(stories && stories?.length > 0) &&
           <section className='flex flex-col md:flex-row gap-12 md:gap-36 items-center justify-center'>
-            {(books?.data?.stories) &&
-              books?.data?.stories?.map((book: BookI) => {
+            {(stories) &&
+              stories?.map((book: BookI) => {
                 return (
                   <BookCard
                     key={book?.uuid}
@@ -54,7 +54,7 @@ const BookCollection: React.FC = async () => {
                 )
               })
             }
-            {books?.data?.stories && (books?.data?.stories?.length < 3) &&
+            {stories && (stories?.length < 3) &&
               <MoreBooksComingSoon />
             }
           </section>
