@@ -22,7 +22,7 @@ const BlogSection: React.FC<BlogSectionI> = async ({
     preheading,
     headline
   } = blok
-  const blogList = await fetchContentStories('published', 'blog', { content_type: 'blogPage' })
+  const { stories } = await fetchContentStories('published', 'blog', { content_type: 'blogPage' })
   return (
     <MarginSection>
       <Heading1
@@ -39,9 +39,9 @@ const BlogSection: React.FC<BlogSectionI> = async ({
           font_family: FONT_FAMILY.CINZEL
         }}
       />
-      {blogList?.data &&
+      {stories &&
         <section className='mt-12 flex flex-row flex-wrap gap-6 justify-center'>
-          {blogList?.data?.stories?.slice(0,3)?.map((blogPost: BlogPostI) => {
+          {stories?.slice(0,3)?.map((blogPost: BlogPostI) => {
             return (
               <BlogPostCard
                 key={blogPost?.uuid}
@@ -65,7 +65,7 @@ const BlogSection: React.FC<BlogSectionI> = async ({
           })}
         </section>
       }
-      {blogList && blogList?.data?.stories?.length > 2 &&
+      {stories && stories?.length > 2 &&
         <div className='mt-12 flex justify-center'>
           <ButtonLink
             link_text='View all blogs'
