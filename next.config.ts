@@ -7,7 +7,7 @@ const nextConfig: NextConfig = ({
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'a.storyblok.com',
+        hostname: 'a-us.storyblok.com',
       }
     ]
   }
