@@ -19,7 +19,6 @@ const MeetTheCharacters: React.FC<MeetTheCharactersI> = ({
         <div className='flex flex-wrap gap-12 mt-6'>
           {characters?.map((
             character: string, index:number) => {
-              console.log('character', character)
             return (
               <CharacterCard
                 key={`${character}-${index}`}
