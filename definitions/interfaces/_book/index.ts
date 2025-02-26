@@ -1,7 +1,6 @@
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
 import { TabGroupI } from '@/definitions/interfaces/_styled/TabGroup'
 import { ButtonLinkDataI } from '@/definitions/interfaces/_styled/Links'
-import { ComponentI } from '@/definitions/interfaces'
 import { FONT_FAMILY, FONT_SIZE, FONT_STYLE, COLORS } from '@/definitions/enums'
 
 export interface BookDetailTemplateI {
@@ -21,23 +20,12 @@ export interface BookDetailTemplateI {
 export interface MeetTheCharactersI {
   blok: {
     heading_text: string;
-    characters: CharacterI[];
+    characters: string[];
   }
 }
 
 export interface CharacterI {
-  content: {
-    _uid: string;
-    name: string;
-    description: string;
-    image: ImageI[] & ComponentI;
-  }
-}
-
-export interface CharacterCardI extends ComponentI {
-  name: string;
-  description: string;
-  image: ImageI;
+  uuid: string;
 }
 
 export interface BookI {
