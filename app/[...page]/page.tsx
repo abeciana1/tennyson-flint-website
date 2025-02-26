@@ -17,10 +17,10 @@ export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
     title, //* used for blog post page
     featured_image, //* used for blog post page
     book_cover 
-  } = content?.data?.story?.content
+  } = content?.story?.content
   const { 
     full_slug
-  } = content?.data?.story
+  } = content?.story
   if (component === 'blogPage') {
     return {
       title: title,
@@ -64,7 +64,7 @@ export default async function Page(props: PageProps) {
   }
   let jsonLd = {}
 
-  if (content?.data?.story?.content?.component === 'bookPage') {
+  if (content?.story?.content?.component === 'bookPage') {
     jsonLd = {
       '@context': 'https://schema.org',
       "@type": "Book",
@@ -80,36 +80,36 @@ export default async function Page(props: PageProps) {
           "height": "150"
         }
       },
-      "copyrightYear": content?.data?.story?.content?.copyright_year,
-      "genre": content?.data?.story?.content?.genre,
-      "about": content?.data?.story?.content?.about,
-      "description": content?.data?.story?.content?.about,
-      "image": content?.data?.story?.content?.book_cover[0]?.file?.filename,
-      "url": `https://tennysonflint.com/${content?.data?.story?.full_slug}`,
+      "copyrightYear": content?.story?.content?.copyright_year,
+      "genre": content?.story?.content?.genre,
+      "about": content?.story?.content?.about,
+      "description": content?.story?.content?.about,
+      "image": content?.story?.content?.book_cover[0]?.file?.filename,
+      "url": `https://tennysonflint.com/${content?.story?.full_slug}`,
       "inLanguage": "en-US",
-      "isbn": content?.data?.story?.content?.isbn,
-      "numberOfPages": content?.data?.story?.content?.number_of_pages,
-      "isFamilyFriendly": content?.data?.story?.content?.family_friendly,
-      "name": content?.data?.story?.content?.book_title,
+      "isbn": content?.story?.content?.isbn,
+      "numberOfPages": content?.story?.content?.number_of_pages,
+      "isFamilyFriendly": content?.story?.content?.family_friendly,
+      "name": content?.story?.content?.book_title,
       "countryOfOrigin": {
         "@type": "Country",
         "name": "USA"
       },
       "audience": {
         "@type": "Audience",
-        "name": content?.data?.story?.content?.audience
+        "name": content?.story?.content?.audience
       },
-      "datePublished": format(content?.data?.story?.content?.book_published_date, 'yyyy-MM-dd')
+      "datePublished": format(content?.story?.content?.book_published_date, 'yyyy-MM-dd')
     }
-  } else if (content?.data?.story?.content?.component === 'blogPage') {
+  } else if (content?.story?.content?.component === 'blogPage') {
     jsonLd = {
       '@context': 'https://schema.org',
       "@type": "BlogPosting",
-      "mainEntityOfPage": `https://tennysonflint.com/${content?.data?.story?.full_slug}`,
-      "headline": content?.data?.story?.content?.title,
-      "name": content?.data?.story?.content?.title,
-      "description": content?.data?.story?.content?.excerpt,
-      "about": content?.data?.story?.content?.excerpt,
+      "mainEntityOfPage": `https://tennysonflint.com/${content?.story?.full_slug}`,
+      "headline": content?.story?.content?.title,
+      "name": content?.story?.content?.title,
+      "description": content?.story?.content?.excerpt,
+      "about": content?.story?.content?.excerpt,
       "author": {
         "@type": "Person",
         "givenName": "Tennyson",
@@ -127,29 +127,29 @@ export default async function Page(props: PageProps) {
         "@id": "https://tennysonflint.com/blog",
         "name": "Tennyson Flint Blog"
       },
-      "datePublished": format(content?.data?.story?.content?.published_date, 'yyyy-MM-dd'),
+      "datePublished": format(content?.story?.content?.published_date, 'yyyy-MM-dd'),
       "image": {
         "@type": "ImageObject",
-        "@id": content?.data?.story?.content?.featured_image[0]?.file.filename,
-        "url": content?.data?.story?.content?.featured_image[0]?.file.filename,
-        "width": content?.data?.story?.content?.featured_image[0]?.width,
-        "height": content?.data?.story?.content?.featured_image[0]?.height,
+        "@id": content?.story?.content?.featured_image[0]?.file.filename,
+        "url": content?.story?.content?.featured_image[0]?.file.filename,
+        "width": content?.story?.content?.featured_image[0]?.width,
+        "height": content?.story?.content?.featured_image[0]?.height,
       },
       "inLanguage": "en-US",
-      "copyrightYear": format(content?.data?.story?.content?.published_date, 'yyyy'),
+      "copyrightYear": format(content?.story?.content?.published_date, 'yyyy'),
     }
   }
   return (
     <>
       <div className='relative grow'>
-        {(content?.data?.story?.content?.component === 'bookPage' || content?.data?.story?.content?.component === 'blogPage') &&
+        {(content?.story?.content?.component === 'bookPage' || content?.story?.content?.component === 'blogPage') &&
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
           />
         }
         <main className='relative'>
-          <StoryblokStory story={content?.data?.story} />
+          <StoryblokStory story={content?.story} />
         </main>
       </div>
     </>
