@@ -11,7 +11,7 @@ export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   const {
     seo_title,
     seo_description,
-  } = content?.data?.story?.content
+  } = content?.story?.content
   return {
     title: `${seo_title} | Tennyson Flint`,
     description: seo_description,
@@ -27,7 +27,7 @@ export default async function Page(props: PageProps) {
   return (
     <>
       <main className='relative grow'>
-        <StoryblokStory story={content?.data?.story} />
+        <StoryblokStory story={content?.story} />
       </main>
     </>
   );
