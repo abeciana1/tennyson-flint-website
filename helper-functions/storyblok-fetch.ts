@@ -6,7 +6,7 @@ export const fetchStory = async (
   const resolveRelations = correctSlug.includes("/books/")
   ? "meetCharacters.characters"
   : "";
-  const url = `https://api-us.storyblok.com/v2/cdn/stories${correctSlug}?cv=1740528764&token=${process.env.NEXT_PUBLIC_STORYBLOK_TOKEN}&version=${version}&resolve_relations=${resolveRelations}`
+  const url = `https://api-us.storyblok.com/v2/cdn/stories${correctSlug}?token=${process.env.NEXT_PUBLIC_STORYBLOK_TOKEN}&version=${version}&resolve_relations=${resolveRelations}`
   const res = await fetch(url, {
     method: "GET",
     headers: {
