@@ -47,14 +47,12 @@ export default function RootLayout({
     <html lang="en">
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <body
-          className={`${openSans.variable} ${cinzel.variable} ${cinzelDecorative.variable} antialiased relative flex flex-col`}
+          className={`max-w-[1440px] mx-auto ${openSans.variable} ${cinzel.variable} ${cinzelDecorative.variable} antialiased relative flex flex-col`}
           >
-          <section className="max-w-[1440px] mx-auto">
-            <NavBar />
-            <StoryblokProvider>
-              {children}
-            </StoryblokProvider>
-          </section>
+          <NavBar />
+          <StoryblokProvider>
+            {children}
+          </StoryblokProvider>
           <Footer/>
         </body>
     </html>
