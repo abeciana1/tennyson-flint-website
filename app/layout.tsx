@@ -49,10 +49,12 @@ export default function RootLayout({
         <body
           className={`${openSans.variable} ${cinzel.variable} ${cinzelDecorative.variable} antialiased relative flex flex-col`}
           >
-          <NavBar />
-          <StoryblokProvider>
-            {children}
-          </StoryblokProvider>
+          <section className="max-w-[1440px] mx-auto">
+            <NavBar />
+            <StoryblokProvider>
+              {children}
+            </StoryblokProvider>
+          </section>
           <Footer/>
         </body>
     </html>
