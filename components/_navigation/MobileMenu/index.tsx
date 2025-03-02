@@ -8,13 +8,22 @@ const MobileMenu: React.FC<NavBarI> = ({ navLinks }) => {
   const [isOpen, setOpen] = useState(false)
 
   useEffect(() => {
-    const main = document?.getElementsByTagName('main')
-    if (isOpen && main && main.length > 0) {
-      main[0]!.style!.display = 'none';
-    } else if (main && main.length > 0) {
-      main[0]!.style!.display = 'block';
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto'
     }
   }, [isOpen])
+
+  const handleLinkClick = () => {
+    setTimeout(() => {
+      setOpen(false)
+    }, 100)
+  }
 
   return (
     <>
@@ -28,17 +37,19 @@ const MobileMenu: React.FC<NavBarI> = ({ navLinks }) => {
         />
       </div>
       {isOpen &&
-        <ul className='md:hidden flex flex-col gap-6 w-full bg-white absolute top-16 left-0 pl-10 pt-4 h-screen z-50'>
-          {navLinks && navLinks?.map((link: NavLinkI) => {
-            return (
-              <NavLink
-                key={link?._uid}
-                label={link?.label}
-                href={link?.href}
-              />
-            )
-          })}
-        </ul>
+        <div className='fixed md:hidden inset-0 top-16 bg-white z-50 flex flex-col gap-6 pt-4 pl-10'>
+          <ul className='flex flex-col gap-6 w-full' onClick={handleLinkClick}>
+            {navLinks && navLinks?.map((link: NavLinkI) => {
+              return (
+                <NavLink
+                  key={link?._uid}
+                  label={link?.label}
+                  href={link?.href}
+                />
+              )
+            })}
+          </ul>
+        </div>
       }
     </>
   )
