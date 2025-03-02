@@ -13,7 +13,7 @@ const NavBar: React.FC = async () => {
   return (
     <header>
       <nav className='flex flex-row px-5 sm:px-10 py-3 items-center justify-between z-50 bg-white'>
-        <Link href='/' title='Link to homepage'>
+        <Link id='nav-logo' href='/' title='Link to homepage'>
           <Heading1 text='Tennyson Flint' fontSize='2xl' />
         </Link>
         <ul className='hidden md:flex flex-row gap-6'>
