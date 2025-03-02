@@ -8,6 +8,14 @@ const MobileMenu: React.FC<NavBarI> = ({ navLinks }) => {
   const [isOpen, setOpen] = useState(false)
 
   useEffect(() => {
+    const logo = document.getElementById('nav-logo')
+    logo?.addEventListener('click', handleLinkClick)
+    return () => {
+      logo?.removeEventListener('click', handleLinkClick)
+    }
+  }, [])
+
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
     } else {
