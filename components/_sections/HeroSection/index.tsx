@@ -9,6 +9,7 @@ import { COLORS, ROUNDED } from '@/definitions/enums'
 import MarginSection from '@/components/_sections/MarginSection'
 import { ImageI } from '@/definitions/interfaces/_styled/ImageComp'
 import cx from 'classnames'
+import { storyblokEditable } from '@storyblok/react/rsc';
 
 const HeroSection: React.FC<HeroSectionI> = ({
   blok
@@ -23,7 +24,7 @@ const HeroSection: React.FC<HeroSectionI> = ({
     responsive_reverse
   } = blok
   return (
-    <MarginSection>
+    <MarginSection {...storyblokEditable(blok)}>
       <section className={cx('flex items-center mx-auto gap-10 lg:gap-24 justify-around flex-col lg:flex-row', {
         ['flex-col-reverse']: responsive_reverse
       })}>

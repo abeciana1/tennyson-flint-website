@@ -2,6 +2,7 @@ import { BlogContentI } from '@/definitions/interfaces/_blog'
 import '@/components/_blog/BlogContent/blog-content.css'
 import Markdown from 'react-markdown'
 import Link from 'next/link'
+import { storyblokEditable } from '@storyblok/react/rsc';
 
 const BlogContent: React.FC<BlogContentI> = ({
   blok
@@ -12,7 +13,8 @@ const BlogContent: React.FC<BlogContentI> = ({
   return (
     <section
       data-testid='blogContent'
-      className='blog-content px-5 sm:px-20 '
+      className='blog-content px-5 sm:px-20'
+      {...storyblokEditable(blok)}
     >
       <Markdown
         components={{
