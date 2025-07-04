@@ -114,7 +114,7 @@ export default async function Page(props: PageProps) {
         "@type": "Person",
         "givenName": "Tennyson",
         "familyName": "Flint",
-        "additionalName": "Augusta Gilmor",
+        "additionalName": "Augusta",
         "image": {
           "@type": "ImageObject",
           "url": "https://a.storyblok.com/f/320446/440x440/21006da3ff/d856641e-d5ae-40b2-8955-006307e9762c-1.png",
