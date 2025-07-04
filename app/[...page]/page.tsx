@@ -4,8 +4,8 @@ import { fetchStory } from '@/helper-functions/storyblok-fetch'
 import {
   StoryblokStory
 } from "@storyblok/react/rsc";
-import { format } from 'date-fns'
 import { notFound } from 'next/navigation'
+import { parseISO, isValid, format } from 'date-fns';
 
 export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   const pageSlug = (await props?.params).page;
@@ -54,6 +54,17 @@ export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   }
 }
 
+function safeFormatDate(rawDate: string | number, dateFormat = 'yyyy-MM-dd') {
+  if (!rawDate) return undefined;
+
+  // If it’s a string, treat it as ISO; otherwise try Date ctor
+  const d = typeof rawDate === 'string'
+    ? parseISO(rawDate)
+    : new Date(rawDate);
+
+  return isValid(d) ? format(d, dateFormat) : undefined;
+}
+
 export default async function Page(props: PageProps) {
   const slug = (await props?.params)?.page;
   let content
@@ -99,7 +110,7 @@ export default async function Page(props: PageProps) {
         "@type": "Audience",
         "name": content?.story?.content?.audience
       },
-      "datePublished": format(new Date(content?.story?.content?.book_published_date), 'yyyy-MM-dd')
+      "datePublished": safeFormatDate(content?.story?.content?.book_published_date, 'yyyy-MM-dd')
     }
   } else if (content?.story?.content?.component === 'blogPage') {
     jsonLd = {
@@ -127,7 +138,7 @@ export default async function Page(props: PageProps) {
         "@id": "https://tennysonflint.com/blog",
         "name": "Tennyson Flint Blog"
       },
-      "datePublished": format(new Date(content?.story?.content?.published_date), 'yyyy-MM-dd'),
+      "datePublished": safeFormatDate(content?.story?.content?.published_date, 'yyyy-MM-dd'),
       "image": {
         "@type": "ImageObject",
         "@id": content?.story?.content?.featured_image[0]?.file.filename,
@@ -136,7 +147,7 @@ export default async function Page(props: PageProps) {
         "height": content?.story?.content?.featured_image[0]?.height,
       },
       "inLanguage": "en-US",
-      "copyrightYear": format(new Date(content?.story?.content?.published_date), 'yyyy'),
+      "copyrightYear": safeFormatDate(content?.story?.content?.published_date, 'yyyy'),
     }
   }
   return (
