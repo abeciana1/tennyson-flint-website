@@ -99,7 +99,7 @@ export default async function Page(props: PageProps) {
         "@type": "Audience",
         "name": content?.story?.content?.audience
       },
-      "datePublished": format(content?.story?.content?.book_published_date, 'yyyy-MM-dd')
+      "datePublished": format(new Date(content?.story?.content?.book_published_date), 'yyyy-MM-dd')
     }
   } else if (content?.story?.content?.component === 'blogPage') {
     jsonLd = {
@@ -127,7 +127,7 @@ export default async function Page(props: PageProps) {
         "@id": "https://tennysonflint.com/blog",
         "name": "Tennyson Flint Blog"
       },
-      "datePublished": format(content?.story?.content?.published_date, 'yyyy-MM-dd'),
+      "datePublished": format(new Date(content?.story?.content?.published_date), 'yyyy-MM-dd'),
       "image": {
         "@type": "ImageObject",
         "@id": content?.story?.content?.featured_image[0]?.file.filename,
@@ -136,7 +136,7 @@ export default async function Page(props: PageProps) {
         "height": content?.story?.content?.featured_image[0]?.height,
       },
       "inLanguage": "en-US",
-      "copyrightYear": format(content?.story?.content?.published_date, 'yyyy'),
+      "copyrightYear": format(new Date(content?.story?.content?.published_date), 'yyyy'),
     }
   }
   return (
