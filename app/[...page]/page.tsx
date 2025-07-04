@@ -54,10 +54,9 @@ export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   }
 }
 
-function safeFormatDate(rawDate: string | number, dateFormat = 'yyyy-MM-dd') {
+function safeFormatDate(rawDate: string, dateFormat = 'yyyy-MM-dd') {
   if (!rawDate) return undefined;
 
-  // If it’s a string, treat it as ISO; otherwise try Date ctor
   const d = typeof rawDate === 'string'
     ? parseISO(rawDate)
     : new Date(rawDate);
